@@ -1,0 +1,306 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "proxima Bold";
+    src: url("/static/Proxima\ Nova\ Bold.otf")
+}
+
+@font-face {
+    font-family: "proxima Thin";
+    src: url("/static/Proxima\ Nova\ Thin.otf");
+}
+
+@font-face {
+    font-family: "proxima Regular";
+    src: url("/static/ProximaNova-Regular.otf");
+}
+
+body {
+    background: #F4F4F4;
+    overflow: hidden;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 730px;
+    height: 430px;
+    margin: auto;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 0 !important;
+}
+
+.myCard {
+    position: relative;
+    background: #fff;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    border-radius: 15px;
+    padding: 0 !important;
+    -webkit-box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
+}
+
+.rightSection {
+    position: absolute;
+    display: flex;
+    min-width: 290px;
+    height: 105%;
+    top: -12px;
+    bottom: -12px;
+    left: -5px;
+    background-color: #6A4E77;
+    border-radius: 8px;
+    padding: 25px;
+    color: rgb(192, 192, 192);
+    font-size: 12px;
+    justify-content: center;
+}
+
+.leftSection {
+    margin-right: 30px;
+}
+
+.leftSection header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.FormContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.md-form {
+    position: relative;
+}
+
+.md-form input {
+    padding-left: 0 !important;
+    padding-top: 20px;
+    margin-top: 12px;
+    border-bottom: 1px solid grey;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
+}
+
+.checkbox-input {
+    /*display: inline-flex;*/
+    align-self: flex-start;
+}
+
+.checkbox-input label input {
+    align-items: center;
+}
+
+.checkbox-input label {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkbox-input label small {
+    align-self: flex-end;
+    margin-left: 10px;
+}
+
+.form-label {
+    position: absolute;
+    display: block;
+    top: 25px;
+    left: 10px;
+    transition: transform .6s, font-size .6s;
+}
+
+.form-label-focused {
+    transform: translate(-10px, -20px);
+    font-size: 12px !important;
+}
+
+.form-label-focused-color {
+    color: #DE3A99 !important;
+}
+
+.md-form label {
+    font-family: "proxima Bold";
+    color: #CFCFCF;
+    font-size: 15px;
+}
+
+.md-form label.active {
+    color: #DE3A99!important;
+    font-size: 20px;
+    font-family: "proxima Regular";
+}
+
+.myForm input {
+    color: #333333;
+    font-family: 'proxima Bold';
+}
+
+.md-form input[type="password"]:not(.browser-default):focus:not([readonly]),
+.md-form input[type="text"]:not(.browser-default):focus:not([readonly]) {
+    border-bottom: 1px solid #DE3A99;
+    box-shadow: 0 1px 0 0 #DE3A99;
+}
+
+.leftSection header h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #DE3A99;
+    color: #DE3A99;
+    font-family: "proxima Bold";
+    width: 100px;
+}
+
+.row {
+    height: 100%;
+}
+
+.rightSection header {
+    color: #fff;
+    font-size: 44px;
+}
+
+.box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+}
+
+.box div {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.box p {
+    margin-top: 70px;
+    font-weight: bold;
+}
+
+.box .img-logo {
+    margin-top: 20px;
+    margin-bottom: 70px;
+}
+
+.leftSection .myInput:focus {
+    outline: none;
+}
+
+.myForm {
+    position: relative;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.FormFooter {
+    margin-top: 35px;
+    min-height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.leftSection .butt {
+    background: #DE3A99;
+    color: #fff;
+    width: 230px;
+    font-family: "proxima Bold";
+    border: none;
+    border-radius: 25px;
+    padding: 10px;
+    -webkit-box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
+}
+
+.FormFooter div:first-child {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 15px;
+}
+
+.FormFooter div:last-child {
+    padding-bottom: 20px;
+}
+
+.FormFooter .passForgot {
+    color: #DE3A99;
+    display: flex;
+    align-self: flex-end;
+    font-family: "proxima Bold";
+    text-decoration: underline;
+}
+
+.leftSection .butt:focus {
+    outline: none;
+}
+
+.leftSection .fas {
+    position: relative;
+    color: #bb36fd;
+    left: 36px;
+}
+
+.butt_out {
+    background: transparent;
+    color: #fff;
+    width: 120px;
+    border: 2px solid#fff;
+    border-radius: 25px;
+    padding: 10px;
+    -webkit-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+}
+
+.butt_out:hover {
+    border: 2px solid#eecbff;
+}
+
+.butt_out:focus {
+    outline: none;
+}
+
+@media screen and (max-width: 767px) {
+    .rightSection {
+        display: none;
+    }
+
+    .leftSection {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .container {
+        background-color: #F4F4F4;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .leftSection .butt {
+        width: 150px;
+        font-size: 16px;
+    }
+}
