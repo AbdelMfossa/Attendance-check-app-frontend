@@ -1,10 +1,16 @@
-import React from "react";
+import React, {useEffect} from "react";
 import ReactDOM from "react-dom";
 import Image from 'next/image';
+import {form} from '../../scripts/form';
 
 
 
 export default function Login() {
+
+    useEffect(() => {
+        form();
+    });
+
     return (
         <>
             <head>
@@ -12,8 +18,7 @@ export default function Login() {
                 <meta http-equiv='X-UA-Compatible' content='IE=edge' />
                 <title>Login</title>
                 <meta name='viewport' content='width=device-width, initial-scale=1' />
-                <link rel='stylesheet' type='text/css' media='screen' href='main.css' />
-                <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet" />
+                // <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet" />
             </head>
             <div className="container">
                 <div className="myCard">
@@ -38,12 +43,12 @@ export default function Login() {
 
                                     <div className="FormContent">
                                         <div className="md-form mb-0">
-                                            <input type="text" name="username" className="form-control Thin" />
-                                            <label >Username</label>
+                                            <input type="text" name="username" className="form-control Thin js-input" id="1" />
+                                            <label id="label-1">Username</label>
                                         </div>
                                         <div className="md-form mb-0">
-                                            <input type="password" name="password" className="form-control Thin" />
-                                            <label for="password">Password</label>
+                                            <input type="password" name="password" className="form-control Thin js-input" id="2" />
+                                            <label id="label-2">Password</label>
                                         </div>
                                         <div className="md-form mb-0">
                                             <label>

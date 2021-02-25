@@ -80,7 +80,7 @@ body {
 }
 
 .md-form label.active {
-    color: #DE3A99!important;
+    /*color: #DE3A99!important;*/
     font-size: 20px;
     font-family: "proxima Regular";
 }
@@ -92,8 +92,8 @@ body {
 
 .md-form input[type="password"]:not(.browser-default):focus:not([readonly]),
 .md-form input[type="text"]:not(.browser-default):focus:not([readonly]) {
-    border-bottom: 1px solid #DE3A99;
-    box-shadow: 0 1px 0 0 #DE3A99;
+    border-bottom: 1px solid #DE3A99 !important;
+    /*box-shadow: 0 1px 0 0 #DE3A99;*/
 }
 
 .myLeftCtn header h2 {
@@ -179,7 +179,7 @@ body {
 }
 
 
-/* 
+/*
 .myLeftCtn .butt:hover {
     background: linear-gradient(45deg, #c85bff, #b726ff);
 } */
@@ -207,7 +207,7 @@ body {
 }
 
 .butt_out:hover {
-    border: 2px solid#eecbff;
+    border: 2px solid #eecbff;
 }
 
 .butt_out:focus {
@@ -230,7 +230,7 @@ body {
 .imagep{
     width: 37px;
     height: 37px;
-    border-radius: 50% !important;  
+    border-radius: 50% !important;
 }
 .colbar{
     background-color: #F4F4F4;
@@ -252,7 +252,58 @@ body {
     margin: 2em;
 }
 .tableau{
-    border-collapse: collapse; 
-    border-spacing: 0; 
+    border-collapse: collapse;
+    border-spacing: 0;
     width: 100%;
+}
+
+.form-label-focused {
+    transform: translate(0px, -20px) !important;
+    font-size: 12px !important;
+}
+
+.form-label-focused-color {
+    color: #DE3A99 !important;
+}
+
+.FormFooter div:first-child {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 15px;
+}
+
+.FormFooter div:last-child {
+    padding-bottom: 20px;
+}
+
+.FormFooter .passForgot {
+    color: #DE3A99;
+    display: flex;
+    align-self: flex-end;
+    font-family: "proxima Thin";
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 767px) {
+    .myRightCtn {
+        display: none;
+    }
+
+    .myLeftCtn {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .container {
+        background-color: #F4F4F4;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .myLeftCtn .butt {
+        width: 150px;
+        font-size: 16px;
+    }
 }
