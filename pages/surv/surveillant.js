@@ -11,24 +11,24 @@ export default function Surveillant() {
             <Layout title="Surveillant">
 
 
-                <div class="container-fluid">
-                    <div class="mainCard">
-                        <header class="row">
-                            <div class="col-12 header-card">
+                <div className="container-fluid">
+                    <div className="mainCard">
+                        <header className="row">
+                            <div className="col-12 header-card">
                                 <span>SURVEILLANTS(8)</span>
-                                <button class="btn btn-dark text-light">NOUVEAU</button>
+                                <button className="btn btn-dark text-light">NOUVEAU</button>
                             </div>
                         </header>
-                        <section class="row">
-                            <div class="col-12 middle-card">
+                        <section className="row">
+                            <div className="col-12 middle-card">
                                 <input type="text" placeholder="Search for Supervisor" />
-                                <i class="bi bi-search"></i>
+                                <i className="bi bi-search"></i>
                             </div>
                         </section>
-                        <section class="row">
-                            <div class="col-12 content-card">
+                        <section className="row">
+                            <div className="col-12 content-card">
 
-                                <table id="datatable" class="table dt-responsive nowrap" style={{borderCollapse: "collapse", borderSpacing: 0, width: "100%"}}>
+                                <table id="datatable" className="table dt-responsive nowrap" style={{ borderCollapse: "collapse", borderSpacing: 0, width: "100%" }}>
 
                                     <thead>
                                         <tr>
