@@ -3,6 +3,5 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/": "pages/index.js",
-  "/surv/surveillant": "pages/surv/surveillant.js",
-  "/auth/login": "pages/auth/login.js"
+  "/surv/surveillant": "pages/surv/surveillant.js"
 }

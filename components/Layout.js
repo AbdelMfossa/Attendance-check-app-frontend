@@ -33,7 +33,7 @@ const Layout = ({ title, children }) => {
 
                         <nav className="navbar navbar-expand-lg navbar-light border-bottom bg-col">
                             <div className="logo-menu" id="icon-menu">
-                                <i className="bi bi-justify">menu-logo</i>
+                                <i className="bi bi-justify"></i>
                             </div>
 
                             <div className="logo-text">
