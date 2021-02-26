@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import Image from 'next/image';
 import { form } from '../../scripts/form';
@@ -10,6 +10,23 @@ export default function Login() {
   useEffect(() => {
     form();
   });
+
+  const [email, setEmail]=useState('')
+  const[password ,setPassword]=useState('');
+
+ const onSubmit=async(event)=>{
+   event.preventDefault()
+   try {
+    const {response}= await axios.post('http://localhost:8000/',{
+      email , password
+    });
+   console.log(response.data)
+     
+   } catch (err) {
+      console.log(err)
+   }
+
+ }
 
   return (
     <>
@@ -34,18 +51,18 @@ export default function Login() {
           </div>
           <div className="col-md">
             <section className="leftSection">
-              <form className="myForm text-center">
+              <form  onSubmit={onSubmit} className="myForm text-center">
                 <header>
                   <h2>Login</h2>
                 </header>
 
                 <div className="FormContent">
                   <div className="md-form mb-0">
-                    <input type="text" name="username" className="form-control js-input" id="1" />
-                    <label for="username" className="form-label" id="label-1">Username</label>
+                    <input type="text" name="email" onChange={e=>setEmail(e.target.name)}  className="form-control js-input" id="1" />
+                    <label for="username" className="form-label" id="label-1">Email</label>
                   </div>
                   <div className="md-form mb-0">
-                    <input type="password" name="password" className="form-control js-input" id="2" />
+                    <input type="password"  onChange={e=>setPassword (e.target.name)} name="password" className="form-control js-input" id="2" />
                     <label for="password" className="form-label" id="label-2">Password</label>
                   </div>
                   <div className="md-form mb-0 mt-3 checkbox-input">
