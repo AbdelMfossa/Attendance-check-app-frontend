@@ -1,5 +1,4 @@
 
-
 export const form = () => {
   const inputs = [...document.querySelectorAll(".js-input")];
 
@@ -40,8 +39,8 @@ export const responsbar = () => {
 export const respons = () => {
   let mainInterface = document.getElementById("main-interface");
   mainInterface.style.height = `${window.innerHeight - 100}px`;
+
   window.onresize = function () {
     mainInterface.style.height = `${window.innerHeight - 100}px`;
   }
-
 }

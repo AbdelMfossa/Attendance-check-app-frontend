@@ -1,11 +1,15 @@
 import React, { useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import { responsbar } from '../scripts/form';
+import { responsbar, respons } from '../scripts/form';
 
-const Layout = ({ title }) => {
+const Layout = ({ title, children }) => {
 
-    // responsbar();
+    useEffect(() => {
+        responsbar();
+        respons();
+    });
+
     return (
         <>
             <Head>
@@ -13,7 +17,7 @@ const Layout = ({ title }) => {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <title>{title}</title>
             </Head>
-            <div className="content-all">
+            <div>
                 <div className="topbar"></div>
                 <div className="d-flex" id="wrapper">
 
@@ -21,7 +25,7 @@ const Layout = ({ title }) => {
                         <div className="sidebar-heading">ATTENDANCE CHECK APP</div>
                         <div className="list-group list-group-flush">
                             <a href="/anal/analytics" className="list-group-item list-group-item-action bg-light">ANALYTICS</a>
-                            <a href="/surv/surveillants" className="list-group-item list-group-item-action bg-light">SURVEILLANTS</a>
+                            <a href="/surv/surveillant" className="list-group-item list-group-item-action bg-light">SURVEILLANTS</a>
                             <a href="/control/controleurs" className="list-group-item list-group-item-action bg-light">CONTROLEURS</a>
                         </div>
                     </div>
@@ -29,7 +33,7 @@ const Layout = ({ title }) => {
 
                         <nav className="navbar navbar-expand-lg navbar-light border-bottom bg-col">
                             <div className="logo-menu" id="icon-menu">
-                                <i className="bi bi-justify"></i>
+                                <i className="bi bi-justify">menu-logo</i>
                             </div>
 
                             <div className="logo-text">
@@ -41,7 +45,7 @@ const Layout = ({ title }) => {
                                 <li className="nav-item dropdown">
                                     <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                                         aria-haspopup="true" aria-expanded="false">
-                                        <Image classNameName="image" src="/static/avatar.jpg" alt="pic profile" width={40} height={40} />
+                                        <Image className="image" src="/static/avatar.jpg" alt="pic profile" width={40} height={40} />
                                     </a>
                                     <div className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                         <a className="dropdown-item" href="#">Account</a>
@@ -51,10 +55,14 @@ const Layout = ({ title }) => {
                                 </li>
                             </ul>
                         </nav>
+
+                        <div className="main" id="main-interface">
+                            {children}
+                        </div>
                     </div>
                 </div>
             </div>
         </>
     )
 }
-export default Layout;   
+export default Layout;
