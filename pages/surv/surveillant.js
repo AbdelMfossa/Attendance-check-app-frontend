@@ -1,8 +1,48 @@
 import Layout from "../../components/Layout";
-
-
+import CustomModal from "../../components/customModal";
+import InfoSurveillant from "../../components/infoSurveillant"
 
 export default function Surveillant() {
+
+    const surveillants = [
+        {
+            nom: "Abdel Aziz Mfossa",
+            matricule: "56M0345",
+            phone: 656553898,
+            qualite: "Surveillant"
+        },
+        {
+            nom: "Luc Panta Perin",
+            matricule: "56M0345",
+            phone: 656553898,
+            qualite: "Surveillant"
+        },
+        {
+            nom: "Delano Roosvelt",
+            matricule: "56M0345",
+            phone: 656553898,
+            qualite: "Surveillant"
+        },
+        {
+            nom: "Kenne Roosvelt",
+            matricule: "56M0345",
+            phone: 656553898,
+            qualite: "Surveillant"
+        },
+        {
+            nom: "Dilane Kombou",
+            matricule: "56M0345",
+            phone: 656553898,
+            qualite: "Surveillant"
+        },
+        {
+            nom: "Joan Loic",
+            matricule: "56M0345",
+            phone: 656553898,
+            qualite: "Surveillant"
+        }
+    ];
+
     return (
         <>
             <head>
@@ -15,8 +55,9 @@ export default function Surveillant() {
                     <div className="mainCard">
                         <header className="row">
                             <div className="col-12 header-card">
-                                <span>SURVEILLANTS(8)</span>
-                                <button className="btn btn-dark text-light">NOUVEAU</button>
+                                <span>SURVEILLANTS({ surveillants.length })</span>
+                                <CustomModal title="Surveillant" />
+
                             </div>
                         </header>
                         <section className="row">
@@ -44,115 +85,11 @@ export default function Surveillant() {
 
 
                                     <tbody>
-                                        <tr>
-                                            <td>Abdel Aziz Mfossa</td>
-                                            <td>56M0345</td>
-                                            <td>656553898</td>
-                                            <td>S005</td>
-                                            <td>Surveillant</td>
-                                            <td>5</td>
-                                            <td>Afficher</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Luc Perin Panta</td>
-                                            <td>16Y4983</td>
-                                            <td>679043452</td>
-                                            <td>NB3</td>
-                                            <td>Surveillant</td>
-                                            <td>3</td>
-                                            <td>Afficher</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Delano Roosvelt</td>
-                                            <td>19M3332</td>
-                                            <td>689365898</td>
-                                            <td>NB4</td>
-                                            <td>Surveillant</td>
-                                            <td>5</td>
-                                            <td>Afficher</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Dilane Kombou</td>
-                                            <td>99M0345</td>
-                                            <td>659553898</td>
-                                            <td>A250</td>
-                                            <td>Surveillant</td>
-                                            <td>1</td>
-                                            <td>Afficher</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Joan Loic</td>
-                                            <td>98M0345</td>
-                                            <td>664553898</td>
-                                            <td>NB1</td>
-                                            <td>Surveillant</td>
-                                            <td>5</td>
-                                            <td>Afficher</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Maurice Joel</td>
-                                            <td>62M0345</td>
-                                            <td>684553898</td>
-                                            <td>A350</td>
-                                            <td>Surveillant</td>
-                                            <td>5</td>
-                                            <td>Afficher</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Roosvelt Kenne</td>
-                                            <td>89M0345</td>
-                                            <td>654553898</td>
-                                            <td>A350</td>
-                                            <td>Surveillant</td>
-                                            <td>5</td>
-                                            <td>Afficher</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Ivan Sandez</td>
-                                            <td>99M0345</td>
-                                            <td>674553898</td>
-                                            <td>A250</td>
-                                            <td>Surveillant</td>
-                                            <td>5</td>
-                                            <td>Afficher</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>Ivan Sandez</td>
-                                            <td>99M0345</td>
-                                            <td>674553898</td>
-                                            <td>A250</td>
-                                            <td>Surveillant</td>
-                                            <td>5</td>
-                                            <td>Afficher</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Ivan Sandez</td>
-                                            <td>99M0345</td>
-                                            <td>674553898</td>
-                                            <td>A250</td>
-                                            <td>Surveillant</td>
-                                            <td>5</td>
-                                            <td>Afficher</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Ivan Sandez</td>
-                                            <td>99M0345</td>
-                                            <td>674553898</td>
-                                            <td>A250</td>
-                                            <td>Surveillant</td>
-                                            <td>5</td>
-                                            <td>Afficher</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Ivan Sandez</td>
-                                            <td>99M0345</td>
-                                            <td>674553898</td>
-                                            <td>A250</td>
-                                            <td>Surveillant</td>
-                                            <td>5</td>
-                                            <td>Afficher</td>
-                                        </tr>
+                                        {
+                                            surveillants.map(surv => (
+                                                <InfoSurveillant dataSurveillant={surv} />
+                                            ))
+                                        }
                                     </tbody>
                                 </table>
 

@@ -207,6 +207,36 @@ body {
   margin-top: 10px;
 }
 
+.dropdown a {
+  color: grey;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.modal-title {
+  font-size: 24px;
+  font-family: "Proxima Regular";
+}
+
+.modal-footer {
+  font-size: 14px;
+  font-family: "Proxima Regular";
+}
+
+.modal-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-form form div {
+  margin-bottom: 10px;
+}
+
+.modal-form form div label {
+  font-size: 14px;
+  font-family: "Proxima Bold";
+}
+
 thead tr {
   background-color: #F4F4F4;
 }

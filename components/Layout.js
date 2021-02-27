@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import { responsbar, respons } from '../scripts/form';
+import {Dropdown} from "react-bootstrap"
+import CustomToggle from "./customToggle"
 
 const Layout = ({ title, children }) => {
 
@@ -26,7 +28,7 @@ const Layout = ({ title, children }) => {
                         <div className="list-group list-group-flush">
                             <a href="/anal/analytics" className="list-group-item list-group-item-action bg-light">ANALYTICS</a>
                             <a href="/surv/surveillant" className="list-group-item list-group-item-action bg-light">SURVEILLANTS</a>
-                            <a href="/control/controleurs" className="list-group-item list-group-item-action bg-light">CONTROLEURS</a>
+                            <a href="/control/controleur" className="list-group-item list-group-item-action bg-light">CONTROLEURS</a>
                         </div>
                     </div>
                     <div className="flex-1" id="page-content-wrapper">
@@ -42,16 +44,18 @@ const Layout = ({ title, children }) => {
                             </div>
 
                             <ul className="navbar-nav profil">
-                                <li className="nav-item dropdown">
-                                    <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                                        aria-haspopup="true" aria-expanded="false">
-                                        <Image className="image" src="/static/avatar.jpg" alt="pic profile" width={40} height={40} />
-                                    </a>
-                                    <div className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                        <a className="dropdown-item" href="#">Account</a>
-                                        <div className="dropdown-divider"></div>
-                                        <a className="dropdown-item" href="#">Logout</a>
-                                    </div>
+                                <li className="nav-item">
+                                    <Dropdown>
+                                        <Dropdown.Toggle as={CustomToggle}>
+                                            <Image className="image" src="/static/avatar.jpg" alt="pic profile" width={40} height={40} />
+                                        </Dropdown.Toggle>
+
+                                        <Dropdown.Menu>
+                                            <Dropdown.Item href="#/action-1">Account</Dropdown.Item>
+                                            <Dropdown.Divider/>
+                                            <Dropdown.Item href="#/action-3">Logout</Dropdown.Item>
+                                        </Dropdown.Menu>
+                                    </Dropdown>
                                 </li>
                             </ul>
                         </nav>
