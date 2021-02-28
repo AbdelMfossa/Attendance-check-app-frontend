@@ -213,6 +213,21 @@ body {
   text-decoration: none;
 }
 
+.survDropdown .dropdown-icon {
+  display: none;
+}
+
+.options-icon {
+  position: absolute;
+  left: 10px;
+  font-size: 14px;
+}
+
+.dropdown-menu a.dropdown-item {
+  font-weight: bold;
+  font-family: "Proxima Regular";
+}
+
 .modal-title {
   font-size: 24px;
   font-family: "Proxima Regular";
