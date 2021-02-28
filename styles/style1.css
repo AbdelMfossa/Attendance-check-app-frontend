@@ -312,15 +312,15 @@ body {
     background-color: white !important;
   }
   
-  #sidebar-wrapper div a:first-child {
+  #sidebar-wrapper div Link:first-child {
     border-top: 1px solid #CFCFCF;
   }
   
-  #sidebar-wrapper div a {
+  #sidebar-wrapper div Link {
     background-color: white !important;
   }
   
-  #sidebar-wrapper div a:hover {
+  #sidebar-wrapper div Link:hover {
     background-color: #F4F4F4 !important;
   }
   
@@ -513,5 +513,6 @@ body {
       margin-right: -40px;
       margin-left: 100px;
     }
+    
   }
   

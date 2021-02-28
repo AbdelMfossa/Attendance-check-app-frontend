@@ -215,3 +215,23 @@ body {
 .Thin{
     font-family: "proxima Thin";
 }
+.color-titre-ajout{
+    background-color: #6A4E77;
+}
+.image{
+    border-radius: 50%  !important;
+}
+
+.logo-textL {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+  
+  .logo-textL span {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 16px;
+    font-family: "proxima Regular";
+  }

@@ -37,7 +37,7 @@ export const responsbar = () => {
 }
 
 export const respons = () => {
-  let mainInterface = document.getElementById("main-interface");
+  let mainInterface = document.getElementById("interface");
   mainInterface.style.height = `${window.innerHeight - 100}px`;
 
   window.onresize = function () {
