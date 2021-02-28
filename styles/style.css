@@ -235,3 +235,23 @@ body {
     font-size: 16px;
     font-family: "proxima Regular";
   }
+  .menuk {
+    width: 200px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+  }
+  .menuk-item {
+    cursor: pointer;
+    padding: 5px;
+    height: 28px;
+    border-bottom: 1px solid rgb(187, 187, 187);
+  }
+  .popmenu{
+      border-radius: 25px;
+      background: #f4f4f4;
+  }
+  .contextual-menu{
+      display: flex;
+  }
