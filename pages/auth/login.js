@@ -6,8 +6,6 @@ import { form } from '../../scripts/form';
 
 export default class Login extends React.Component {
   render() {
-    componentDidMount(form());
-    form();
     return (
       <>
         <head>
