@@ -6,18 +6,19 @@ import CustomToggle from "./customToggle"
 
 const InfoSurveillant = ({ dataSurveillant }) => {
 
-  const { nom, matricule, phone, qualite } = dataSurveillant;
+  // const { nom, matricule, phone, qualite } = dataSurveillant;
+  const { id, name, email, phone } = dataSurveillant;
 
   return (
     <>
       <Head>
       </Head>
       <tr>
-        <td>{nom}</td>
-        <td>{matricule}</td>
-        <td>{phone}</td>
+        <td>{ name }</td>
+        <td>{ id }</td>
+        <td>{ email }</td>
         <td>S005</td>
-        <td>{qualite}</td>
+        <td>{ phone }</td>
         <td>5</td>
         <td className="contextual-menu survDropdown">Afficher
           <Dropdown >

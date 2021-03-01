@@ -1,103 +1,89 @@
+import React, { Component } from 'react';
 import Layout from "../../components/Layout";
 import CustomModal from "../../components/customModal";
-import InfoSurveillant from "../../components/infoSurveillant"
+import InfoSurveillant from "../../components/infoSurveillant";
+import axios from "axios";
 
-export default function Surveillant() {
 
-    const surveillants = [
-        {
-            nom: "Abdel Aziz Mfossa",
-            matricule: "56M0345",
-            phone: 656553898,
-            qualite: "Surveillant"
-        },
-        {
-            nom: "Luc Panta Perin",
-            matricule: "56M0345",
-            phone: 656553898,
-            qualite: "Surveillant"
-        },
-        {
-            nom: "Delano Roosvelt",
-            matricule: "56M0345",
-            phone: 656553898,
-            qualite: "Surveillant"
-        },
-        {
-            nom: "Kenne Roosvelt",
-            matricule: "56M0345",
-            phone: 656553898,
-            qualite: "Surveillant"
-        },
-        {
-            nom: "Dilane Kombou",
-            matricule: "56M0345",
-            phone: 656553898,
-            qualite: "Surveillant"
-        },
-        {
-            nom: "Joan Loic",
-            matricule: "56M0345",
-            phone: 656553898,
-            qualite: "Surveillant"
+class Surveillant extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            surveillants: this.props.survs
         }
-    ];
+    }
 
-    return (
-        <>
-            <head>
+    render() {
+        return (
+            <>
+                <head>
 
-            </head>
-            <Layout title="Surveillant">
-
-
-                <div className="container-fluid">
-                    <div className="mainCard">
-                        <header className="row">
-                            <div className="col-12 header-card">
-                                <span>SURVEILLANTS({ surveillants.length })</span>
-                                <CustomModal title="Surveillant" />
-
-                            </div>
-                        </header>
-                        <section className="row">
-                            <div className="col-12 middle-card">
-                                <input type="text" placeholder="Search for Supervisor" />
-                                <i className="bi bi-search"></i>
-                            </div>
-                        </section>
-                        <section className="row">
-                            <div className="col-12 content-card">
-
-                                <table id="datatable" className="table dt-responsive nowrap" style={{ borderCollapse: "collapse", borderSpacing: 0, width: "100%" }}>
-
-                                    <thead>
-                                        <tr>
-                                            <th>Nom</th>
-                                            <th>Matricule</th>
-                                            <th>Phone</th>
-                                            <th>Salle</th>
-                                            <th>Qualite</th>
-                                            <th>Horaire</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
+                </head>
+                <Layout title="Surveillant">
 
 
-                                    <tbody>
-                                        {
-                                            surveillants.map(surv => (
-                                                <InfoSurveillant dataSurveillant={surv} />
-                                            ))
-                                        }
-                                    </tbody>
-                                </table>
+                    <div className="container-fluid">
+                        <div className="mainCard">
+                            <header className="row">
+                                <div className="col-12 header-card">
+                                    <span>SURVEILLANTS({ this.state.surveillants.length })</span>
+                                    <CustomModal title="Surveillant" />
 
-                            </div>
-                        </section>
+                                </div>
+                            </header>
+                            <section className="row">
+                                <div className="col-12 middle-card">
+                                    <input type="text" placeholder="Search for Supervisor" />
+                                    <i className="bi bi-search"></i>
+                                </div>
+                            </section>
+                            <section className="row">
+                                <div className="col-12 content-card">
+
+                                    <table id="datatable" className="table dt-responsive nowrap" style={{ borderCollapse: "collapse", borderSpacing: 0, width: "100%" }}>
+
+                                        <thead>
+                                            <tr>
+                                                <th>Nom</th>
+                                                <th>Matricule</th>
+                                                <th>Phone</th>
+                                                <th>Salle</th>
+                                                <th>Qualite</th>
+                                                <th>Horaire</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+
+
+                                        <tbody>
+                                            {
+                                                this.state.surveillants.map(surv => (
+                                                    <InfoSurveillant dataSurveillant={surv} />
+                                                ))
+                                            }
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </section>
+                        </div>
                     </div>
-                </div>
-            </Layout>
-        </>
-    )
+                </Layout>
+            </>
+        )
+    }
 }
+
+export async function getStaticProps() {
+    const res = await axios.get("https://jsonplaceholder.typicode.com/users");
+    const survs = res.data;
+
+    return {
+        props: {
+            survs
+        }
+    }
+}
+
+export default Surveillant;
