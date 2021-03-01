@@ -28,6 +28,7 @@
       "static/chunks/main.js",
       "static/chunks/webpack.js",
       "static/chunks/pages/auth/login.js"
+<<<<<<< HEAD
     ],
     "/next/dist/pages/_error": [
       "static/chunks/main.js",
@@ -38,6 +39,8 @@
       "static/chunks/main.js",
       "static/chunks/webpack.js",
       "static/chunks/pages/surv/surveillant.js"
+=======
+>>>>>>> master
     ]
   },
   "ampFirstPages": []

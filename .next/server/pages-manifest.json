@@ -2,7 +2,10 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
+<<<<<<< HEAD
   "/surv/surveillant": "pages/surv/surveillant.js",
   "/next/dist/pages/_error": "pages/next/dist/pages/_error.js",
+=======
+>>>>>>> master
   "/auth/login": "pages/auth/login.js"
 }
