@@ -19,12 +19,12 @@ const InfoSurveillant = ({ dataSurveillant }) => {
         <td>S005</td>
         <td>{qualite}</td>
         <td>5</td>
-        <td className="contextual-menu">Afficher
+        <td className="contextual-menu survDropdown">Afficher
           <Dropdown >
             <Dropdown.Toggle as={CustomToggle}>
-              <i className="bi bi-three-dots-vertical" />
+              <i className="bi bi-three-dots-vertical options-icon" />
             </Dropdown.Toggle>
-            <Dropdown.Menu>
+            <Dropdown.Menu className="options">
               <Dropdown.Item href="modif/edite">Edit</Dropdown.Item>
               <Dropdown.Divider />
               <Dropdown.Item href="../del/delete">Delete</Dropdown.Item>

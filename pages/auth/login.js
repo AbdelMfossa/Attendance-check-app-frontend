@@ -1,10 +1,15 @@
-import React, { useEffect } from "react";
+import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import Image from 'next/image';
 import { form } from '../../scripts/form';
 
 
-export default class Login extends React.Component {
+class Login extends Component {
+
+  componentDidMount() {
+    form();
+  }
+
   render() {
     return (
       <>
@@ -12,7 +17,7 @@ export default class Login extends React.Component {
           <meta charset='utf-8' />
           <meta http-equiv='X-UA-Compatible' content='IE=edge' />
           <title>Login</title>
-          <meta name='viewport' content='widtdevice-width, initial-scale=1' />
+          <meta name='viewport' content='width=device-width, initial-scale=1' />
         </head>
 
         <div className="container">
@@ -68,3 +73,5 @@ export default class Login extends React.Component {
     )
   }
 }
+
+export default Login;

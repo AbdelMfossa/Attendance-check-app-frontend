@@ -45,7 +45,6 @@ const Layout = ({ title, children }) => {
                                 <span>The University of Yaounde I</span>
                             </div>
                             <div className="logo-textL">
-                                <span>Bonjour Mr le Decanat</span>
                                 <Dropdown>
                                     <Dropdown.Toggle as={CustomToggle}>
                                         <Image className="img-xs image" src="/static/avatar.jpg" alt="pic profile" width={40} height={40} />
