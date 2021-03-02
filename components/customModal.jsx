@@ -9,7 +9,7 @@ const CustomModal = ({ title }) => {
 
   return (
     <>
-      <Button variant="dark" onClick={handleShow}>
+      <Button variant="dark" onClick={handleShow} >
         NOUVEAU
       </Button>
 
@@ -18,6 +18,7 @@ const CustomModal = ({ title }) => {
         onHide={handleClose}
         backdrop="static"
         keyboard={false}
+        className="modalSuppression"
       >
         <Modal.Header closeButton className="color-titre-ajout">
           <Modal.Title >Ajout nouveau {title}</Modal.Title>

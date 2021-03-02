@@ -2,6 +2,7 @@ import React from 'react'
 import Head from "next/head";
 import { Dropdown } from "react-bootstrap"
 import CustomToggle from "./customToggle"
+import CustomModalC from "./customModalC"
 
 
 const InfoSurveillant = ({ dataSurveillant }) => {
@@ -25,9 +26,9 @@ const InfoSurveillant = ({ dataSurveillant }) => {
               <i className="bi bi-three-dots-vertical options-icon" />
             </Dropdown.Toggle>
             <Dropdown.Menu className="options">
-              <Dropdown.Item href="modif/edite">Edit</Dropdown.Item>
+              <Dropdown.Item href="modif/edite" >Edit</Dropdown.Item>
               <Dropdown.Divider />
-              <Dropdown.Item href="../del/delete">Delete</Dropdown.Item>
+              <CustomModalC />
             </Dropdown.Menu>
           </Dropdown>
         </td>
