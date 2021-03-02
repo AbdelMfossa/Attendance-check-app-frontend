@@ -3,7 +3,7 @@ import { Modal, Button, Dropdown } from 'react-bootstrap';
 
 
 
-function customModalC({ onDelete }) {
+function customModalC({ onDelete, id }) {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
