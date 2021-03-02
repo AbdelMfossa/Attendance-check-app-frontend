@@ -4,7 +4,7 @@ import { Dropdown } from "react-bootstrap"
 import CustomToggle from "./customToggle"
 
 
-const InfoSurveillant = ({ dataSurveillant }) => {
+const InfoSurveillant = ({ dataSurveillant, onDelete }) => {
 
   // const { nom, matricule, phone, qualite } = dataSurveillant;
   const { id, name, email, phone } = dataSurveillant;
@@ -28,7 +28,7 @@ const InfoSurveillant = ({ dataSurveillant }) => {
             <Dropdown.Menu className="options">
               <Dropdown.Item href="modif/edite">Edit</Dropdown.Item>
               <Dropdown.Divider />
-              <Dropdown.Item href="../del/delete">Delete</Dropdown.Item>
+              <Dropdown.Item onClick={ () => onDelete(id) }>Delete</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
         </td>

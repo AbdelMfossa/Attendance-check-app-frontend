@@ -28,6 +28,11 @@
       "static/chunks/main.js",
       "static/chunks/webpack.js",
       "static/chunks/pages/control/controleur.js"
+    ],
+    "/surv/surveillant": [
+      "static/chunks/main.js",
+      "static/chunks/webpack.js",
+      "static/chunks/pages/surv/surveillant.js"
     ]
   },
   "ampFirstPages": []

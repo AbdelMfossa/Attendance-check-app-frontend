@@ -14,6 +14,16 @@ class Controleur extends React.Component {
         }
     }
 
+    handleDelete = (id) => {
+        let controleurs = [...this.state.controleurs];
+
+        let index = controleurs.findIndex(surv => surv.id === id);
+
+        controleurs.splice(index, 1);
+
+        this.setState({controleurs});
+    }
+
     render() {
         return (
             <>
@@ -56,9 +66,15 @@ class Controleur extends React.Component {
 
                                         <tbody>
                                             {
-                                                this.state.controleurs.map(contr => (
-                                                    <InfoSurveillant dataSurveillant={contr} />
-                                                ))
+                                                this.state.controleurs.map(contr => {
+                                                    return (
+                                                        <InfoSurveillant
+                                                            dataSurveillant={contr}
+                                                            key={contr.id}
+                                                            onDelete={this.handleDelete}
+                                                        />
+                                                    )
+                                                })
                                             }
                                         </tbody>
                                     </table>

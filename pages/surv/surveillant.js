@@ -14,6 +14,16 @@ class Surveillant extends Component {
         }
     }
 
+    handleDelete = (id) => {
+        let surveillants = [...this.state.surveillants];
+
+        let index = surveillants.findIndex(surv => surv.id === id);
+
+        surveillants.splice(index, 1);
+
+        this.setState({surveillants});
+    }
+
     render() {
         return (
             <>
@@ -58,9 +68,15 @@ class Surveillant extends Component {
 
                                         <tbody>
                                             {
-                                                this.state.surveillants.map(surv => (
-                                                    <InfoSurveillant dataSurveillant={surv} />
-                                                ))
+                                                this.state.surveillants.map(surv => {
+                                                    return (
+                                                        <InfoSurveillant
+                                                            dataSurveillant={surv}
+                                                            key={surv.id}
+                                                            onDelete={this.handleDelete}
+                                                        />
+                                                    )
+                                                })
                                             }
                                         </tbody>
                                     </table>
