@@ -52,7 +52,6 @@ class Surveillant extends Component {
                                 <div className="col-12 content-card">
 
                                     <table id="datatable" className="table dt-responsive nowrap" style={{ borderCollapse: "collapse", borderSpacing: 0, width: "100%" }}>
-
                                         <thead>
                                             <tr>
                                                 <th>Nom</th>
@@ -64,7 +63,6 @@ class Surveillant extends Component {
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
-
 
                                         <tbody>
                                             {

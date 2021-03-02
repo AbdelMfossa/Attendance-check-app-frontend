@@ -63,7 +63,6 @@ class Controleur extends React.Component {
                                             </tr>
                                         </thead>
 
-
                                         <tbody>
                                             {
                                                 this.state.controleurs.map(contr => {
@@ -87,7 +86,6 @@ class Controleur extends React.Component {
             </>
         )
     }
-
 }
 
 export async function getStaticProps() {

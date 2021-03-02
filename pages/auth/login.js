@@ -2,15 +2,32 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import Image from 'next/image';
 import { form } from '../../scripts/form';
+import axios from "axios";
+import Router from 'next/router';
 
+class Login extends React.Component {
+  handleSubmit = e => {
+    e.preventDefault();
+    const data = {
+      email: this.email,
+      password: this.password
+    }
 
-class Login extends Component {
+    axios.post("http://192.168.1.104:8000/api/users/signin", data)
+      .then(res => {
 
+        Router.push("/");
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
   componentDidMount() {
     form();
   }
 
   render() {
+
     return (
       <>
         <head>
@@ -33,24 +50,24 @@ class Login extends Component {
               </section>
             </div>
             <div className="col-md">
-              <section className="leftSection">
-                <form className="myForm text-center">
+              <section className="leftSection" onSubmit={this.handleSubmit}>
+                <form className="myForm text-center" onSubmit={this.submit}>
                   <header>
                     <h2>Login</h2>
                   </header>
 
                   <div className="FormContent">
                     <div className="md-form mb-0">
-                      <input type="text" name="username" className="form-control js-input" id="1" />
-                      <label for="username" className="form-label" id="label-1">Username</label>
+                      <input type="text" name="username" className="form-control js-input" id="1" onChange={e => this.email = e.target.value} />
+                      <label for="username" className="form-label" id="label-1">Email</label>
                     </div>
                     <div className="md-form mb-0">
-                      <input type="password" name="password" className="form-control js-input" id="2" />
+                      <input type="password" name="password" className="form-control js-input" id="2" onChange={e => this.password = e.target.value} />
                       <label for="password" className="form-label" id="label-2">Password</label>
                     </div>
                     <div className="md-form mb-0 mt-3 checkbox-input">
                       <label>
-                        <input id="check_1" name="check_1" type="checkbox" required />
+                        <input id="check_1" name="check_1" type="checkbox" />
                         <small> Garder ma session ouverte</small>
                         <div className="invalid-feedback"></div>
                       </label>
@@ -61,7 +78,7 @@ class Login extends Component {
                       <a href="#" className="passForgot">Mot de passe oublié ?</a>
                     </div>
                     <div className="md-form mb-0">
-                      <input type="submit" className="butt" value="Login Now &#x27F6;" />
+                      <button type="submit" className="butt">Login Now &#x27F6;</button>
                     </div>
                   </div>
                 </form>

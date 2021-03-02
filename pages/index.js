@@ -1,11 +1,18 @@
 import Layout from "../components/Layout";
+import React from "react"
+import ReactDOM from "react-dom";
 import Link from "next/link";
+import axios from "axios";
 
 
-export default function Index() {
-    return (
-        <Layout title="Home">
-            Attendance check app
-        </Layout>
-    )
+export default class Index extends React.Component {
+
+    render() {
+
+        return (
+            <Layout title="Home">
+                You failed password
+            </Layout>
+        )
+    }
 }

@@ -247,3 +247,7 @@ body {
   .contextual-menu{
       display: flex;
   }
+.modalSuppression{
+    font-family: "proxima Regular";
+    background-color: #CFCFCF;
+}
