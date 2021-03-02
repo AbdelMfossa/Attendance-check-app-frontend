@@ -6,12 +6,27 @@ import axios from "axios";
 
 
 export default class Index extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      email: ""
+    };
+  }
+
+  componentDidMount() {
+    let email = document.cookie.slice(6);
+
+    this.setState({email});
+  }
 
     render() {
+      let user = {};
+
 
         return (
             <Layout title="Home">
-                You failed password
+                { "Hello " + this.state.email}
             </Layout>
         )
     }

@@ -14,6 +14,10 @@ class Surveillant extends Component {
         }
     }
 
+    componentDidMount() {
+        console.log(document.cookie);
+    }
+
     handleDelete = (id) => {
         let surveillants = [...this.state.surveillants];
 
