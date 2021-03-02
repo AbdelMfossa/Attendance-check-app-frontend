@@ -6,13 +6,11 @@ const CustomModal = ({ title }) => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
   return (
     <>
       <Button variant="dark" onClick={handleShow} >
         NOUVEAU
       </Button>
-
       <Modal
         show={show}
         onHide={handleClose}
@@ -25,27 +23,20 @@ const CustomModal = ({ title }) => {
         </Modal.Header>
         <Modal.Body>
           <div className="modal-form">
-            <form>
+            <form >
               <div>
-                <label htmlFor="matricule">Matricule</label>
-                <input type="text" className="form-control" placeholder={"matricule du " + title} />
+                <label>Nom</label>
+                <input type="text" className="form-control" placeholder={"Nom du " + title} />
               </div>
-
               <div>
-                <label htmlFor="nom">Nom</label>
-                <input type="text" className="form-control" placeholder={"nom du " + title} />
+                <label >Prénom</label>
+                <input type="text" className="form-control" placeholder={"Prénom du " + title} />
               </div>
-
               <div>
-                <label htmlFor="phone">Telephone</label>
-                <input type="number" className="form-control" placeholder={"telephone du " + title} />
-              </div>
-
-              <div>
-                <label htmlFor="qualite">Qualite</label>
+                <label >Genre</label>
                 <select className="form-control">
-                  <option value="1">{title}</option>
-                  <option value="1">Chef de salle</option>
+                  <option value="M" onChange={e => this.genre = e.target.value}>masculin</option>
+                  <option value="F" onChange={e => this.genre = e.target.value}>féminin</option>
                 </select>
               </div>
             </form>
@@ -55,7 +46,7 @@ const CustomModal = ({ title }) => {
           <Button variant="secondary" onClick={handleClose}>
             Fermer
           </Button>
-          <Button variant="primary" className="color-titre-ajout">Valider</Button>
+          <Button variant="primary" type="submit" className="color-titre-ajout">Valider</Button>
         </Modal.Footer>
       </Modal>
     </>

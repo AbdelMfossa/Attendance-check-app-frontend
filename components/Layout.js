@@ -9,7 +9,12 @@ import axios from "axios";
 import Router from 'next/router';
 
 class Layout extends React.Component {
+    componentDidMount() {
+        responsbar();
+        respons();
+    }
     render() {
+
         return (
             <>
                 <Head>
