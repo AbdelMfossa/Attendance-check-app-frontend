@@ -5,43 +5,39 @@ import InfoSurveillant from "../../components/infoSurveillant";
 import axios from "axios";
 
 
+
 class Surveillant extends Component {
     constructor(props) {
         super(props);
-
         this.state = {
-            surveillants: this.props.survs
+            surveillants: []
         }
     }
-
     componentDidMount() {
-        console.log(document.cookie);
+
     }
 
     handleDelete = (id) => {
         let surveillants = [...this.state.surveillants];
 
         let index = surveillants.findIndex(surv => surv.id === id);
-
         surveillants.splice(index, 1);
-
-        this.setState({surveillants});
+        this.setState({ surveillants });
     }
 
     render() {
         return (
+
             <>
                 <head>
 
                 </head>
                 <Layout title="Surveillant">
-
-
                     <div className="container-fluid">
                         <div className="mainCard">
                             <header className="row">
                                 <div className="col-12 header-card">
-                                    <span>SURVEILLANTS({ this.state.surveillants.length })</span>
+                                    <span>SURVEILLANTS({this.state.surveillants.length})</span>
                                     <CustomModal title="Surveillant" />
 
                                 </div>
@@ -70,7 +66,7 @@ class Surveillant extends Component {
 
                                         <tbody>
                                             {
-                                                this.state.surveillants.map(surv => {
+                                                this.surveillants.map(surv => {
                                                     return (
                                                         <InfoSurveillant
                                                             dataSurveillant={surv}
@@ -94,9 +90,8 @@ class Surveillant extends Component {
 }
 
 export async function getStaticProps() {
-    const res = await axios.get("https://jsonplaceholder.typicode.com/users");
-    const survs = res.data;
-
+    const resp = await axios.get("surveillance/supervisor");
+    const survs = resp.data.data;
     return {
         props: {
             survs

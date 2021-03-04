@@ -16,20 +16,17 @@ class Login extends React.Component {
       session: false
     }
   }
-
   componentDidMount() {
     form();
-
     const formular = document.getElementById("form");
-
-    formular.addEventListener("submit", function(e) {
+    formular.addEventListener("submit", function (e) {
       e.preventDefault();
 
       const email = e.target[0].value;
       const password = e.target[1].value;
       const session = e.target[2].checked;
 
-      handleSubmit({email, password, session});
+      handleSubmit({ email, password, session });
     });
   }
 

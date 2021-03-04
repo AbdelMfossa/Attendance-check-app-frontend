@@ -17,17 +17,17 @@ export default class Index extends React.Component {
   componentDidMount() {
     let email = document.cookie.slice(6);
 
-    this.setState({email});
+    this.setState({ email });
   }
 
-    render() {
-      let user = {};
+  render() {
+    let user = {};
 
 
-        return (
-            <Layout title="Home">
-                { "Hello " + this.state.email}
-            </Layout>
-        )
-    }
+    return (
+      <Layout title="Home">
+        { "Hello " + this.state.email}
+      </Layout>
+    )
+  }
 }
