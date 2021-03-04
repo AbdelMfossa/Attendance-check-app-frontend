@@ -4,14 +4,11 @@ import axios from "axios"
 
 
 
-function customModalC() {
+function customModalC({ onDelete, id }) {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    const handleDelete = () => {
-        console.log("suppression");
-    }
 
     return (
         <>
@@ -26,10 +23,10 @@ function customModalC() {
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
                         NO/Close
-            </Button>
-                    <Button variant="danger" onClick={handleDelete}>
+                    </Button>
+                    <Button variant="danger" onClick={ () => onDelete(id) }>
                         YES
-            </Button>
+                    </Button>
                 </Modal.Footer>
             </Modal>
         </>

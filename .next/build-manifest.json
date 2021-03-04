@@ -24,10 +24,14 @@
       "static/chunks/webpack.js",
       "static/chunks/pages/_error.js"
     ],
-    "/control/controleur": [
+    "/surv/surveillant": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
+<<<<<<< HEAD
       "static/chunks/pages/control/controleur.js"
+=======
+      "static/chunks/pages/surv/surveillant.js"
+>>>>>>> feature
     ]
   },
   "ampFirstPages": []

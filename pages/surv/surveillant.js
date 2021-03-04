@@ -1,64 +1,43 @@
+import React, { Component } from 'react';
 import Layout from "../../components/Layout";
 import CustomModal from "../../components/customModal";
-import InfoSurveillant from "../../components/infoSurveillant"
-import ReactDOM from "react-dom";
-import React from "react";
+import InfoSurveillant from "../../components/infoSurveillant";
+import axios from "axios";
 
-export default class Surveillant extends React.Component {
+
+
+class Surveillant extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            surveillants: []
+        }
+    }
+    componentDidMount() {
+
+    }
+
+    handleDelete = (id) => {
+        let surveillants = [...this.state.surveillants];
+
+        let index = surveillants.findIndex(surv => surv.id === id);
+        surveillants.splice(index, 1);
+        this.setState({ surveillants });
+    }
 
     render() {
-        const surveillants = [
-            {
-                nom: "Abdel Aziz Mfossa",
-                matricule: "56M0345",
-                phone: 656553898,
-                qualite: "Surveillant"
-            },
-            {
-                nom: "Luc Panta Perin",
-                matricule: "56M0345",
-                phone: 656553898,
-                qualite: "Surveillant"
-            },
-            {
-                nom: "Delano Roosvelt",
-                matricule: "56M0345",
-                phone: 656553898,
-                qualite: "Surveillant"
-            },
-            {
-                nom: "Kenne Roosvelt",
-                matricule: "56M0345",
-                phone: 656553898,
-                qualite: "Surveillant"
-            },
-            {
-                nom: "Dilane Kombou",
-                matricule: "56M0345",
-                phone: 656553898,
-                qualite: "Surveillant"
-            },
-            {
-                nom: "Joan Loic",
-                matricule: "56M0345",
-                phone: 656553898,
-                qualite: "Surveillant"
-            }
-        ];
-
         return (
+
             <>
                 <head>
 
                 </head>
                 <Layout title="Surveillant">
-
-
                     <div className="container-fluid">
                         <div className="mainCard">
                             <header className="row">
                                 <div className="col-12 header-card">
-                                    <span>SURVEILLANTS({surveillants.length})</span>
+                                    <span>SURVEILLANTS({this.state.surveillants.length})</span>
                                     <CustomModal title="Surveillant" />
 
                                 </div>
@@ -84,11 +63,18 @@ export default class Surveillant extends React.Component {
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
+
                                         <tbody>
                                             {
-                                                surveillants.map(surv => (
-                                                    <InfoSurveillant dataSurveillant={surv} />
-                                                ))
+                                                this.surveillants.map(surv => {
+                                                    return (
+                                                        <InfoSurveillant
+                                                            dataSurveillant={surv}
+                                                            key={surv.id}
+                                                            onDelete={this.handleDelete}
+                                                        />
+                                                    )
+                                                })
                                             }
                                         </tbody>
                                     </table>
@@ -102,3 +88,15 @@ export default class Surveillant extends React.Component {
         )
     }
 }
+
+export async function getStaticProps() {
+    const resp = await axios.get("surveillance/supervisor");
+    const survs = resp.data.data;
+    return {
+        props: {
+            survs
+        }
+    }
+}
+
+export default Surveillant;

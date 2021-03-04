@@ -1,3 +1,4 @@
+import $ from 'jquery';
 
 export const form = () => {
   const inputs = [...document.querySelectorAll(".js-input")];
@@ -43,4 +44,12 @@ export const respons = () => {
   window.onresize = function () {
     mainInterface.style.height = `${window.innerHeight - 100}px`;
   }
+}
+
+export const search = () => {
+  var table = $('#datatable').DataTable();
+
+  $('#myInputTextField').on('keyup', function () {
+    table.search(this.value).draw();
+  });
 }

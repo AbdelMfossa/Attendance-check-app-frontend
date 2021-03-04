@@ -29,7 +29,7 @@ class Layout extends React.Component {
                         <div className="bg-light border-right" id="sidebar-wrapper">
                             <div className="sidebar-heading">ATTENDANCE CHECK APP</div>
                             <div className="list-group list-group-flush" id="menuLoading">
-                                <Link href="/anal/analytics"><a className="list-group-item list-group-item-action bg-light">ANALYTICS </a></Link>
+                                <Link href="/anal/analytic"><a className="list-group-item list-group-item-action bg-light">ANALYTICS </a></Link>
                                 <Link href="/surv/surveillant"><a className="list-group-item list-group-item-action bg-light">SURVEILLANTS</a></Link>
                                 <Link href="/control/controleur"><a className="list-group-item list-group-item-action bg-light">CONTROLEURS</a></Link>
                             </div>
@@ -52,7 +52,7 @@ class Layout extends React.Component {
                                         </Dropdown.Toggle>
 
                                         <Dropdown.Menu>
-                                            <Dropdown.Item href="#/action-1">Account</Dropdown.Item>
+                                            <Dropdown.Item href="../data/account">Account</Dropdown.Item>
                                             <Dropdown.Divider />
                                             <Dropdown.Item href="../auth/login">Logout</Dropdown.Item>
                                         </Dropdown.Menu>

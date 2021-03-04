@@ -4,26 +4,42 @@ import Image from 'next/image';
 import { form } from '../../scripts/form';
 import axios from "axios";
 import Router from 'next/router';
+import handleSubmit from "../../scripts/login";
 
 class Login extends React.Component {
-  handleSubmit = e => {
-    e.preventDefault();
-    const data = {
-      email: this.email,
-      password: this.password
+  constructor() {
+    super();
+
+    this.state = {
+      email: "",
+      password: "",
+      session: false
     }
-
-    axios.post("http://192.168.1.104:8000/api/users/signin", data)
-      .then(res => {
-
-        Router.push("/");
-      })
-      .catch(err => {
-        console.log(err)
-      })
   }
   componentDidMount() {
     form();
+    const formular = document.getElementById("form");
+    formular.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const email = e.target[0].value;
+      const password = e.target[1].value;
+      const session = e.target[2].checked;
+
+      handleSubmit({ email, password, session });
+    });
+  }
+
+  handleChange = (event) => {
+    const id = event.currentTarget.id;
+    const value = event.currentTarget.value;
+
+    // on verifie si le l'evenement vient du champ email
+    if (id === "1") {
+      this.setState({ email: value });
+    } else if (id === "2") {
+      this.setState({ password: value });
+    }
   }
 
   render() {
@@ -50,19 +66,19 @@ class Login extends React.Component {
               </section>
             </div>
             <div className="col-md">
-              <section className="leftSection" onSubmit={this.handleSubmit}>
-                <form className="myForm text-center" onSubmit={this.submit}>
+              <section className="leftSection">
+                <form className="myForm text-center" id="form">
                   <header>
                     <h2>Login</h2>
                   </header>
 
                   <div className="FormContent">
                     <div className="md-form mb-0">
-                      <input type="text" name="username" className="form-control js-input" id="1" onChange={e => this.email = e.target.value} />
-                      <label for="username" className="form-label" id="label-1">Email</label>
+                      <input type="text" value={this.state.email} name="email" className="form-control js-input" id="1" onChange={this.handleChange} />
+                      <label for="email" className="form-label" id="label-1">Email</label>
                     </div>
                     <div className="md-form mb-0">
-                      <input type="password" name="password" className="form-control js-input" id="2" onChange={e => this.password = e.target.value} />
+                      <input type="password" value={this.state.password} name="password" className="form-control js-input" id="2" onChange={this.handleChange} />
                       <label for="password" className="form-label" id="label-2">Password</label>
                     </div>
                     <div className="md-form mb-0 mt-3 checkbox-input">
