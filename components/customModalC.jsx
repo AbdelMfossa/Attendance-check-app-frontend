@@ -4,7 +4,7 @@ import axios from "axios"
 
 
 
-function customModalC({ onDelete, id }) {
+function customModalC({ id, onDelete, donnee }) {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -24,7 +24,7 @@ function customModalC({ onDelete, id }) {
                     <Button variant="secondary" onClick={handleClose}>
                         NO/Close
                     </Button>
-                    <Button variant="danger" onClick={ () => onDelete(id) }>
+                    <Button variant="danger" onClick={() => onDelete({ id })} >
                         YES
                     </Button>
                 </Modal.Footer>

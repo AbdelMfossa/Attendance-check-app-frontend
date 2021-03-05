@@ -24,14 +24,20 @@
       "static/chunks/webpack.js",
       "static/chunks/pages/_error.js"
     ],
-    "/surv/surveillant": [
+    "/anal/analytic": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
-<<<<<<< HEAD
+      "static/chunks/pages/anal/analytic.js"
+    ],
+    "/control/controleur": [
+      "static/chunks/main.js",
+      "static/chunks/webpack.js",
       "static/chunks/pages/control/controleur.js"
-=======
-      "static/chunks/pages/surv/surveillant.js"
->>>>>>> feature
+    ],
+    "/next/dist/pages/_error": [
+      "static/chunks/main.js",
+      "static/chunks/webpack.js",
+      "static/chunks/pages/next/dist/pages/_error.js"
     ]
   },
   "ampFirstPages": []

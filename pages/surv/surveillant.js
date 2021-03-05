@@ -10,19 +10,24 @@ class Surveillant extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            surveillants: []
+            surveillants: this.props.survs
         }
     }
     componentDidMount() {
-
+        $(document).ready(function () {
+            $('#datatable').DataTable({
+                "searching": true,
+                "paging": false,
+                "info": false,
+                "columnDefs": [
+                    { orderable: false, targets: [1, 2, 3, 4, 6] }
+                ],
+            });
+        });
     }
 
     handleDelete = (id) => {
-        let surveillants = [...this.state.surveillants];
-
-        let index = surveillants.findIndex(surv => surv.id === id);
-        surveillants.splice(index, 1);
-        this.setState({ surveillants });
+        axios.delete(`surveillance/supervisor/${id}`)
     }
 
     render() {
@@ -44,7 +49,7 @@ class Surveillant extends Component {
                             </header>
                             <section className="row">
                                 <div className="col-12 middle-card">
-                                    <input type="text" placeholder="Search for Supervisor" />
+                                    <input type="text" id="test" placeholder="Search for Supervisor" />
                                     <i className="bi bi-search"></i>
                                 </div>
                             </section>
@@ -58,15 +63,15 @@ class Surveillant extends Component {
                                                 <th>Matricule</th>
                                                 <th>Phone</th>
                                                 <th>Salle</th>
-                                                <th>Qualite</th>
+                                                <th>Qualité</th>
                                                 <th>Horaire</th>
-                                                <th>Action</th>
+                                                <th>Actions</th>
                                             </tr>
                                         </thead>
 
                                         <tbody>
                                             {
-                                                this.surveillants.map(surv => {
+                                                this.state.surveillants.map(surv => {
                                                     return (
                                                         <InfoSurveillant
                                                             dataSurveillant={surv}
@@ -98,5 +103,4 @@ export async function getStaticProps() {
         }
     }
 }
-
 export default Surveillant;

@@ -2,9 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-<<<<<<< HEAD
-  "/control/controleur": "pages/control/controleur.js"
-=======
-  "/surv/surveillant": "pages/surv/surveillant.js"
->>>>>>> feature
+  "/control/controleur": "pages/control/controleur.js",
+  "/next/dist/pages/_error": "pages/next/dist/pages/_error.js",
+  "/anal/analytic": "pages/anal/analytic.js"
 }

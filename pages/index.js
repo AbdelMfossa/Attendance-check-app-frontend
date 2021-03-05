@@ -4,6 +4,8 @@ import ReactDOM from "react-dom";
 import Link from "next/link";
 import axios from "axios";
 
+axios.defaults.baseURL = ""
+
 
 export default class Index extends React.Component {
   constructor() {

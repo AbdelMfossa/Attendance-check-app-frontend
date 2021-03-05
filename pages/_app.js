@@ -5,7 +5,7 @@ import "../styles/style1.css"
 import "../styles/style2.css"
 import axios from "axios";
 
-axios.defaults.baseURL = "https://192.168.1.108:8000/api/"
+axios.defaults.baseURL = "http://192.168.8.100:8000/api/"
 
 export default function MyApp({ Component, pageProps }) {
     return <Component {...pageProps} />

@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-self.__BUILD_MANIFEST = {__rewrites:[],"/_error":["static\u002Fchunks\u002Fpages\u002F_error.js"],"/control/controleur":["static\u002Fchunks\u002Fpages\u002Fcontrol\u002Fcontroleur.js"],sortedPages:["\u002F_app","\u002F_error","\u002Fcontrol\u002Fcontroleur"]};self.__BUILD_MANIFEST_CB && self.__BUILD_MANIFEST_CB()
-=======
-self.__BUILD_MANIFEST = {__rewrites:[],"/_error":["static\u002Fchunks\u002Fpages\u002F_error.js"],"/surv/surveillant":["static\u002Fchunks\u002Fpages\u002Fsurv\u002Fsurveillant.js"],sortedPages:["\u002F_app","\u002F_error","\u002Fsurv\u002Fsurveillant"]};self.__BUILD_MANIFEST_CB && self.__BUILD_MANIFEST_CB()
->>>>>>> feature
+self.__BUILD_MANIFEST = {__rewrites:[],"/_error":["static\u002Fchunks\u002Fpages\u002F_error.js"],"/anal/analytic":["static\u002Fchunks\u002Fpages\u002Fanal\u002Fanalytic.js"],"/control/controleur":["static\u002Fchunks\u002Fpages\u002Fcontrol\u002Fcontroleur.js"],"/next/dist/pages/_error":["static\u002Fchunks\u002Fpages\u002Fnext\u002Fdist\u002Fpages\u002F_error.js"],sortedPages:["\u002F_app","\u002F_error","\u002Fanal\u002Fanalytic","\u002Fcontrol\u002Fcontroleur","\u002Fnext\u002Fdist\u002Fpages\u002F_error"]};self.__BUILD_MANIFEST_CB && self.__BUILD_MANIFEST_CB()
