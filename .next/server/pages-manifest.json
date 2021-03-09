@@ -2,7 +2,5 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/control/controleur": "pages/control/controleur.js",
-  "/next/dist/pages/_error": "pages/next/dist/pages/_error.js",
-  "/anal/analytic": "pages/anal/analytic.js"
+  "/surv/surveillant": "pages/surv/surveillant.js"
 }

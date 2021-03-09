@@ -12,34 +12,20 @@ class Login extends React.Component {
 
     this.state = {
       email: "",
-      password: "",
-      session: false
+      password: ""
     }
   }
-  componentDidMount() {
-    form();
-    const formular = document.getElementById("form");
-    formular.addEventListener("submit", function (e) {
-      e.preventDefault();
 
-      const email = e.target[0].value;
-      const password = e.target[1].value;
-      const session = e.target[2].checked;
-
-      handleSubmit({ email, password, session });
-    });
-  }
 
   handleChange = (event) => {
-    const id = event.currentTarget.id;
-    const value = event.currentTarget.value;
-
-    // on verifie si le l'evenement vient du champ email
-    if (id === "1") {
-      this.setState({ email: value });
-    } else if (id === "2") {
-      this.setState({ password: value });
-    }
+    const { name, value } = event.target;
+    this.setState({ [name]: [value] })
+  }
+  handleSubmit = e => {
+    axios.post("192.168.225.201")
+      .then(
+        res => console.log(res.data)
+      )
   }
 
   render() {
@@ -67,7 +53,7 @@ class Login extends React.Component {
             </div>
             <div className="col-md">
               <section className="leftSection">
-                <form className="myForm text-center" id="form">
+                <form className="myForm text-center" id="form" onSubmit={this.handleSubmit}>
                   <header>
                     <h2>Login</h2>
                   </header>

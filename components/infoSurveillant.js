@@ -8,32 +8,19 @@ import Link from 'next/link';
 
 const InfoSurveillant = ({ dataSurveillant, onDelete }) => {
 
-  const { id, last_name, first_name, email, exam, matricule, phone, horaire } = dataSurveillant;
+  const { id, last_name, first_name, email, exam, matricule, phone, horaire, grade } = dataSurveillant;
 
   return (
     <>
-      <Head>
-      </Head>
       <tr>
         <td>{`${last_name} ${first_name}`}</td>
         <td>{matricule}</td>
         <td>{phone}</td>
-        <td>
-          {exam.absent.map(
-            explore => {
-              return (
-                explore.salle.code
-              )
-            })}
-        </td>
-        < td > {grade}</td>
-        <td> {horaire.present.map(
-          explore => {
-            return (
-              explore
-            )
-          })}</td>
-        <td className="contextual-menu survDropdown">Afficher
+        <td>{exam.absent.map(explore => explore.salle.code)}</td>
+        < td >{grade === true ? `Chef de Salle` : `Surveillant`}</td>
+        <td> {exam.present.length * 2}</td>
+        <td className="contextual-menu survDropdown">
+          <Link href="../anal/analyticPersonnel"><a>Afficher</a></Link>
           <Dropdown >
             <Dropdown.Toggle as={CustomToggle}>
               <i className="bi bi-three-dots-vertical options-icon" />

@@ -58,18 +58,6 @@ export const search = () => {
   });
 }
 
-export const jquerytab = () => {
-  $(document).ready(function () {
-    var table = $('#datatable').DataTable({
-      "searching": true,
-      "paging": false,
-      "info": false,
-      "columnDefs": [
-        { orderable: false, targets: [1, 2, 3, 4, 6] }
-      ],
-    });
-  });
-}
 
 // export const place = () => {
 //   const doc = document.getElementById("datatable_filter");
