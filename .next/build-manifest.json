@@ -24,20 +24,15 @@
       "static/chunks/webpack.js",
       "static/chunks/pages/_error.js"
     ],
-    "/anal/analytic": [
+    "/auth/login": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
-      "static/chunks/pages/anal/analytic.js"
+      "static/chunks/pages/auth/login.js"
     ],
-    "/control/controleur": [
+    "/auth/test": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
-      "static/chunks/pages/control/controleur.js"
-    ],
-    "/next/dist/pages/_error": [
-      "static/chunks/main.js",
-      "static/chunks/webpack.js",
-      "static/chunks/pages/next/dist/pages/_error.js"
+      "static/chunks/pages/auth/test.js"
     ]
   },
   "ampFirstPages": []
