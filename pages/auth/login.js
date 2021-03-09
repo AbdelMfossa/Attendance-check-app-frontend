@@ -12,20 +12,28 @@ class Login extends React.Component {
 
     this.state = {
       email: "",
-      password: ""
+      password: "",
+      session: null
     }
   }
 
+  componentDidMount() {
+    form();
+
+    handleSubmit( this.state );
+  }
 
   handleChange = (event) => {
-    const { name, value } = event.target;
-    this.setState({ [name]: [value] })
-  }
-  handleSubmit = e => {
-    axios.post("192.168.225.201")
-      .then(
-        res => console.log(res.data)
-      )
+    const index = event.target.id;
+    console.log(event.target);
+
+    if (index === "1") {
+      this.setState({ email: event.target.value })
+    } else if (index === "2") {
+      this.setState({ password: event.target.value })
+    } else if (index === "check_1") {
+      this.setState({ session: event.target.checked })
+    }
   }
 
   render() {

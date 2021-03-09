@@ -12,23 +12,22 @@ export default class Index extends React.Component {
     super();
 
     this.state = {
-      email: ""
+      jwt: ""
     };
   }
 
   componentDidMount() {
-    let email = document.cookie.slice(6);
+    let jwt = localStorage.getItem('jwt');
 
-    this.setState({ email });
+    if (jwt !== null) {
+      this.setState({ jwt });
+    }
   }
 
   render() {
-    let user = {};
-
-
     return (
       <Layout title="Home">
-        { "Hello " + this.state.email}
+        { "Hello " + this.state.jwt }
       </Layout>
     )
   }

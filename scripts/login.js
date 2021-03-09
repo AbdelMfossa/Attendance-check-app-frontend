@@ -2,16 +2,14 @@ import axios from "axios";
 import Router from "next/router";
 
 const handleSubmit = (data) => {
+  const { email, password, session } = data;
 
-  // axios.post("http://192.168.1.104:8000/api/users/signin", data)
-  axios.get("https://jsonplaceholder.typicode.com/users")
+  axios.post("users/signin", { email, password })
     .then(res => {
-      const { email, password, session } = data;
+      console.log(res);
 
       if (session) {
-        document.cookie = `email=${email}; path=/; max-age=80600`;
-      } else {
-        document.cookie = "email=; path=/;";
+        localStorage.setItem("jwt", Object.values(res.data));
       }
 
       Router.push("/");

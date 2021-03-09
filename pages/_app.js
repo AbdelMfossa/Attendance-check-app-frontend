@@ -5,7 +5,7 @@ import "../styles/style1.css"
 import "../styles/style2.css"
 import axios from "axios";
 
-axios.defaults.baseURL = "http://attendceappuy1.herokuapp.com/api/"
+axios.defaults.baseURL = "http://192.168.225.201:8000/api/"
 
 export default function MyApp({ Component, pageProps }) {
     return <Component {...pageProps} />
