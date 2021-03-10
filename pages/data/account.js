@@ -3,6 +3,7 @@ import React from "react"
 import ReactDOM from "react-dom";
 import Link from "next/link";
 import axios from "axios";
+import CustomModalModif from "../../components/customModalModif";
 
 
 export default class Account extends React.Component {
@@ -38,6 +39,22 @@ export default class Account extends React.Component {
       }
     }
 
+    handleModification({ lname, fname, adEmail, nPhone, role }) {
+      axios.put("users/users/info", {
+        last_name: lname,
+        first_name: fname,
+        email: adEmail,
+        phone: nPhone,
+        role
+      })
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => {
+        console.error(err);
+      });
+    }
+
     render() {
       const user = this.state.user;
         return (
@@ -48,7 +65,10 @@ export default class Account extends React.Component {
                         <div className="personalData">
                           <header>
                             <h2>Informations Personnelles</h2>
-                            <button className="btn btn-dark text-light">Modifier</button>
+                            <CustomModalModif
+                              user={user}
+                              onModification={this.handleModification}
+                            />
                           </header>
                           <div className="personalData-info">
                             <span>Nom: </span>
