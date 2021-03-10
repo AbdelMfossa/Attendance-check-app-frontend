@@ -23,6 +23,7 @@ class CustomModalSalle extends React.Component {
       .catch(
         err => console.log(err)
       )
+    this.setState({ show: false })
 
   }
   render() {
@@ -40,7 +41,7 @@ class CustomModalSalle extends React.Component {
           className="modalSuppression"
         >
           <Modal.Header closeButton className="color-titre-ajout">
-            <Modal.Title >CREATION D'UNE SALLE</Modal.Title>
+            <Modal.Title className="colorTitre" >CREATION D'UNE SALLE</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <div className="modal-form" >

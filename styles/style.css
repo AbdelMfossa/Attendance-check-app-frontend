@@ -283,5 +283,8 @@ body {
 .exportB{
     margin-bottom: 10px;
     border-radius: 0%;
-   
+}
+.colorTitre{
+    color: white;
+    text-align: center;
 }
