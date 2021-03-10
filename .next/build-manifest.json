@@ -33,11 +33,6 @@
       "static/chunks/main.js",
       "static/chunks/webpack.js",
       "static/chunks/pages/auth/login.js"
-    ],
-    "/auth/test": [
-      "static/chunks/main.js",
-      "static/chunks/webpack.js",
-      "static/chunks/pages/auth/test.js"
     ]
   },
   "ampFirstPages": []

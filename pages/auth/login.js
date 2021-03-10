@@ -1,26 +1,31 @@
-import React, { Component, useState } from "react";
+import React, { Component, useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import Image from 'next/image';
 import { form } from '../../scripts/form';
 import axios from "axios";
 import {useCookies} from  "react-cookie"
-export default ()=>{
+import Router from 'next/router';
+
+export default function Login() {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  useEffect(() => {
+    form();
+  });
+
   const onSubmit = async event => {
     event.preventDefault();
+    console.log({email, password});
     try {
         await axios.post('users/signin',{email ,password})
         .then(
             async (res)=>{
-                localStorage.setItem('jwt' ,Object.values(res.data))
+                localStorage.setItem('jwt', Object.values(res.data))
                 console.log(localStorage.getItem('jwt'));
 
-                //setCookie("jwt", Object.values(res.data),{
-                  //sameSite:true
-                //})
+                Router.push("/");
             }
 
         )

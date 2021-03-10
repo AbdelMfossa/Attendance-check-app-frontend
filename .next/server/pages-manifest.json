@@ -2,10 +2,6 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-<<<<<<< HEAD
   "/": "pages/index.js",
-=======
-  "/auth/test": "pages/auth/test.js",
->>>>>>> c0dbbc06315d16c97b533b8dbde4fff4f5946b62
   "/auth/login": "pages/auth/login.js"
 }

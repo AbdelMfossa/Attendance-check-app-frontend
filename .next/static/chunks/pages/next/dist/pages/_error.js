@@ -189,7 +189,6 @@ eval("var assign=Object.assign.bind(Object);module.exports=assign;module.exports
 
 /***/ }),
 
-<<<<<<< HEAD
 /***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fnext%2Fdist%2Fpages%2F_error&absolutePagePath=%2Fhome%2Fdilane%2FBureau%2FAttendance-check-app-frontend%2Fnode_modules%2Fnext%2Fdist%2Fpages%2F_error.js!./":
 /*!***************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fnext%2Fdist%2Fpages%2F_error&absolutePagePath=%2Fhome%2Fdilane%2FBureau%2FAttendance-check-app-frontend%2Fnode_modules%2Fnext%2Fdist%2Fpages%2F_error.js ***!
@@ -198,16 +197,6 @@ eval("var assign=Object.assign.bind(Object);module.exports=assign;module.exports
 /***/ (function(module, exports, __webpack_require__) {
 
 eval("\n      (window.__NEXT_P = window.__NEXT_P || []).push([\n        \"/next/dist/pages/_error\",\n        function () {\n          return __webpack_require__(/*! ./node_modules/next/dist/pages/_error.js */ \"./node_modules/next/dist/pages/_error.js\");\n        }\n      ]);\n    //# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9fTl9FLy4vbm9kZV9tb2R1bGVzL25leHQvZGlzdC9idWlsZC93ZWJwYWNrL2xvYWRlcnMvbmV4dC1jbGllbnQtcGFnZXMtbG9hZGVyLmpzPzk2ZGMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUNBO0FBQ0E7QUFDQTtBQUNBLGlCQUFpQixtQkFBTyxDQUFDLDBGQUEwRjtBQUNuSDtBQUNBIiwiZmlsZSI6Ii4vbm9kZV9tb2R1bGVzL25leHQvZGlzdC9idWlsZC93ZWJwYWNrL2xvYWRlcnMvbmV4dC1jbGllbnQtcGFnZXMtbG9hZGVyLmpzP3BhZ2U9JTJGbmV4dCUyRmRpc3QlMkZwYWdlcyUyRl9lcnJvciZhYnNvbHV0ZVBhZ2VQYXRoPSUyRmhvbWUlMkZkaWxhbmUlMkZCdXJlYXUlMkZBdHRlbmRhbmNlLWNoZWNrLWFwcC1mcm9udGVuZCUyRm5vZGVfbW9kdWxlcyUyRm5leHQlMkZkaXN0JTJGcGFnZXMlMkZfZXJyb3IuanMhLi8uanMiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICh3aW5kb3cuX19ORVhUX1AgPSB3aW5kb3cuX19ORVhUX1AgfHwgW10pLnB1c2goW1xuICAgICAgICBcIi9uZXh0L2Rpc3QvcGFnZXMvX2Vycm9yXCIsXG4gICAgICAgIGZ1bmN0aW9uICgpIHtcbiAgICAgICAgICByZXR1cm4gcmVxdWlyZShcIi9ob21lL2RpbGFuZS9CdXJlYXUvQXR0ZW5kYW5jZS1jaGVjay1hcHAtZnJvbnRlbmQvbm9kZV9tb2R1bGVzL25leHQvZGlzdC9wYWdlcy9fZXJyb3IuanNcIik7XG4gICAgICAgIH1cbiAgICAgIF0pO1xuICAgICJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fnext%2Fdist%2Fpages%2F_error&absolutePagePath=%2Fhome%2Fdilane%2FBureau%2FAttendance-check-app-frontend%2Fnode_modules%2Fnext%2Fdist%2Fpages%2F_error.js!./\n");
-=======
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fnext%2Fdist%2Fpages%2F_error&absolutePagePath=%2Fhome%2Fluc%2FDocuments%2FProjetDsc%2FAttendance-check-app-frontend%2Fnode_modules%2Fnext%2Fdist%2Fpages%2F_error.js!./":
-/*!***************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fnext%2Fdist%2Fpages%2F_error&absolutePagePath=%2Fhome%2Fluc%2FDocuments%2FProjetDsc%2FAttendance-check-app-frontend%2Fnode_modules%2Fnext%2Fdist%2Fpages%2F_error.js ***!
-  \***************************************************************************************************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("\n      (window.__NEXT_P = window.__NEXT_P || []).push([\n        \"/next/dist/pages/_error\",\n        function () {\n          return __webpack_require__(/*! ./node_modules/next/dist/pages/_error.js */ \"./node_modules/next/dist/pages/_error.js\");\n        }\n      ]);\n    //# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9fTl9FLy4vbm9kZV9tb2R1bGVzL25leHQvZGlzdC9idWlsZC93ZWJwYWNrL2xvYWRlcnMvbmV4dC1jbGllbnQtcGFnZXMtbG9hZGVyLmpzP2E1ZDEiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUNBO0FBQ0E7QUFDQTtBQUNBLGlCQUFpQixtQkFBTyxDQUFDLDBGQUFvRztBQUM3SDtBQUNBIiwiZmlsZSI6Ii4vbm9kZV9tb2R1bGVzL25leHQvZGlzdC9idWlsZC93ZWJwYWNrL2xvYWRlcnMvbmV4dC1jbGllbnQtcGFnZXMtbG9hZGVyLmpzP3BhZ2U9JTJGbmV4dCUyRmRpc3QlMkZwYWdlcyUyRl9lcnJvciZhYnNvbHV0ZVBhZ2VQYXRoPSUyRmhvbWUlMkZsdWMlMkZEb2N1bWVudHMlMkZQcm9qZXREc2MlMkZBdHRlbmRhbmNlLWNoZWNrLWFwcC1mcm9udGVuZCUyRm5vZGVfbW9kdWxlcyUyRm5leHQlMkZkaXN0JTJGcGFnZXMlMkZfZXJyb3IuanMhLi8uanMiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICh3aW5kb3cuX19ORVhUX1AgPSB3aW5kb3cuX19ORVhUX1AgfHwgW10pLnB1c2goW1xuICAgICAgICBcIi9uZXh0L2Rpc3QvcGFnZXMvX2Vycm9yXCIsXG4gICAgICAgIGZ1bmN0aW9uICgpIHtcbiAgICAgICAgICByZXR1cm4gcmVxdWlyZShcIi9ob21lL2x1Yy9Eb2N1bWVudHMvUHJvamV0RHNjL0F0dGVuZGFuY2UtY2hlY2stYXBwLWZyb250ZW5kL25vZGVfbW9kdWxlcy9uZXh0L2Rpc3QvcGFnZXMvX2Vycm9yLmpzXCIpO1xuICAgICAgICB9XG4gICAgICBdKTtcbiAgICAiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fnext%2Fdist%2Fpages%2F_error&absolutePagePath=%2Fhome%2Fluc%2FDocuments%2FProjetDsc%2FAttendance-check-app-frontend%2Fnode_modules%2Fnext%2Fdist%2Fpages%2F_error.js!./\n");
->>>>>>> c0dbbc06315d16c97b533b8dbde4fff4f5946b62
 
 /***/ }),
 
@@ -318,8 +307,4 @@ eval("\n\nif (false) {} else {\n  module.exports = __webpack_require__(/*! ./cjs
 
 /***/ })
 
-<<<<<<< HEAD
 },[["./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fnext%2Fdist%2Fpages%2F_error&absolutePagePath=%2Fhome%2Fdilane%2FBureau%2FAttendance-check-app-frontend%2Fnode_modules%2Fnext%2Fdist%2Fpages%2F_error.js!./","webpack"]]]);
-=======
-},[["./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fnext%2Fdist%2Fpages%2F_error&absolutePagePath=%2Fhome%2Fluc%2FDocuments%2FProjetDsc%2FAttendance-check-app-frontend%2Fnode_modules%2Fnext%2Fdist%2Fpages%2F_error.js!./","webpack"]]]);
->>>>>>> c0dbbc06315d16c97b533b8dbde4fff4f5946b62
