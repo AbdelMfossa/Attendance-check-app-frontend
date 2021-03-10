@@ -1,43 +1,41 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Head from "next/head";
-import { Dropdown } from "react-bootstrap"
-import CustomToggle from "./customToggle"
-import CustomModalC from "./customModalC"
 import Link from 'next/link';
+import axios from "axios"
 
 
-const InfoSurveillantSalle = ({ dataSurveillant, props }) => {
+export async function getStaticProps() {
+    const resp = await axios.get("/surveillance/room");
+    const salle = resp.data.data;
+    return {
+        props: {
+            salle,
+        }
+    }
+}
+
+const InfoSurveillantSalle = ({ dataSurveillant, salle }) => {
 
     const { id, last_name, first_name, grade, phone } = dataSurveillant;
 
     return (
         <>
+
             <tr>
+                {salle}
                 <td>{`${last_name} ${first_name}`}</td>
                 <td>{phone}</td>
-                <td>{grade}</td>
-                <td>
-                    <select className="form-control">
-                        {props.salle.map(salle =>
-                            <option onChange={e => this.salle = e.target.value}>{salle.code}</option>)}
+                < td >{grade === true ? `Chef de Salle` : `Surveillant`}</td>
+                {/* <td>
+                    <select className="form-control" onChange={e => this.salle = e.target.value}>
+                        {salle.map(salle =>
+                            <option value={salle.code}>{salle.code}</option>)}
                     </select>
-                </td>
+                </td> */}
             </tr>
         </>
     )
 }
 
-export async function getStaticProps() {
-    try {
-        const res = await axios.get("surveillance/room");
-        const salle = res.data;
-        return {
-            props: {
-                salle: salle
-            }
-        }
-    } catch (err) {
-        console.log(err)
-    }
-}
+
 export default InfoSurveillantSalle;

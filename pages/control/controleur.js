@@ -49,7 +49,7 @@ class Controleur extends React.Component {
                             </header>
                             <section className="row">
                                 <div className="col-12 content-card">
-                                    <table id="datatable" className="table table-responsive nowrap " style={{ borderCollapse: "collapse", borderSpacing: 0, width: "100%" }}>
+                                    <table id="datatable" className="table nowrap " style={{ borderCollapse: "collapse", borderSpacing: 0, width: "100%" }}>
                                         <thead>
                                             <tr>
                                                 <th>Nom</th>

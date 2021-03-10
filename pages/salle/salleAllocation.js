@@ -3,11 +3,15 @@ import Link from "next/link";
 import Layout from "../../components/Layout";
 import CustomModalSalle from "../../components/customModalSalle"
 import $ from 'jquery';
+import axios from "axios"
+import InfoSurveillantSalle from "../../components/infoSurveillantSalle"
+import { respons } from "../../scripts/form";
 
 
 class Salle extends React.Component {
     state = {
-        survs: this.props.survs
+        survs: this.props.survs,
+        salle: this.props.salle
     }
     handleAlloc = () => {
         axios.put(`/surveillance/supervisor/${state.id}`, state)
@@ -49,8 +53,8 @@ class Salle extends React.Component {
                                     </thead>
 
                                     <tbody>
-                                        {/* {
-                                            this.state.surveillants.map(surv => {
+                                        {
+                                            this.state.survs.map(surv => {
                                                 return (
                                                     <InfoSurveillantSalle
                                                         dataSurveillant={surv}
@@ -58,7 +62,7 @@ class Salle extends React.Component {
                                                     />
                                                 )
                                             })
-                                        } */}
+                                        }
                                     </tbody>
                                 </table>
 
@@ -71,17 +75,16 @@ class Salle extends React.Component {
     }
 }
 export async function getStaticProps() {
-    try {
-        const resp = await axios.get("/surveillance/supervisor");
-        const survs = resp.data.data;
-        return {
-            props: {
-                survs: survs
-            }
+    const resp = await axios.get("/surveillance/supervisor");
+    const rep = await axios.get("/surveillance/room");
+    const salle = rep.data.data;
+    const survs = resp.data.data;
+    return {
+        props: {
+            survs: survs,
+            salle: salle
         }
-    } catch (err) {
-        console.log(err)
-        return null;
+
     }
 }
 export default Salle;

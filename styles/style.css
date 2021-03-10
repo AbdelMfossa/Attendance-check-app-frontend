@@ -278,7 +278,10 @@ body {
     border-radius: 0%;
 }
 .boutonE{
-    width: auto;
-    height: 300px;
     border-radius: 0%;
+}
+.exportB{
+    margin-bottom: 10px;
+    border-radius: 0%;
+   
 }

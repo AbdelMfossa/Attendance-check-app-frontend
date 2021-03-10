@@ -19,20 +19,8 @@ class Analystic extends Component {
             surveillants: this.props.survs
         }
     }
-    handlePrint() {
-        $(document).ready(function () {
-            $('#datatable').DataTable();
-
-            //Buttons examples
-            var table = $('#datatable-buttons').DataTable({
-                lengthChange: false,
-                buttons: ['copy', 'excel', 'pdf']
-            });
-
-            table.buttons().container()
-                .appendTo('#datatable-buttons_wrapper .col-md-6:eq(0)');
-        });
-
+    handlePrint = () => {
+        ss
     }
 
     render() {
@@ -48,7 +36,7 @@ class Analystic extends Component {
                             </header>
                             <section className="row">
                                 <div className="col-12 content-card">
-                                    <button className="btn btn-secondary bouton" onClick={this.handlePrint}>Export as PDF</button>
+                                    <button className="btn btn-secondary exportB" onClick={this.handlePrint}>Export as PDF</button>
                                     <table id="datatable" className="table dt-responsive nowrap" style={{ borderCollapse: "collapse", borderSpacing: 0, width: "100%" }}>
                                         <thead>
                                             <tr>
