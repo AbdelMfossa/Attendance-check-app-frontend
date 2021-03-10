@@ -10,7 +10,7 @@ export default class Index extends React.Component {
     super();
 
     this.state = {
-      jwt: ""
+      jwt: "",
     };
   }
 
@@ -34,8 +34,6 @@ export default class Index extends React.Component {
     return (
       <Layout title="Home">
         { "Hello " + this.state.jwt }
-
-        <Homepage />
       </Layout>
     )
   }

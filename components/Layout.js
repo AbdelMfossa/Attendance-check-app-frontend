@@ -52,7 +52,7 @@ class Layout extends React.Component {
                                         </Dropdown.Toggle>
 
                                         <Dropdown.Menu>
-                                            <Dropdown.Item href="../data/account">Account</Dropdown.Item>
+                                            <Dropdown.Item href="/data/account">Account</Dropdown.Item>
                                             <Dropdown.Divider />
                                             <Dropdown.Item href="../auth/login">Logout</Dropdown.Item>
                                         </Dropdown.Menu>
