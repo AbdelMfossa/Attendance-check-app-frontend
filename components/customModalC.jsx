@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { Modal, Button, Dropdown } from 'react-bootstrap';
 import axios from "axios"
+import { useRouter } from 'next/router'
 
 
-
-function customModalC({ id, onDelete, donnee }) {
+function customModalC({ id, onDelete }) {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -22,9 +22,12 @@ function customModalC({ id, onDelete, donnee }) {
                 <Modal.Body>Etes vous certains de vouloir  le supprimer ?</Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
-                        NO/Close
+                        No/Close
                     </Button>
-                    <Button variant="danger" onClick={() => onDelete({ id })} >
+                    <Button variant="danger" onClick={() => {
+                        onDelete({ id })
+                        handleClose
+                    }} >
                         YES
                     </Button>
                 </Modal.Footer>

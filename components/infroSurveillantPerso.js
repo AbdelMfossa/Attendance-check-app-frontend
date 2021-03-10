@@ -38,7 +38,7 @@ const InfoSurveillantPerso = ({ dataSurveillant }) => {
             </tr>
             <tr>
                 <th>Cota Horaire</th>
-                <td>{exam.present.length === 0 ? null : exam.present.length * 2}</td>
+                <td>{exam.present.length === 0 ? `0` : exam.present.length * 2}</td>
             </tr>
             <tr>
                 <th>Details</th>

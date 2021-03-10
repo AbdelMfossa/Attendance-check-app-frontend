@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 const InfoSurveillant = ({ dataSurveillant, onDelete }) => {
 
-  const { id, last_name, first_name, email, exam, matricule, phone, horaire, grade } = dataSurveillant;
+  const { id, last_name, first_name, email, exam, matricule, phone, grade } = dataSurveillant;
 
   return (
     <>
@@ -28,7 +28,7 @@ const InfoSurveillant = ({ dataSurveillant, onDelete }) => {
             <Dropdown.Menu className="options">
               <Dropdown.Item  >Edit</Dropdown.Item>
               <Dropdown.Divider />
-              <CustomModalC id={id} onDelete={onDelete} donne={dataSurveillant} />
+              <CustomModalC id={id} onClick={onDelete} />
             </Dropdown.Menu>
           </Dropdown>
         </td>

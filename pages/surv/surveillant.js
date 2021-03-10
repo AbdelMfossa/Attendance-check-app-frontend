@@ -11,7 +11,6 @@ import { place } from "../../scripts/form";
 import $ from 'jquery';
 import Link from "next/link"
 
-
 class Surveillant extends Component {
     constructor(props) {
         super(props);
@@ -25,20 +24,18 @@ class Surveillant extends Component {
                 "searching": true,
                 "paging": false,
                 "info": false,
-                "columnDefs": [
-                    { orderable: false, targets: [1, 2, 3, 4, 6] }
-                ],
+                "columnDefs": [{ orderable: false, targets: [1, 2, 3, 6] }]
             });
         });
     }
-
     handleDelete = (id) => {
-        axios.delete(`surveillance/supervisor/${id}`)
+        axios.delete(`/surveillance/supervisor/${id}`)
+        this.setState({ surveillants: surveillants })
     }
+
 
     render() {
         return (
-
             <>
                 <Layout title="Surveillant">
                     <div className="container-fluid">
@@ -51,7 +48,7 @@ class Surveillant extends Component {
                             </header>
                             <section className="row">
                                 <div className="col-12 content-card">
-                                    <table id="datatable" className="table dt-responsive nowrap" style={{ borderCollapse: "collapse", borderSpacing: 0, width: "100%" }}>
+                                    <table id="datatable" className="table-responsive-sm nowrap " style={{ borderCollapse: "collapse", borderSpacing: 0, width: "100%" }}>
                                         <thead>
                                             <tr>
                                                 <th>Nom</th>
@@ -88,13 +85,10 @@ class Surveillant extends Component {
         )
     }
 }
+
 export async function getStaticProps() {
     const resp = await axios.get("/surveillance/supervisor");
     const survs = resp.data.data;
-    return {
-        props: {
-            survs
-        }
-    }
+    return { props: { survs } }
 }
 export default Surveillant;

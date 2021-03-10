@@ -260,7 +260,7 @@ body {
 }
 
 #datatable_filter input{
-    width: 150px;
+    width: 250px;
     margin-bottom: 20px;
     border-radius: 0px;
     display: flex;
@@ -287,4 +287,7 @@ body {
 .colorTitre{
     color: white;
     text-align: center;
+}
+.tail{
+    max-width: max-content;
 }

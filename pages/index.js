@@ -4,9 +4,6 @@ import ReactDOM from "react-dom";
 import Link from "next/link";
 import axios from "axios";
 
-axios.defaults.baseURL = ""
-
-
 export default class Index extends React.Component {
   constructor() {
     super();
@@ -15,7 +12,6 @@ export default class Index extends React.Component {
       email: ""
     };
   }
-
   componentDidMount() {
     let email = document.cookie.slice(6);
 
@@ -24,8 +20,6 @@ export default class Index extends React.Component {
 
   render() {
     let user = {};
-
-
     return (
       <Layout title="Home">
         { "Hello " + this.state.email}

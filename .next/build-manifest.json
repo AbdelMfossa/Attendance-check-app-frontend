@@ -14,6 +14,11 @@
     "static/development/_ssgManifest.js"
   ],
   "pages": {
+    "/": [
+      "static/chunks/main.js",
+      "static/chunks/webpack.js",
+      "static/chunks/pages/index.js"
+    ],
     "/_app": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
@@ -24,15 +29,10 @@
       "static/chunks/webpack.js",
       "static/chunks/pages/_error.js"
     ],
-    "/salle/salleAllocation": [
+    "/analyse/[id]": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
-      "static/chunks/pages/salle/salleAllocation.js"
-    ],
-    "/surv/surveillant": [
-      "static/chunks/main.js",
-      "static/chunks/webpack.js",
-      "static/chunks/pages/surv/surveillant.js"
+      "static/chunks/pages/analyse/[id].js"
     ]
   },
   "ampFirstPages": []

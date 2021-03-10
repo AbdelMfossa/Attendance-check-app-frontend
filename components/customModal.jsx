@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState } from 'react'
+import React from 'react'
 import { Modal, Button } from 'react-bootstrap';
 
 
@@ -83,7 +83,7 @@ class CustomModalSalle extends React.Component {
                 </div>
                 <div>
                   <label >Grade</label>
-                  <select className="form-control" onChange={e => { e.target.value === "1" ? this.setState({ grade: true }) : this.setState({ grade: grade }) }} >
+                  <select className="form-control" onChange={e => { e.target.value == "1" ? this.setState({ grade: true }) : this.setState({ grade: grade }) }} >
                     <option value="0">Surveillant</option>
                     <option value="1" >Chef de salle</option>
                   </select>

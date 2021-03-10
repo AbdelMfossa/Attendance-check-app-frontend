@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from "../../components/Layout";
-import CustomModal from "../../components/customModal";
+import ModalC from "../../components/ModalC"
 import InfoControleur from "../../components/infoControleur";
 import axios from "axios";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -21,6 +21,7 @@ class Controleur extends React.Component {
 
     handleDelete = (id) => {
         axios.delete(`users/users/${id}`)
+        this.setState({ controleurs: this.state.controleurs })
     }
     componentDidMount() {
         $(document).ready(function () {
@@ -44,12 +45,12 @@ class Controleur extends React.Component {
                             <header className="row">
                                 <div className="col-12 header-card">
                                     <span>CONTROLEURS({this.state.controleurs.length})</span>
-                                    <CustomModal title="Controleur" />
+                                    <ModalC title="Controleur" />
                                 </div>
                             </header>
                             <section className="row">
                                 <div className="col-12 content-card">
-                                    <table id="datatable" className="table nowrap " style={{ borderCollapse: "collapse", borderSpacing: 0, width: "100%" }}>
+                                    <table id="datatable" className="table-responsive-sm nowrap " style={{ borderCollapse: "collapse", borderSpacing: 0, width: "100%" }}>
                                         <thead>
                                             <tr>
                                                 <th>Nom</th>

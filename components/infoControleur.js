@@ -12,8 +12,6 @@ const InfoSurveillant = ({ dataSurveillant, onDelete }) => {
 
     return (
         <>
-            <Head>
-            </Head>
             {role.id === 2 ?
                 <tr>
                     <td>{`${last_name} ${first_name}`}</td>
@@ -22,7 +20,7 @@ const InfoSurveillant = ({ dataSurveillant, onDelete }) => {
                     <td>{email}</td>
                     <td className="contextual-menu survDropdown">
                         Afficher
-<Dropdown >
+                <Dropdown >
                             <Dropdown.Toggle as={CustomToggle}>
                                 <i className="bi bi-three-dots-vertical options-icon" />
                             </Dropdown.Toggle>
