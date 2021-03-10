@@ -260,7 +260,7 @@ body {
 }
 
 #datatable_filter input{
-    width: 300px;
+    width: 150px;
     margin-bottom: 20px;
     border-radius: 0px;
     display: flex;
@@ -268,4 +268,17 @@ body {
 }
 .Trait{
     margin-bottom: 1px !important;
+}
+.homeLink{
+    text-decoration: none !important;
+    color: #333333 !important;
+    margin-top: 0px !important;
+}
+.bouton{
+    border-radius: 0%;
+}
+.boutonE{
+    width: auto;
+    height: 300px;
+    border-radius: 0%;
 }

@@ -8,7 +8,7 @@ const CustomModal = ({ title }) => {
   const handleShow = () => setShow(true);
   return (
     <>
-      <Button variant="dark" onClick={handleShow} >
+      <Button variant="dark" className="bouton" onClick={handleShow} >
         NOUVEAU
       </Button>
       <Modal

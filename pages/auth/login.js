@@ -5,39 +5,33 @@ import { form } from '../../scripts/form';
 import axios from "axios";
 import Router from 'next/router';
 import handleSubmit from "../../scripts/login";
+import Head from "next/head";
 
 class Login extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
-      email: "",
-      password: ""
+  componentDidMount() {
+    form();
+  }
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const data = {
+      email: this.email,
+      password: this.password
     }
-  }
-
-
-  handleChange = (event) => {
-    const { name, value } = event.target;
-    this.setState({ [name]: [value] })
-  }
-  handleSubmit = e => {
-    axios.post("192.168.225.201")
-      .then(
-        res => console.log(res.data)
+    axios.post('/users/signin', data)
+      .then(res => console.log(res))
+      .catch(err => console.log(err)
       )
   }
 
   render() {
-
     return (
       <>
-        <head>
+        <Head>
           <meta charset='utf-8' />
           <meta http-equiv='X-UA-Compatible' content='IE=edge' />
           <title>Login</title>
           <meta name='viewport' content='width=device-width, initial-scale=1' />
-        </head>
+        </Head>
 
         <div className="container">
           <div className="row myCard">
@@ -60,12 +54,12 @@ class Login extends React.Component {
 
                   <div className="FormContent">
                     <div className="md-form mb-0">
-                      <input type="text" value={this.state.email} name="email" className="form-control js-input" id="1" onChange={this.handleChange} />
-                      <label for="email" className="form-label" id="label-1">Email</label>
+                      <input type="text" name="email" className="form-control js-input" id="1" onChange={e => this.email = e.target.value} />
+                      <label htmlFor="email" className="form-label" id="label-1">Email</label>
                     </div>
                     <div className="md-form mb-0">
-                      <input type="password" value={this.state.password} name="password" className="form-control js-input" id="2" onChange={this.handleChange} />
-                      <label for="password" className="form-label" id="label-2">Password</label>
+                      <input type="password" name="password" className="form-control js-input" id="2" onChange={e => this.password = e.target.value} />
+                      <label htmlFor="password" className="form-label" id="label-2">Password</label>
                     </div>
                     <div className="md-form mb-0 mt-3 checkbox-input">
                       <label>
@@ -84,6 +78,7 @@ class Login extends React.Component {
                     </div>
                   </div>
                 </form>
+
               </section>
             </div>
           </div>

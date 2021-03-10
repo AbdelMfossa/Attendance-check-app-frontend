@@ -24,7 +24,7 @@ class Controleur extends React.Component {
     }
     componentDidMount() {
         $(document).ready(function () {
-            $('#Cdatatable').DataTable({
+            $('#datatable').DataTable({
                 "searching": true,
                 "paging": false,
                 "info": false,
@@ -38,9 +38,6 @@ class Controleur extends React.Component {
     render() {
         return (
             <>
-                <head>
-
-                </head>
                 <Layout title="Controleur">
                     <div className="container-fluid">
                         <div className="mainCard">
@@ -52,7 +49,7 @@ class Controleur extends React.Component {
                             </header>
                             <section className="row">
                                 <div className="col-12 content-card">
-                                    <table id="Cdatatable" className="table dt-responsive nowrap " style={{ borderCollapse: "collapse", borderSpacing: 0, width: "100%" }}>
+                                    <table id="datatable" className="table table-responsive nowrap " style={{ borderCollapse: "collapse", borderSpacing: 0, width: "100%" }}>
                                         <thead>
                                             <tr>
                                                 <th>Nom</th>

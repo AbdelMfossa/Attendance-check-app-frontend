@@ -6,7 +6,7 @@ import CustomModalC from "./customModalC"
 import Link from 'next/link';
 
 
-const InfoSurveillant = ({ dataSurveillant }) => {
+const InfoSurveillantPerso = ({ dataSurveillant }) => {
 
     const { id, last_name, first_name, genre, exam, matricule, phone, grade } = dataSurveillant;
 
@@ -38,14 +38,45 @@ const InfoSurveillant = ({ dataSurveillant }) => {
             </tr>
             <tr>
                 <th>Cota Horaire</th>
-                <td>{exam.present.length === 0 ? exam.present.length * 2 : null}</td>
+                <td>{exam.present.length === 0 ? null : exam.present.length * 2}</td>
             </tr>
-            {/* Informations supllementaires */}
             <tr>
-                <td> bonjour</td>
+                <th>Details</th>
+                <td>
+                    <ul>
+                        {exam.present.map(explore => {
+                            return (
+                                <li> `${explore.Ue.code} /${explore.niveau.filiere}/ ${explore.Horaire.date}/ ${explore.Horaire.begin} - ${explore.Horaire.end}`</li>
+                            )
+                        })} 
+                    </ul>
+                </td>
             </tr>
         </>
     )
 }
 
-export default InfoSurveillant;
+export default InfoSurveillantPerso;
+
+///revoir
+{/* <li> {exam.present.map(explore => {
+                            return (
+                                `${explore.Ue.code} /${explore.niveau.filiere}/ ${explore.Horaire.date}/ ${explore.Horaire.begin} - ${explore.Horaire.end}`
+                            )
+                        })} /{exam.present.map(explore => {
+                            return (
+                                explore.niveau.filiere
+                            )
+                        })}/ {exam.present.map(explore => {
+                            return (
+                                explore.Horaire.date
+                            )
+                        })}/ {exam.present.map(explore => {
+                            return (
+                                explore.Horaire.begin
+                            )
+                        })}-{exam.present.map(explore => {
+                            return (
+                                explore.Horaire.end
+                            )
+                        })} */}
