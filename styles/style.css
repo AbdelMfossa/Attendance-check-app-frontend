@@ -262,7 +262,7 @@ body {
 }
 
 #datatable_filter input{
-    width: 300px;
+    width: 150px;
     margin-bottom: 20px;
     border-radius: 0px;
     display: flex;
@@ -303,4 +303,20 @@ body {
 
 .personalData > header > button {
     height: 35px;
+}
+.homeLink{
+    text-decoration: none !important;
+    color: #333333 !important;
+    margin-top: 0px !important;
+}
+.bouton{
+    border-radius: 0%;
+}
+.boutonE{
+    border-radius: 0%;
+}
+.exportB{
+    margin-bottom: 10px;
+    border-radius: 0%;
+
 }

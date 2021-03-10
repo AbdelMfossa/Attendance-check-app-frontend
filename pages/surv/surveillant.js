@@ -12,8 +12,6 @@ import $ from 'jquery';
 import Link from "next/link"
 
 
-
-
 class Surveillant extends Component {
     constructor(props) {
         super(props);
@@ -42,9 +40,6 @@ class Surveillant extends Component {
         return (
 
             <>
-                <head>
-
-                </head>
                 <Layout title="Surveillant">
                     <div className="container-fluid">
                         <div className="mainCard">
@@ -94,7 +89,7 @@ class Surveillant extends Component {
     }
 }
 export async function getStaticProps() {
-    const resp = await axios.get("surveillance/supervisor");
+    const resp = await axios.get("/surveillance/supervisor");
     const survs = resp.data.data;
     return {
         props: {
