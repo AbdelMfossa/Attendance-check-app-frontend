@@ -58,6 +58,7 @@ class Salle extends React.Component {
                                                 return (
                                                     <InfoSurveillantSalle
                                                         dataSurveillant={surv}
+                                                        salle={this.state.salle}
                                                         key={surv.id}
                                                     />
                                                 )
@@ -75,14 +76,14 @@ class Salle extends React.Component {
     }
 }
 export async function getStaticProps() {
-    const resp = await axios.get("/surveillance/supervisor");
-    const rep = await axios.get("/surveillance/room");
+    const resp = await axios.get("surveillance/supervisor");
+    const rep = await axios.get("surveillance/room");
     const salle = rep.data.data;
     const survs = resp.data.data;
     return {
         props: {
             survs: survs,
-            salle: salle
+            salle: salle,
         }
 
     }

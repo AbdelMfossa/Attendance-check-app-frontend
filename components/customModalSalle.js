@@ -19,7 +19,7 @@ class CustomModalSalle extends React.Component {
       localisation: this.localisation
     }
 
-    axios.post(`/surveillance/room`, data)
+    axios.post(`surveillance/room`, data)
       .catch(
         err => console.log(err)
       )

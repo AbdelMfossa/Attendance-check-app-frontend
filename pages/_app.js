@@ -7,7 +7,7 @@ import { CookiesProvider } from "react-cookie"
 import axios from 'axios';
 
 
-axios.defaults.baseURL = "http://192.168.225.201:8000/api/"
+axios.defaults.baseURL = "http://192.168.8.101:8000/api/"
 axios.defaults.withCredentials = true;
 
 

@@ -29,7 +29,7 @@ class Surveillant extends Component {
         });
     }
     handleDelete = (id) => {
-        axios.delete(`/surveillance/supervisor/${id}`)
+        axios.delete(`surveillance/supervisor/${id}`)
         this.setState({ surveillants: this.state.surveillants })
     }
 

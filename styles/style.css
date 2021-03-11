@@ -309,6 +309,8 @@ body {
 }
 .boutonE{
     border-radius: 0%;
+    display: inline-block;
+    width: 150px !important;
 }
 .exportB{
     margin-bottom: 10px;

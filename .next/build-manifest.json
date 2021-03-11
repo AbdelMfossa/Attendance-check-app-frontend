@@ -24,15 +24,15 @@
       "static/chunks/webpack.js",
       "static/chunks/pages/_error.js"
     ],
-    "/control/controleur": [
+    "/salle/salleAllocation": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
-      "static/chunks/pages/control/controleur.js"
+      "static/chunks/pages/salle/salleAllocation.js"
     ],
-    "/data/account": [
+    "/surv/surveillant": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
-      "static/chunks/pages/data/account.js"
+      "static/chunks/pages/surv/surveillant.js"
     ]
   },
   "ampFirstPages": []

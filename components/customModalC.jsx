@@ -25,8 +25,8 @@ function customModalC({ id, onDelete }) {
                         No/Close
                     </Button>
                     <Button variant="danger" onClick={() => {
-                        onDelete({ id })
-                        setShow(false)
+                        onDelete(id);
+                        setShow(false);
                     }} >
                         YES
                     </Button>

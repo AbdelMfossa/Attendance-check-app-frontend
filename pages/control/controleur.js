@@ -72,6 +72,7 @@ class Controleur extends React.Component {
                                                     )
                                                 })
                                             }
+
                                         </tbody>
                                     </table>
 
