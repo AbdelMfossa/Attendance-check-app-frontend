@@ -25,23 +25,12 @@ export default function Login() {
           async (res) => {
             localStorage.setItem('jwt', Object.values(res.data))
             console.log(localStorage.getItem('jwt'));
-<<<<<<< HEAD
             Router.push("/");
           }
         )
     } catch (err) {
       console.log(err)
-=======
-
-            Router.push("/");
-          }
-
-        )
-    } catch (err) {
-      toast(err.response.data)
->>>>>>> feature
     }
-
   };
 
   return (

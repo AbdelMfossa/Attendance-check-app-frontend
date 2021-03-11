@@ -10,7 +10,6 @@ import Router from 'next/router';
 export default class Account extends React.Component {
   constructor() {
     super();
-
     this.state = {
       user: {
         last_name: "",
@@ -19,42 +18,21 @@ export default class Account extends React.Component {
         phone: "",
         role: null
       },
-
       isloading: true
     }
   }
 
-<<<<<<< HEAD
-  componentDidMount() {
+  async componentDidMount() {
     try {
-      axios.get("users/currentuser")
-        .then(res => {
-          const { last_name, first_name, email, phone, role } = res.data.data;
-          console.log(role)
-          const user = { last_name: last_name.toUpperCase(), first_name: first_name.toUpperCase(), email, phone, role };
-
-          let loading = this.state.isloading;
-          this.setState({ user, isloading: !loading });
-        });
+      const res = await axios.get("users/currentuser");
+      const { last_name, first_name, email, phone, role } = res.data.data;
+      const user = { last_name: last_name.toUpperCase(), first_name: first_name.toUpperCase(), email, phone, role };
+      let loading = this.state.isloading;
+      this.setState({ user, isloading: !loading });
     } catch (err) {
-      console.log(err);
-=======
-    async componentDidMount() {
-      try {
-        const res = await axios.get("users/currentuser");
-
-        const {last_name, first_name, email, phone, role} = res.data.data;
-        const user = {last_name: last_name.toUpperCase(), first_name: first_name.toUpperCase(), email, phone, role};
-
-        let loading = this.state.isloading;
-        this.setState({ user , isloading: !loading});
-      } catch (err) {
-        Router.push("auth/login");
-      }
->>>>>>> feature
+      Router.push("auth/login");
     }
   }
-
   handleModification({ lname, fname, adEmail, nPhone, role }) {
     axios.put("users/users/info", {
       last_name: lname,

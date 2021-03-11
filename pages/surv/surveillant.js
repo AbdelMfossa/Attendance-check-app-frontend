@@ -31,9 +31,9 @@ class Surveillant extends Component {
 
         try {
             axios.get("users/currentuser")
-            .then(res => {
-              // ok
-            });
+                .then(res => {
+                    // ok
+                });
         } catch (err) {
             Router.push("/auth/login");
         }
@@ -94,19 +94,18 @@ class Surveillant extends Component {
         )
     }
 }
-<<<<<<< HEAD
 
-export async function getServerSideProps() {
-<<<<<<< HEAD
-    const resp = await axios.get("surveillance/supervisor");
-=======
-    const resp = await axios.get("/surveillance/supervisor");
-=======
 export async function getStaticProps() {
-    const resp = await axios.get("surveillance/supervisor");
->>>>>>> 938bf71ae3c2feaee696f98fd8c90deb46ca3d1b
->>>>>>> feature
-    const survs = resp.data.data;
-    return { props: { survs } }
+    try {
+        const resp = await axios.get("surveillance/supervisor");
+        const survs = resp.data.data;
+        return { props: { survs } }
+    } catch (err) {
+        return {
+            props: {
+                survs: []
+            }
+        }
+    }
 }
 export default Surveillant;
