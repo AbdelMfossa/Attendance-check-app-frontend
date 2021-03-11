@@ -29,10 +29,10 @@
       "static/chunks/webpack.js",
       "static/chunks/pages/_error.js"
     ],
-    "/analyse/[id]": [
+    "/surv/surveillant": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
-      "static/chunks/pages/analyse/[id].js"
+      "static/chunks/pages/surv/surveillant.js"
     ]
   },
   "ampFirstPages": []
