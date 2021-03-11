@@ -2,6 +2,16 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
+<<<<<<< HEAD
   "/salle/salleAllocation": "pages/salle/salleAllocation.js",
   "/surv/surveillant": "pages/surv/surveillant.js"
+=======
+<<<<<<< HEAD
+  "/salle/salleAllocation": "pages/salle/salleAllocation.js",
+  "/surv/surveillant": "pages/surv/surveillant.js"
+=======
+  "/auth/login": "pages/auth/login.js",
+  "/analyse/analytic": "pages/analyse/analytic.js"
+>>>>>>> 938bf71ae3c2feaee696f98fd8c90deb46ca3d1b
+>>>>>>> feature
 }

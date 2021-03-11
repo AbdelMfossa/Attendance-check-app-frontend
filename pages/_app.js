@@ -5,17 +5,35 @@ import "../styles/style1.css"
 import "../styles/style2.css"
 import { CookiesProvider } from "react-cookie"
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
+<<<<<<< HEAD
 
+=======
+// axios.defaults.baseURL = "https://attendceappuy1.herokuapp.com/api/"
+>>>>>>> feature
 axios.defaults.baseURL = "http://192.168.8.101:8000/api/"
 axios.defaults.withCredentials = true;
 
 
 export default function MyApp({ Component, pageProps }) {
+<<<<<<< HEAD
   return (
     <>
       <Component {...pageProps} />
       <CookiesProvider />
     </>
   )
+=======
+  const notify = () => toast("Wow so easy !");
+
+    return (
+      <>
+        <Component {...pageProps} />
+        <CookiesProvider/>
+        <ToastContainer />
+      </>
+    )
+>>>>>>> feature
 }

@@ -10,6 +10,7 @@ import "datatables.net-dt/css/jquery.dataTables.min.css"
 import { place } from "../../scripts/form";
 import $ from 'jquery';
 import Link from "next/link"
+import Router from 'next/router';
 
 class Surveillant extends Component {
     constructor(props) {
@@ -27,6 +28,15 @@ class Surveillant extends Component {
                 "columnDefs": [{ orderable: false, targets: [1, 2, 6] }]
             });
         });
+
+        try {
+            axios.get("users/currentuser")
+            .then(res => {
+              // ok
+            });
+        } catch (err) {
+            Router.push("/auth/login");
+        }
     }
     handleDelete = (id) => {
         axios.delete(`surveillance/supervisor/${id}`)
@@ -84,9 +94,18 @@ class Surveillant extends Component {
         )
     }
 }
+<<<<<<< HEAD
 
 export async function getServerSideProps() {
+<<<<<<< HEAD
     const resp = await axios.get("surveillance/supervisor");
+=======
+    const resp = await axios.get("/surveillance/supervisor");
+=======
+export async function getStaticProps() {
+    const resp = await axios.get("surveillance/supervisor");
+>>>>>>> 938bf71ae3c2feaee696f98fd8c90deb46ca3d1b
+>>>>>>> feature
     const survs = resp.data.data;
     return { props: { survs } }
 }

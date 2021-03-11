@@ -330,3 +330,7 @@ input[type="search"]{
     display: block;
     left: 20px;
 }
+
+.activeNav {
+    background-color: blue !important;
+}

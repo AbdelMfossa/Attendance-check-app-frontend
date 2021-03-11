@@ -85,5 +85,11 @@ export async function getStaticProps() {
         console.log(err)
         return null;
     }
+
+    return {
+        props: {
+            survs: []
+        }
+    }
 }
 export default Analystic;

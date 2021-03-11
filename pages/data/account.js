@@ -4,6 +4,7 @@ import ReactDOM from "react-dom";
 import Link from "next/link";
 import axios from "axios";
 import CustomModalModif from "../../components/customModalModif";
+import Router from 'next/router';
 
 
 export default class Account extends React.Component {
@@ -23,6 +24,7 @@ export default class Account extends React.Component {
     }
   }
 
+<<<<<<< HEAD
   componentDidMount() {
     try {
       axios.get("users/currentuser")
@@ -36,6 +38,20 @@ export default class Account extends React.Component {
         });
     } catch (err) {
       console.log(err);
+=======
+    async componentDidMount() {
+      try {
+        const res = await axios.get("users/currentuser");
+
+        const {last_name, first_name, email, phone, role} = res.data.data;
+        const user = {last_name: last_name.toUpperCase(), first_name: first_name.toUpperCase(), email, phone, role};
+
+        let loading = this.state.isloading;
+        this.setState({ user , isloading: !loading});
+      } catch (err) {
+        Router.push("auth/login");
+      }
+>>>>>>> feature
     }
   }
 
