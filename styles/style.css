@@ -257,14 +257,9 @@ body {
     background-color: white;
 }
 
-<<<<<<< HEAD
 
 #datatable_filter label{
     color:white;   
-=======
-#datatable_filter{
-    color:white;
->>>>>>> 7a784e9d8bb21e68a8e8411fbf130c4360f923e3
 }
 
 
@@ -318,7 +313,6 @@ body {
 .exportB{
     margin-bottom: 10px;
     border-radius: 0%;
-<<<<<<< HEAD
 }
 .colorTitre{
     color: white;
@@ -333,7 +327,4 @@ input[type="search"]{
     border-radius: 0px;
     display: block;
     left: 20px;
-=======
-
->>>>>>> 7a784e9d8bb21e68a8e8411fbf130c4360f923e3
 }
