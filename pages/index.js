@@ -4,6 +4,7 @@ import ReactDOM from "react-dom";
 import Link from "next/link";
 import axios from "axios";
 import Homepage from './auth/test';
+import Router from 'next/router';
 
 export default class Index extends React.Component {
   constructor() {
@@ -26,7 +27,7 @@ export default class Index extends React.Component {
       console.log(res);
     })
     .catch(err => {
-      console.error(err);
+      Router.push("auth/login");
     })
   }
 

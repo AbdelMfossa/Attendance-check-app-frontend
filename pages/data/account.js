@@ -4,6 +4,7 @@ import ReactDOM from "react-dom";
 import Link from "next/link";
 import axios from "axios";
 import CustomModalModif from "../../components/customModalModif";
+import Router from 'next/router';
 
 
 export default class Account extends React.Component {
@@ -23,19 +24,17 @@ export default class Account extends React.Component {
       }
     }
 
-    componentDidMount() {
+    async componentDidMount() {
       try {
-        axios.get("users/currentuser")
-        .then(res => {
-          const {last_name, first_name, email, phone, role} = res.data.data;
-          console.log(role)
-          const user = {last_name: last_name.toUpperCase(), first_name: first_name.toUpperCase(), email, phone, role};
+        const res = await axios.get("users/currentuser");
 
-          let loading = this.state.isloading;
-          this.setState({ user , isloading: !loading});
-        });
+        const {last_name, first_name, email, phone, role} = res.data.data;
+        const user = {last_name: last_name.toUpperCase(), first_name: first_name.toUpperCase(), email, phone, role};
+
+        let loading = this.state.isloading;
+        this.setState({ user , isloading: !loading});
       } catch (err) {
-        console.log(err);
+        Router.push("auth/login");
       }
     }
 

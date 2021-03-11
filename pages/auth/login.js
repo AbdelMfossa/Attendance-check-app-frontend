@@ -5,6 +5,7 @@ import { form } from '../../scripts/form';
 import axios from "axios";
 import {useCookies} from  "react-cookie"
 import Router from 'next/router';
+import { toast } from "react-toastify";
 
 export default function Login() {
 
@@ -30,7 +31,7 @@ export default function Login() {
 
         )
     } catch (err) {
-        console.log(err)
+        toast(err.response.data)
     }
 
   };

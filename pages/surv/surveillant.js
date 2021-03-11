@@ -10,6 +10,7 @@ import "datatables.net-dt/css/jquery.dataTables.min.css"
 import { place } from "../../scripts/form";
 import $ from 'jquery';
 import Link from "next/link"
+import Router from 'next/router';
 
 
 class Surveillant extends Component {
@@ -30,6 +31,15 @@ class Surveillant extends Component {
                 ],
             });
         });
+
+        try {
+            axios.get("users/currentuser")
+            .then(res => {
+              // ok
+            });
+        } catch (err) {
+            Router.push("/auth/login");
+        }
     }
 
     handleDelete = (id) => {
@@ -89,7 +99,7 @@ class Surveillant extends Component {
     }
 }
 export async function getStaticProps() {
-    const resp = await axios.get("/surveillance/supervisor");
+    const resp = await axios.get("surveillance/supervisor");
     const survs = resp.data.data;
     return {
         props: {
