@@ -40,11 +40,11 @@ const CustomModalModif = ({ user, onModification }) => {
             <form >
               <div>
                 <label>First_name</label>
-                <input type="text" value={fname} className="form-control" placeholder="votre nom" onChange={e => setLname(e.target.value)} />
+                <input type="text" value={fname} className="form-control" placeholder="votre nom" onChange={e => setFname(e.target.value)} />
               </div>
               <div>
                 <label >Last_name</label>
-                <input type="text" value={lname} className="form-control" placeholder="votre prenom" onChange={e => setFname(e.target.value)} />
+                <input type="text" value={lname} className="form-control" placeholder="votre prenom" onChange={e => setLname(e.target.value)} />
               </div>
               <div>
                 <label >Email</label>

@@ -3,8 +3,9 @@ import ReactDOM from "react-dom";
 import Image from 'next/image';
 import { form } from '../../scripts/form';
 import axios from "axios";
-import {useCookies} from  "react-cookie"
+import { useCookies } from "react-cookie"
 import Router from 'next/router';
+import { toast } from "react-toastify";
 
 export default function Login() {
 
@@ -17,20 +18,20 @@ export default function Login() {
 
   const onSubmit = async event => {
     event.preventDefault();
-    console.log({email, password});
+    console.log({ email, password });
     try {
-        await axios.post('users/signin',{email ,password})
+      await axios.post('users/signin', { email, password })
         .then(
-            async (res)=>{
-                localStorage.setItem('jwt', Object.values(res.data))
-                console.log(localStorage.getItem('jwt'));
+          async (res) => {
+            localStorage.setItem('jwt', Object.values(res.data))
+            console.log(localStorage.getItem('jwt'));
 
-                Router.push("/");
-            }
+            Router.push("/");
+          }
 
         )
     } catch (err) {
-        console.log(err)
+      toast(err.response.data)
     }
 
   };
@@ -67,11 +68,11 @@ export default function Login() {
 
                 <div className="FormContent">
                   <div className="md-form mb-0">
-                    <input type="text"  name="email"  onChange={e=>setEmail(e.target.value)} className="form-control js-input" id="1"  />
+                    <input type="text" name="email" onChange={e => setEmail(e.target.value)} className="form-control js-input" id="1" />
                     <label for="email" className="form-label" id="label-1">Email</label>
                   </div>
                   <div className="md-form mb-0">
-                    <input type="password"  name="password" onChange={e=>setPassword(e.target.value)} className="form-control js-input" id="2" />
+                    <input type="password" name="password" onChange={e => setPassword(e.target.value)} className="form-control js-input" id="2" />
                     <label for="password" className="form-label" id="label-2">Password</label>
                   </div>
                   <div className="md-form mb-0 mt-3 checkbox-input">

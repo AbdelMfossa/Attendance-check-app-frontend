@@ -6,7 +6,11 @@ import axios from "axios";
 <<<<<<< HEAD
 =======
 import Homepage from './auth/test';
+<<<<<<< HEAD
 >>>>>>> 7a784e9d8bb21e68a8e8411fbf130c4360f923e3
+=======
+import Router from 'next/router';
+>>>>>>> 938bf71ae3c2feaee696f98fd8c90deb46ca3d1b
 
 export default class Index extends React.Component {
   constructor() {
@@ -28,7 +32,7 @@ export default class Index extends React.Component {
       console.log(res);
     })
     .catch(err => {
-      console.error(err);
+      Router.push("auth/login");
     })
   }
 
