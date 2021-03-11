@@ -255,17 +255,11 @@ body {
 }
 
 
-#datatable_filter{
-    color:white;  
+#datatable_filter label{
+    color:white;   
 }
 
-#datatable_filter input{
-    width: 250px;
-    margin-bottom: 20px;
-    border-radius: 0px;
-    display: flex;
-    left: 20px;
-}
+
 .Trait{
     margin-bottom: 1px !important;
 }
@@ -290,4 +284,11 @@ body {
 }
 .tail{
     max-width: max-content;
+}
+input[type="search"]{
+    width: 250px;
+    margin-bottom: 20px;
+    border-radius: 0px;
+    display: block;
+    left: 20px;
 }

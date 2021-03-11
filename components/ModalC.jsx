@@ -23,7 +23,6 @@ export default class ModalC extends React.Component {
     handleShow = () => this.setState({ show: true });
 
     handleCreate = event => {
-        const route = new Router()
         event.preventDefault();
         const data = {
             first_name: this.state.first_name,
@@ -34,7 +33,6 @@ export default class ModalC extends React.Component {
             password: this.state.password,
             password_confirm: this.state.password,
             role: this.state.role
-
         }
 
         axios.post(`/users/signup`, data)

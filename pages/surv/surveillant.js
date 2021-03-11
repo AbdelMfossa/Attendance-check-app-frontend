@@ -30,9 +30,8 @@ class Surveillant extends Component {
     }
     handleDelete = (id) => {
         axios.delete(`/surveillance/supervisor/${id}`)
-        this.setState({ surveillants: surveillants })
+        this.setState({ surveillants: this.state.surveillants })
     }
-
 
     render() {
         return (
@@ -86,7 +85,7 @@ class Surveillant extends Component {
     }
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
     const resp = await axios.get("/surveillance/supervisor");
     const survs = resp.data.data;
     return { props: { survs } }
