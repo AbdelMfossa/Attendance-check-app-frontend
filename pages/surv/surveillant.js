@@ -24,7 +24,7 @@ class Surveillant extends Component {
                 "searching": true,
                 "paging": false,
                 "info": false,
-                "columnDefs": [{ orderable: false, targets: [1, 2, 3, 6] }]
+                "columnDefs": [{ orderable: false, targets: [1, 2, 6] }]
             });
         });
     }
@@ -86,7 +86,7 @@ class Surveillant extends Component {
 }
 
 export async function getServerSideProps() {
-    const resp = await axios.get("/surveillance/supervisor");
+    const resp = await axios.get("surveillance/supervisor");
     const survs = resp.data.data;
     return { props: { survs } }
 }

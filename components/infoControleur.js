@@ -20,11 +20,7 @@ const InfoSurveillant = ({ dataSurveillant, onDelete }) => {
                     <td>{email}</td>
                     <td className="contextual-menu survDropdown">
                         Afficher
-<<<<<<< HEAD
                 <Dropdown >
-=======
-                        <Dropdown >
->>>>>>> 7a784e9d8bb21e68a8e8411fbf130c4360f923e3
                             <Dropdown.Toggle as={CustomToggle}>
                                 <i className="bi bi-three-dots-vertical options-icon" />
                             </Dropdown.Toggle>

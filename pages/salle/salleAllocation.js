@@ -14,7 +14,7 @@ class Salle extends React.Component {
         salle: this.props.salle
     }
     handleAlloc = () => {
-        axios.put(`/surveillance/supervisor/${state.id}`, state)
+        axios.put(`surveillance/supervisor/${state.id}`, state)
 
     }
     componentDidMount() {

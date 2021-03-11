@@ -34,7 +34,7 @@ const InfoSurveillantPerso = ({ dataSurveillant }) => {
             </tr>
             <tr>
                 <th>Salle</th>
-                <td>{exam.present.map(explore => explore.salle.code)}</td>
+                <td>{exam.present.map(explore => explore.salle.code + "/")}</td>
             </tr>
             <tr>
                 <th>Cota Horaire</th>

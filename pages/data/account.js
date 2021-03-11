@@ -7,94 +7,90 @@ import CustomModalModif from "../../components/customModalModif";
 
 
 export default class Account extends React.Component {
-    constructor() {
-      super();
+  constructor() {
+    super();
 
-      this.state = {
-        user: {
-          last_name: "",
-          first_name: "",
-          email: "",
-          phone: "",
-          role: null
-        },
+    this.state = {
+      user: {
+        last_name: "",
+        first_name: "",
+        email: "",
+        phone: "",
+        role: null
+      },
 
-        isloading: true
-      }
+      isloading: true
     }
+  }
 
-    componentDidMount() {
-      try {
-        axios.get("users/currentuser")
+  componentDidMount() {
+    try {
+      axios.get("users/currentuser")
         .then(res => {
-          const {last_name, first_name, email, phone, role} = res.data.data;
+          const { last_name, first_name, email, phone, role } = res.data.data;
           console.log(role)
-          const user = {last_name: last_name.toUpperCase(), first_name: first_name.toUpperCase(), email, phone, role};
+          const user = { last_name: last_name.toUpperCase(), first_name: first_name.toUpperCase(), email, phone, role };
 
           let loading = this.state.isloading;
-          this.setState({ user , isloading: !loading});
+          this.setState({ user, isloading: !loading });
         });
-      } catch (err) {
-        console.log(err);
-      }
+    } catch (err) {
+      console.log(err);
     }
+  }
 
-    handleModification({ lname, fname, adEmail, nPhone, role }) {
-      axios.put("users/users/info", {
-        last_name: lname,
-        first_name: fname,
-        email: adEmail,
-        phone: nPhone,
-        role
-      })
+  handleModification({ lname, fname, adEmail, nPhone, role }) {
+    axios.put("users/users/info", {
+      last_name: lname,
+      first_name: fname,
+      email: adEmail,
+      phone: nPhone,
+      role
+    })
       .then(res => {
         console.log(res);
       })
       .catch(err => {
         console.error(err);
       });
-    }
+  }
 
-    render() {
-      const user = this.state.user;
-        return (
-            <Layout title="Account" >
-                <div className="loadData">
-                    {
-                      this.state.isloading ? "Chargement" : (
-                        <div className="personalData">
-                          <header>
-                            <h2>Informations Personnelles</h2>
-                            <CustomModalModif
-                              user={user}
-                              onModification={this.handleModification}
-                            />
-                          </header>
-                          <div className="personalData-info">
-                            <span>Nom: </span>
-                            <span>{ user.first_name }</span>
-                          </div>
-                          <div className="personalData-info">
-                            <span>Prenom: </span>
-                            <span>{ user.last_name }</span>
-                          </div>
-                          <div className="personalData-info">
-                            <span>Email: </span>
-                            <span>{ user.email }</span>
-                          </div>
-                          <div className="personalData-info">
-                            <span>Phone: </span>
-                            <span>{ user.phone }</span>
-                          </div>
-                          <div className="personalData-info">
-                            <span>Role: </span>
-                            <span>{ user.role.name }</span>
-                          </div>
-                        </div>
-                      )
-                    }
+  render() {
+    const user = this.state.user;
+    return (
+      <Layout title="Account" >
+        <div className="loadData">
+          {
+            this.state.isloading ? "Chargement" : (
+              <div className="personalData">
+                <header>
+                  <h2>Informations Personnelles</h2>
+                  <CustomModalModif
+                    user={user}
+                    onModification={this.handleModification}
+                  />
+                </header>
+                <div className="personalData-info">
+                  <span>Nom: </span>
+                  <span>{user.first_name}</span>
                 </div>
-            </Layout>
-        )
-    }
+                <div className="personalData-info">
+                  <span>Prenom: </span>
+                  <span>{user.last_name}</span>
+                </div>
+                <div className="personalData-info">
+                  <span>Email: </span>
+                  <span>{user.email}</span>
+                </div>
+                <div className="personalData-info">
+                  <span>Phone: </span>
+                  <span>{user.phone}</span>
+                </div>
+              </div>
+            )
+          }
+        </div>
+      </Layout>
+    )
+  }
 }

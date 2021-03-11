@@ -37,7 +37,7 @@ function analyticPersonnel({ post }) {
 }
 export async function getStaticProps({ params }) {
     try {
-        const res = await axios.get(`/surveillance/supervisor/${params.id}`)
+        const res = await axios.get(`surveillance/supervisor/${params.id}`)
         const post = res.data.data;
         return { props: { post } }
     } catch (err) {

@@ -48,7 +48,7 @@ export default class ModalC extends React.Component {
             <>
                 <Button variant="dark" className="btn boutonE" onClick={this.handleShow} >
                     NOUVEAU
-      </Button>
+                 </Button>
                 <Modal
                     show={this.state.show}
                     onHide={this.handleClose}

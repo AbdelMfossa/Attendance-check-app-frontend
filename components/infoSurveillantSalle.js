@@ -5,7 +5,7 @@ import axios from "axios"
 
 
 export async function getStaticProps() {
-    const resp = await axios.get("/surveillance/room");
+    const resp = await axios.get("surveillance/room");
     const salle = resp.data.data;
     return {
         props: {

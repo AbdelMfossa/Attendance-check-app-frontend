@@ -16,7 +16,7 @@ const InfoSurveillant = ({ dataSurveillant, onDelete }) => {
         <td>{`${last_name} ${first_name}`}</td>
         <td>{matricule}</td>
         <td>{phone}</td>
-        <td>{exam.absent.map(explore => explore.salle.code)}</td>
+        <td>{exam.absent.map(explore => explore.salle.code + " / ")}</td>
         < td >{grade === true ? `Chef de Salle` : `Surveillant`}</td>
         <td> {exam.present.length * 2}</td>
         <td className="contextual-menu survDropdown">
