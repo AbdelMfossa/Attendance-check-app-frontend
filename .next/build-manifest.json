@@ -23,6 +23,7 @@
       "static/chunks/main.js",
       "static/chunks/webpack.js",
       "static/chunks/pages/_error.js"
+<<<<<<< HEAD
     ],
     "/control/controleur": [
       "static/chunks/main.js",
@@ -33,6 +34,8 @@
       "static/chunks/main.js",
       "static/chunks/webpack.js",
       "static/chunks/pages/salle/salleAllocation.js"
+=======
+>>>>>>> 7a784e9d8bb21e68a8e8411fbf130c4360f923e3
     ]
   },
   "ampFirstPages": []

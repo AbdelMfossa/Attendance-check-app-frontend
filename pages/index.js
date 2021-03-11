@@ -3,26 +3,43 @@ import React from "react"
 import ReactDOM from "react-dom";
 import Link from "next/link";
 import axios from "axios";
+<<<<<<< HEAD
+=======
+import Homepage from './auth/test';
+>>>>>>> 7a784e9d8bb21e68a8e8411fbf130c4360f923e3
 
 export default class Index extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      email: ""
+      jwt: "",
     };
   }
   componentDidMount() {
-    let email = document.cookie.slice(6);
+    let jwt = localStorage.getItem('jwt');
 
-    this.setState({ email });
+    if (jwt !== null) {
+      this.setState({ jwt });
+    }
+
+    axios.get("users/currentuser")
+    .then(res => {
+      console.log(res);
+    })
+    .catch(err => {
+      console.error(err);
+    })
   }
 
   render() {
+<<<<<<< HEAD
     let user = {};
+=======
+>>>>>>> 7a784e9d8bb21e68a8e8411fbf130c4360f923e3
     return (
       <Layout title="Home">
-        { "Hello " + this.state.email}
+        { "Hello " + this.state.jwt }
       </Layout>
     )
   }

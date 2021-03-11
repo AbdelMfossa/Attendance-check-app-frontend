@@ -251,17 +251,58 @@ body {
     font-family: "proxima Regular";
 }
 .loadData{
+    position: relative;
+    height: auto;
+    padding: 20px;
     background-color: white;
 }
 
+<<<<<<< HEAD
 
 #datatable_filter label{
     color:white;   
+=======
+#datatable_filter{
+    color:white;
+>>>>>>> 7a784e9d8bb21e68a8e8411fbf130c4360f923e3
 }
 
 
 .Trait{
     margin-bottom: 1px !important;
+}
+
+.personalData {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-family: "Proxima Regular";
+    font-size: 14px;
+}
+
+.personalData-info {
+    border-bottom: 1px solid grey;
+    padding-top: 20px
+}
+
+.personalData-info > span:first-child {
+    font-weight: bold;
+    font-family: "Proxima Bold";
+}
+
+.personalData-info > span:last-child {
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.personalData > header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.personalData > header > button {
+    height: 35px;
 }
 .homeLink{
     text-decoration: none !important;
@@ -277,6 +318,7 @@ body {
 .exportB{
     margin-bottom: 10px;
     border-radius: 0%;
+<<<<<<< HEAD
 }
 .colorTitre{
     color: white;
@@ -291,4 +333,7 @@ input[type="search"]{
     border-radius: 0px;
     display: block;
     left: 20px;
+=======
+
+>>>>>>> 7a784e9d8bb21e68a8e8411fbf130c4360f923e3
 }

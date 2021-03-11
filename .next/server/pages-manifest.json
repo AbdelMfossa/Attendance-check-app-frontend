@@ -1,7 +1,11 @@
 {
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
+<<<<<<< HEAD
   "/_document": "pages/_document.js",
   "/control/controleur": "pages/control/controleur.js",
   "/salle/salleAllocation": "pages/salle/salleAllocation.js"
+=======
+  "/_document": "pages/_document.js"
+>>>>>>> 7a784e9d8bb21e68a8e8411fbf130c4360f923e3
 }
