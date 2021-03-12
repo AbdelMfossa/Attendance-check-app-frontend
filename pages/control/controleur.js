@@ -7,7 +7,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'jquery/dist/jquery.min.js';
 import "datatables.net-dt/js/dataTables.dataTables"
 import "datatables.net-dt/css/jquery.dataTables.min.css"
-import { place } from "../../scripts/form";
 import $ from 'jquery';
 import jsPDF from "jspdf";
 import "jspdf-autotable";
@@ -19,11 +18,6 @@ class Controleur extends React.Component {
         this.state = {
             controleurs: this.props.controleurs
         }
-    }
-
-    handleDelete = (id) => {
-        axios.delete(`users/users/${id}`)
-        this.setState({ controleurs: this.state.controleurs })
     }
     componentDidMount() {
         $(document).ready(function () {
@@ -99,7 +93,6 @@ class Controleur extends React.Component {
                                                         <InfoControleur
                                                             dataSurveillant={contr}
                                                             key={contr.id}
-                                                            onDelete={this.handleDelete}
                                                         />
                                                     )
                                                 })

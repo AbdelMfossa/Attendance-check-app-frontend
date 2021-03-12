@@ -29,7 +29,7 @@ const infoControleur = ({ dataSurveillant, onDelete }) => {
                                 <Dropdown.Menu className="options">
                                     <Dropdown.Item href="modif/edite" >Edit</Dropdown.Item>
                                     <Dropdown.Divider />
-                                    <CustomModalC id={id} onDelete={onDelete} donne={dataSurveillant} />
+                                    <CustomModalC id={id} titre={`users`} />
                                 </Dropdown.Menu>
                             </Dropdown>
                         </td>

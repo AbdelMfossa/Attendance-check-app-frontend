@@ -25,7 +25,7 @@ class Salle extends React.Component {
                 "paging": false,
                 "info": false,
                 "columnDefs": [
-                    { orderable: false, targets: [1, 3] }
+                    { orderable: false, targets: [2, 3, 4] }
                 ],
             });
         });
@@ -38,7 +38,7 @@ class Salle extends React.Component {
                         <header className="row">
                             <div className="col-12 header-card">
                                 <span>ALLOCATION DES SALLES</span>
-                                <CustomModalSalle />
+                                <CustomModalSalle salle={this.props.salle} />
                                 <CustomModalExam
                                     matiere={this.state.matiere}
                                     horaire={this.state.horaire}

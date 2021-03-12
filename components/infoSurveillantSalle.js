@@ -19,17 +19,9 @@ export default class InfoSurveillantSalle extends React.Component {
             user: 0
         }
         axios.post("surveillance/controle", data)
-            .then(
-                (res) => {
-                    if (res.data != null) {
-                        toast.success("Surveillant alloué à une salle")
-                        this.setState({ surveillants: this.state.surveillants })
-                    }
-                }
-            )
-            .catch(err => console.log(err))
+            .then(() => toast.success("Surveillant alloué à une salle"))
+            .catch(() => toast.error("Erreur lors de l'allocation"));
         console.log(data);
-
     }
 
     render() {
@@ -52,7 +44,7 @@ export default class InfoSurveillantSalle extends React.Component {
                             )}
                         </select>
                     </td>
-                    <td><button type="submit" onClick={this.handleAlloc} variant="dark" className="btn bouton ">Allouer </button></td>
+                    <td><button type="submit" onClick={this.handleAlloc} className="btn boutonS">Allouer </button></td>
                 </tr>
             </>
         )

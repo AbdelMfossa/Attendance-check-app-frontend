@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import { Modal, Button } from 'react-bootstrap';
-
+import { toast } from 'react-toastify'
 
 class CustomModalExam extends React.Component {
     state = {
@@ -25,11 +25,9 @@ class CustomModalExam extends React.Component {
         }
 
         axios.post(`surveillance/examen`, data)
-            .catch(
-                err => console.log(err)
-            )
+            .catch(err => toast.error("Erreur lors de la creation de l'examen"))
+            .then(toast.success("Examen crée avec succès"))
         this.setState({ show: false })
-
     }
     render() {
 
@@ -56,7 +54,7 @@ class CustomModalExam extends React.Component {
                                     <input type="text" className="form-control" placeholder="" onChange={e => this.date = e.target.value} />
                                 </div>
                                 <div>
-                                    <label >Name</label>
+                                    <label >Nom </label>
                                     <input type="text" className="form-control" placeholder="" onChange={e => this.name = e.target.value} />
                                 </div>
                                 <div>

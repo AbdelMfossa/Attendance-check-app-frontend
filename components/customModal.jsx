@@ -1,9 +1,10 @@
 import axios from 'axios';
 import React from 'react'
 import { Modal, Button } from 'react-bootstrap';
+import { toast } from 'react-toastify'
 
 
-class CustomModalSalle extends React.Component {
+class CustomModal extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -30,13 +31,13 @@ class CustomModalSalle extends React.Component {
       grade: this.state.grade
 
     }
-
     axios.post(`/surveillance/supervisor`, data)
-      .catch(
-        err => console.log(err)
-      )
+      .catch(err => { console.log(err); toast.error("Erreur lors de la suppression"); })
+      .then((res) => {
+        if (res.data != null)
+          toast.success("Surveillant Crée avec succès Veuillez recharchez la page");
+      });
     this.setState({ show: false })
-    console.log(data)
 
   }
   render() {
@@ -103,4 +104,4 @@ class CustomModalSalle extends React.Component {
   }
 }
 
-export default CustomModalSalle;
+export default CustomModal;

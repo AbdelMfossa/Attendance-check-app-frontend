@@ -5,9 +5,9 @@ import { toast } from 'react-toastify'
 
 
 class CustomModalSalle extends React.Component {
-
   state = {
-    show: false
+    show: false,
+    salles: this.props.salle
   }
   handleClose = () => this.setState({ show: false });
   handleShow = () => this.setState({ show: true });
@@ -19,25 +19,18 @@ class CustomModalSalle extends React.Component {
       libelle: this.libelle,
       localisation: this.localisation
     }
-
     axios.post(`surveillance/room`, data)
-      .then(
-        (res) => {
-          if (res.data != null) {
-            toast.success("Surveillant alloué")
-            this.setState({ surveillants: this.state.surveillants })
-          }
-        }
-      )
-      .catch(
-        (err) => {
-          console.log(err)
-        }
-      )
+      .then(() => {
+        const datas = this.state.salles.slice();
+        datas.push(data);
+        this.setState({ salles: datas })
+        toast.success("Salle créee avec succès")
+      })
+      .catch((err) => toast.error("Erruer lors de la création de la Salle "))
     this.setState({ show: false })
   }
-  render() {
 
+  render() {
     return (
       <>
         <Button variant="dark" className="btn boutonE" onClick={this.handleShow} >

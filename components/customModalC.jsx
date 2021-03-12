@@ -1,28 +1,30 @@
 import React, { useState } from 'react'
 import { Modal, Button, Dropdown } from 'react-bootstrap';
 import axios from "axios"
-import { useRouter } from 'next/router'
 import { toast } from 'react-toastify'
 
 
-function customModalC({ id, onDelete }) {
+function customModalC(props) {
     const [show, setShow] = useState(false);
-
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const handleDelete = (survid) => {
-        axios.delete(`surveillance/supervisor/${survid}`).then(
-            (res) => {
-                if (res.data != null) {
-                    toast.success("surveillant supprimmée")
-                    this.setState({ surveillants: this.state.surveillants })
-                }
-            }
-        )
-            .catch(
-                err => console.log(err)
-            )
-
+        if (props.titre == 'users') {
+            axios.delete(`users/users/${survid}`)
+                .then((res) => {
+                    if (res.data != null)
+                        toast.success("Controleur supprimmé Veuillez recharger la page pour que les modifications prennent effet");
+                })
+                .catch(err => { console.log(err); toast.error("Erreur lors de la suppression"); })
+        }
+        if (props.titre == 'surveillant') {
+            axios.delete(`surveillance/supervisor/${survid}`)
+                .then((res) => {
+                    if (res.data != null)
+                        toast.success("surveillant supprimmé Veuillez recharger la page pour que les modifications prennent effet");
+                })
+                .catch(err => { console.log(err); toast.error("Erreur lors de la suppression "); })
+        }
     }
 
     return (
@@ -40,7 +42,7 @@ function customModalC({ id, onDelete }) {
                         No/Close
                     </Button>
                     <Button variant="danger" onClick={() => {
-                        handleDelete(id);
+                        handleDelete(props.id);
                         setShow(false);
                     }} >
                         YES

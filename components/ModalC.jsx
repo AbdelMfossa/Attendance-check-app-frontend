@@ -1,8 +1,7 @@
 import axios from 'axios';
 import React from 'react'
 import { Modal, Button } from 'react-bootstrap';
-import Router from "next/router"
-
+import { toast } from 'react-toastify'
 
 export default class ModalC extends React.Component {
     constructor(props) {
@@ -18,7 +17,6 @@ export default class ModalC extends React.Component {
             role: 2
         }
     }
-
     handleClose = () => this.setState({ show: false });
     handleShow = () => this.setState({ show: true });
 
@@ -34,15 +32,16 @@ export default class ModalC extends React.Component {
             password_confirm: this.state.password,
             role: this.state.role
         }
-
         axios.post(`/users/signup`, data)
-            .catch(
-                err => console.log(err)
-            )
+            .catch(err => { console.log(err); toast.error("Erreur lors de la creation du controleur"); })
+            .then((res) => {
+                if (res.data != null)
+                    toast.success("Controleur Crée avec succès Veuillez recharchez la page");
+            });
         this.setState({ show: false })
         console.log(data)
-
     }
+
     render() {
         return (
             <>

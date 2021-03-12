@@ -16,9 +16,7 @@ import { toast } from 'react-toastify';
 class Surveillant extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            surveillants: this.props.survs
-        }
+        this.state = { surveillants: this.props.survs }
     }
     componentDidMount() {
         $(document).ready(function () {
@@ -29,14 +27,8 @@ class Surveillant extends Component {
                 "columnDefs": [{ orderable: false, targets: [1, 2, 6] }]
             });
         });
-        try {
-            axios.get("users/currentuser")
-                .then(res => {
-                    console.log("reussi")
-                });
-        } catch (err) {
-            Router.push("/auth/login");
-        }
+        try { axios.get("users/currentuser"); }
+        catch (err) { Router.push("/auth/login"); }
     }
     render() {
         return (
@@ -72,7 +64,6 @@ class Surveillant extends Component {
                                                         <InfoSurveillant
                                                             dataSurveillant={surv}
                                                             key={surv.id}
-                                                            onDelete={this.handleDelete}
                                                         />
                                                     )
                                                 })
