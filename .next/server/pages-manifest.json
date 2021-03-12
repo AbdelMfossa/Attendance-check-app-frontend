@@ -2,6 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/surv/surveillant": "pages/surv/surveillant.js",
-  "/analyse/analytic": "pages/analyse/analytic.js"
+  "/data/account": "pages/data/account.js",
+  "/salle/salleAllocation": "pages/salle/salleAllocation.js",
+  "/auth/login": "pages/auth/login.js"
 }

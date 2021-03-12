@@ -9,7 +9,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
-axios.defaults.baseURL = "http://192.168.8.101:8000/api/"
+axios.defaults.baseURL = "https://attendceappuy1.herokuapp.com/api/"
 axios.defaults.withCredentials = true;
 
 

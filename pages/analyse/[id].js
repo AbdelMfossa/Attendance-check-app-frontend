@@ -41,7 +41,9 @@ export async function getStaticProps({ params }) {
         const post = res.data.data;
         return { props: { post } }
     } catch (err) {
-        console.log(err)
+        console.log(err);
+        return { props: { post: '' } }
+
     }
 }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from "../../components/Layout";
 import ModalC from "../../components/ModalC"
-import InfoControleur from "../../components/infoControleur";
+import InfoControleur from "../../components/infoControleur"
 import axios from "axios";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'jquery/dist/jquery.min.js';
@@ -35,7 +35,6 @@ class Controleur extends React.Component {
             });
         });
     }
-
     render() {
         return (
             <>
@@ -44,7 +43,7 @@ class Controleur extends React.Component {
                         <div className="mainCard">
                             <header className="row">
                                 <div className="col-12 header-card">
-                                    <span>CONTROLEURS({this.state.controleurs.length})</span>
+                                    <span>CONTROLEURS</span>
                                     <ModalC title="Controleur" />
                                 </div>
                             </header>
@@ -87,12 +86,14 @@ class Controleur extends React.Component {
 }
 
 export async function getStaticProps() {
-    const res = await axios.get("users/users");
-    const controleurs = res.data;
-    return {
-        props: {
-            controleurs: controleurs
-        }
+    try {
+        const res = await axios.get("users/users");
+        const controleurs = res.data;
+        return { props: { controleurs: controleurs } }
+    }
+    catch (err) {
+        console.log("Echec du chargement de la liste des controleurs ");
+        return { props: { controleurs: [] } }
     }
 }
 

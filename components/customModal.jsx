@@ -19,7 +19,7 @@ class CustomModalSalle extends React.Component {
   handleClose = () => this.setState({ show: false });
   handleShow = () => this.setState({ show: true });
 
-  handleCreate = event => {
+  handleCreate = async (event) => {
     event.preventDefault();
     const data = {
       first_name: this.state.first_name,

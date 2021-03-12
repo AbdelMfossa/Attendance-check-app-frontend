@@ -10,6 +10,8 @@ import "datatables.net-dt/css/jquery.dataTables.min.css"
 import { place } from "../../scripts/form";
 import $ from 'jquery';
 import Link from "next/link"
+import jsPDF from "jspdf";
+import "jspdf-autotable";
 
 
 class Analystic extends Component {
@@ -22,6 +24,34 @@ class Analystic extends Component {
     handlePrint = () => {
         ss
     }
+    exportPDF = () => {
+        const unit = "pt";
+        const size = "A4";
+        const orientation = "portrait";
+
+        const marginLeft = 40;
+        const doc = new jsPDF(orientation, unit, size);
+        doc.setFontSize(15);
+        const title = "Statistique surveillance UNIVERSITE YAOUNDE 1";
+        // const headers = [["Noms et Prénoms", "Matricule", "Phone", "Salle", "Qualité", "Cota Horaires"]];
+        const headers = [["Noms et Prénoms", "Genre"]];
+        const data = this.state.surveillants.map(elt => [`${elt.first_name} ${elt.last_name}`, elt.genre]);
+
+        // const data = this.state.surveillants.map(elt => [`${elt.first_name} ${elt.last_name}`, elt.matricule, elt.phone,
+        // elt.exam.present.map(salle => salle.code + " / "), elt.grade === true ? `Chef de Salle` : `Surveillant`, elt.exam.present.length * 2]);
+
+        let content = {
+            startY: 50,
+            head: headers,
+            body: data,
+            theme: 'grid'
+        };
+
+        doc.text(title, marginLeft, 40);
+        doc.autoTable(content);
+        doc.save("report.pdf")
+    }
+
 
     render() {
         return (
@@ -36,7 +66,7 @@ class Analystic extends Component {
                             </header>
                             <section className="row">
                                 <div className="col-12 content-card">
-                                    <button className="btn btn-secondary exportB" onClick={this.handlePrint}>Export as PDF</button>
+                                    <button className="btn btn-secondary exportB" onClick={this.exportPDF}>Export as PDF</button>
                                     <table id="datatable" className="table dt-responsive nowrap" style={{ borderCollapse: "collapse", borderSpacing: 0, width: "100%" }}>
                                         <thead>
                                             <tr>
@@ -49,7 +79,7 @@ class Analystic extends Component {
                                             </tr>
                                         </thead>
 
-                                        <tbody>
+                                        {/* <tbody>
                                             {
                                                 this.state.surveillants.map(surv => {
                                                     return (
@@ -60,7 +90,7 @@ class Analystic extends Component {
                                                     )
                                                 })
                                             }
-                                        </tbody>
+                                        </tbody> */}
                                     </table>
 
                                 </div>

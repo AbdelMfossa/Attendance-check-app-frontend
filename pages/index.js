@@ -22,7 +22,7 @@ export default class Index extends React.Component {
         console.log(res);
       })
       .catch(err => {
-        Router.push("auth/login");
+        Router.push("/auth/login");
       })
   }
 

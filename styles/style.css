@@ -257,12 +257,6 @@ body {
     background-color: white;
 }
 
-
-#datatable_filter label{
-    color:white;   
-}
-
-
 .Trait{
     margin-bottom: 1px !important;
 }
@@ -334,4 +328,12 @@ input[type="search"]{
 
 .activeNav {
     background-color: blue !important;
+}
+#datatable_filter label{
+    font-size: 0 !important;
+}
+#datatable_filter input{
+    width:250px !important ;
+    height: 32px !important;
+    font-size: 15px !important;
 }

@@ -1,5 +1,6 @@
 import React, { Component, useState, useEffect } from "react";
 import ReactDOM from "react-dom";
+import Head from "next/head"
 import Image from 'next/image';
 import { form } from '../../scripts/form';
 import axios from "axios";
@@ -35,12 +36,15 @@ export default function Login() {
 
   return (
     <>
-      <head>
-        <meta charset='utf-8' />
-        <meta http-equiv='X-UA-Compatible' content='IE=edge' />
-        <title>Login</title>
-        <meta name='viewport' content='width=device-width, initial-scale=1' />
-      </head>
+      <Head>
+        <head>
+          <title>Login</title>
+          <meta charset='utf-8' />
+          <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+          <title>Login</title>
+          <meta name='viewport' content='width=device-width, initial-scale=1' />
+        </head>
+      </Head>
 
       <div className="container">
         <div className="row myCard">
