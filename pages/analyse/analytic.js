@@ -30,20 +30,19 @@ class Analystic extends Component {
         const orientation = "portrait";
 
         const marginLeft = 40;
+        const title = "UY1";
         const doc = new jsPDF(orientation, unit, size);
         doc.setFontSize(15);
-        const title = "Statistique surveillance UNIVERSITE YAOUNDE 1";
-        // const headers = [["Noms et Prénoms", "Matricule", "Phone", "Salle", "Qualité", "Cota Horaires"]];
-        const headers = [["Noms et Prénoms", "Genre"]];
+        const headers = [["Noms et Prénoms", "Matricule", "Phone", "Salle", "Qualité", "Cota Horaires"]];
         const data = this.state.surveillants.map(elt => [`${elt.first_name} ${elt.last_name}`, elt.genre]);
 
-        // const data = this.state.surveillants.map(elt => [`${elt.first_name} ${elt.last_name}`, elt.matricule, elt.phone,
-        // elt.exam.present.map(salle => salle.code + " / "), elt.grade === true ? `Chef de Salle` : `Surveillant`, elt.exam.present.length * 2]);
+        const datas = this.state.surveillants.map(elt => [`${elt.first_name} ${elt.last_name}`, elt.matricule, elt.phone,
+        elt.exam.present.map(salle => salle.code + " / "), elt.grade === true ? `Chef de Salle` : `Surveillant`, elt.exam.present.length * 2]);
 
         let content = {
             startY: 50,
             head: headers,
-            body: data,
+            body: datas,
             theme: 'grid'
         };
 
@@ -79,7 +78,7 @@ class Analystic extends Component {
                                             </tr>
                                         </thead>
 
-                                        {/* <tbody>
+                                        <tbody>
                                             {
                                                 this.state.surveillants.map(surv => {
                                                     return (
@@ -90,7 +89,7 @@ class Analystic extends Component {
                                                     )
                                                 })
                                             }
-                                        </tbody> */}
+                                        </tbody>
                                     </table>
 
                                 </div>

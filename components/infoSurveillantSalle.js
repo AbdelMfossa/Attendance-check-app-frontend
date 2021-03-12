@@ -12,12 +12,14 @@ export default class InfoSurveillantSalle extends React.Component {
     }
     handleAlloc = async () => {
         const data = {
-            idexam: this.examen,
-            id: this.state.surveillant.id,
-            sal: this.salle
+            surveillant: this.state.surveillant.id,
+            examen: this.examen,
+            salle: this.salle
         }
-        axios.post("surveillance/control", data)
+        axios.post("surveillance/controler", data)
             .catch(err => console.log(err))
+        console.log(data);
+
     }
 
     render() {
@@ -27,16 +29,16 @@ export default class InfoSurveillantSalle extends React.Component {
                     <td>{`${this.state.surveillant.last_name} ${this.state.surveillant.first_name}`}</td>
                     < td >{this.state.surveillant.grade === true ? `Chef de Salle` : `Surveillant`}</td>
                     <td>
-                        <select className="form-select" onChange={e => this.examen = e.target.value}>
-                            {examen.map(examen =>
-                                <option value={examen.id}>{examen.nom}</option>
+                        <select className="form-select" onChange={e => this.examen = parseInt(e.target.value)}>
+                            {this.state.examen.map(examen =>
+                                <option value={examen.id}>{examen.name} - {examen.day}</option>
                             )}
                         </select>
                     </td>
                     <td>
-                        <select className="form-select" onChange={e => this.salle = e.target.value}>
-                            {salle.map(salle =>
-                                <option value={salle.code}>{salle.code}</option>
+                        <select className="form-select" onChange={e => this.salle = parseInt(e.target.value)}>
+                            {this.state.salle.map(salle =>
+                                <option value={salle.id}>{salle.code}</option>
                             )}
                         </select>
                     </td>

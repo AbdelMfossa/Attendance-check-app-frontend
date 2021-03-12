@@ -24,15 +24,10 @@
       "static/chunks/webpack.js",
       "static/chunks/pages/_error.js"
     ],
-    "/auth/login": [
+    "/analyse/analytic": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
-      "static/chunks/pages/auth/login.js"
-    ],
-    "/data/account": [
-      "static/chunks/main.js",
-      "static/chunks/webpack.js",
-      "static/chunks/pages/data/account.js"
+      "static/chunks/pages/analyse/analytic.js"
     ],
     "/salle/salleAllocation": [
       "static/chunks/main.js",

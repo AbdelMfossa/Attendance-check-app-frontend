@@ -5,8 +5,12 @@ import { Modal, Button } from 'react-bootstrap';
 
 class CustomModalExam extends React.Component {
     state = {
-        show: false
+        show: false,
+        horaire: this.props.horaire,
+        ue: this.props.matiere,
+        semestre: this.props.semestre
     }
+
     handleClose = () => this.setState({ show: false });
     handleShow = () => this.setState({ show: true });
 
@@ -15,9 +19,9 @@ class CustomModalExam extends React.Component {
         const data = {
             date: this.date,
             plage: this.plage,
-            ue: this.ue,
             nom: this.nom,
-            semestre: this.semestre
+            semestre: this.semestre,
+            ue: this.props.matiere
         }
 
         axios.post(`surveillance/examen`, data)
@@ -49,33 +53,33 @@ class CustomModalExam extends React.Component {
                             <form >
                                 <div>
                                     <label>Date</label>
-                                    <input type="text" className="form-control" placeholder="Code de la salle Exemple: R110" onChange={e => this.date = e.target.value} />
+                                    <input type="text" className="form-control" placeholder="" onChange={e => this.date = e.target.value} />
                                 </div>
                                 <div>
                                     <label >Name</label>
-                                    <input type="text" className="form-control" placeholder="Situer la salle " onChange={e => this.name = e.target.value} />
+                                    <input type="text" className="form-control" placeholder="" onChange={e => this.name = e.target.value} />
                                 </div>
                                 <div>
                                     <label >plage</label>
                                     <select className="form-select" onChange={e => this.plage = e.target.value}>
-                                        {horaire.map(plage =>
-                                            <option value={salle.code}>{plage.begin} - {plage.end}</option>
+                                        {this.state.horaire.map(plage =>
+                                            <option value={plage.id}>{plage.begin} - {plage.end}</option>
                                         )}
                                     </select>
                                 </div>
                                 <div>
                                     <label >Ue</label>
                                     <select className="form-select" onChange={e => this.ue = e.target.value}>
-                                        {ue.map(ue =>
-                                            <option value={ue.code}>{ue.code}:{ue.intitule}</option>
+                                        {this.state.ue.map(ue =>
+                                            <option value={ue.id}>{ue.code}:{ue.intitule}</option>
                                         )}
                                     </select>
                                 </div>
                                 <div>
                                     <label >Semestre</label>
                                     <select className="form-select" onChange={e => this.semestre = e.target.value}>
-                                        {semestre.map(semestre =>
-                                            <option value={semestre.nom}>{semestre.nom}</option>
+                                        {this.state.semestre.map(semestre =>
+                                            <option value={semestre.id}>{semestre.num_semestre}</option>
                                         )}
                                     </select>
                                 </div>

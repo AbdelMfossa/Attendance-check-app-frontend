@@ -48,10 +48,9 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-    const res = await axios.get(`surveillance/supervisor`)
-    const posts = res.data.data;
-
     try {
+        const res = await axios.get(`surveillance/supervisor`)
+        const posts = res.data.data;
         const paths = posts.map((post) => `/analyse/${post.id}`)
         return { paths, fallback: false }
     }

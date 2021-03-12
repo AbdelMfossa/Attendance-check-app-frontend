@@ -68,11 +68,11 @@ export default function Login() {
                 <div className="FormContent">
                   <div className="md-form mb-0">
                     <input type="text" name="email" onChange={e => setEmail(e.target.value)} className="form-control js-input" id="1" />
-                    <label for="email" className="form-label" id="label-1">Email</label>
+                    <label htmlFor="email" className="form-label" id="label-1">Email</label>
                   </div>
                   <div className="md-form mb-0">
                     <input type="password" name="password" onChange={e => setPassword(e.target.value)} className="form-control js-input" id="2" />
-                    <label for="password" className="form-label" id="label-2">Password</label>
+                    <label htmlFor="password" className="form-label" id="label-2">Password</label>
                   </div>
                   <div className="md-form mb-0 mt-3 checkbox-input">
                     <label>
@@ -85,7 +85,7 @@ export default function Login() {
 
                 <div className="FormFooter">
                   <div className="md-form mb-0">
-                    <a href="#" className="passForgot">Mot de passe oublié ?</a>
+                    <a href="/" className="passForgot">Mot de passe oublié ?</a>
                   </div>
                   <div className="md-form mb-0">
                     <button type="submit" className="butt">Login Now &#x27F6;</button>

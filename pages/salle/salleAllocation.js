@@ -16,7 +16,7 @@ class Salle extends React.Component {
         matiere: this.props.matiere,
         horaire: this.props.horaire,
         semestre: this.props.semestre,
-        ue: this.props.ue
+        examen: this.props.examen
     }
     componentDidMount() {
         $(document).ready(function () {
@@ -43,7 +43,6 @@ class Salle extends React.Component {
                                     matiere={this.state.matiere}
                                     horaire={this.state.horaire}
                                     semestre={this.state.semestre}
-                                    ue={this.state.ue}
                                 />
                             </div>
                         </header>
@@ -84,23 +83,21 @@ class Salle extends React.Component {
         )
     }
 }
-export async function getServerSideProps() {
+export async function getStaticProps() {
     try {
         const rep1 = await axios.get("surveillance/supervisor");
         const rep2 = await axios.get("surveillance/room");
         const rep3 = await axios.get("surveillance/matiere");
         const rep4 = await axios.get("surveillance/horaire");
         const rep5 = await axios.get("surveillance/semestre");
-        const rep6 = await axios.get("surveillance/ue");
-        const rep7 = await axios.get("surveillance/examen")
+        const rep6 = await axios.get("surveillance/examen")
 
         const survs = rep1.data.data;
         const salle = rep2.data.data;
         const matiere = rep3.data.data;
         const horaire = rep4.data.data;
         const semestre = rep5.data.data;
-        const ue = rep6.data.data;
-        const examen = rep7.data.data;
+        const examen = rep6.data.data;
 
 
         return {
@@ -110,11 +107,11 @@ export async function getServerSideProps() {
                 matiere: matiere,
                 horaire: horaire,
                 semestre: semestre,
-                ue: ue,
                 examen: examen
             }
         }
     } catch (err) {
+        console.log("Echec du chargement")
         return { props: { survs: [], salle: [], matiere: [], horaire: [], semestre: [], ue: [] } }
     }
 }
