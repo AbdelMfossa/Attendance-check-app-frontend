@@ -61,7 +61,7 @@ class CustomModalExam extends React.Component {
                                 </div>
                                 <div>
                                     <label >plage</label>
-                                    <select className="form-select" onChange={e => this.plage = e.target.value}>
+                                    <select className="form-control" onChange={e => this.plage = e.target.value}>
                                         {this.state.horaire.map(plage =>
                                             <option value={plage.id}>{plage.begin} - {plage.end}</option>
                                         )}
@@ -69,7 +69,7 @@ class CustomModalExam extends React.Component {
                                 </div>
                                 <div>
                                     <label >Ue</label>
-                                    <select className="form-select" onChange={e => this.ue = e.target.value}>
+                                    <select className="form-control" onChange={e => this.ue = e.target.value}>
                                         {this.state.ue.map(ue =>
                                             <option value={ue.id}>{ue.code}:{ue.intitule}</option>
                                         )}
@@ -77,7 +77,7 @@ class CustomModalExam extends React.Component {
                                 </div>
                                 <div>
                                     <label >Semestre</label>
-                                    <select className="form-select" onChange={e => this.semestre = e.target.value}>
+                                    <select className="form-control" onChange={e => this.semestre = e.target.value}>
                                         {this.state.semestre.map(semestre =>
                                             <option value={semestre.id}>{semestre.num_semestre}</option>
                                         )}

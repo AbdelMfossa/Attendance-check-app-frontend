@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import Head from "next/head";
 import Link from 'next/link';
 import axios from "axios"
+import { toast } from 'react-toastify'
 
 
 export default class InfoSurveillantSalle extends React.Component {
@@ -18,6 +19,14 @@ export default class InfoSurveillantSalle extends React.Component {
             user: 0
         }
         axios.post("surveillance/controle", data)
+            .then(
+                (res) => {
+                    if (res.data != null) {
+                        toast.success("Surveillant alloué à une salle")
+                        this.setState({ surveillants: this.state.surveillants })
+                    }
+                }
+            )
             .catch(err => console.log(err))
         console.log(data);
 

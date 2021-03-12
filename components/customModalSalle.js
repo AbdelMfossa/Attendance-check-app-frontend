@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import { Modal, Button } from 'react-bootstrap';
+import { toast } from 'react-toastify'
 
 
 class CustomModalSalle extends React.Component {
@@ -20,11 +21,20 @@ class CustomModalSalle extends React.Component {
     }
 
     axios.post(`surveillance/room`, data)
+      .then(
+        (res) => {
+          if (res.data != null) {
+            toast.success("Surveillant alloué")
+            this.setState({ surveillants: this.state.surveillants })
+          }
+        }
+      )
       .catch(
-        err => console.log(err)
+        (err) => {
+          console.log(err)
+        }
       )
     this.setState({ show: false })
-
   }
   render() {
 
