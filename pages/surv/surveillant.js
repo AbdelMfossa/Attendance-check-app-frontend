@@ -11,6 +11,7 @@ import { place } from "../../scripts/form";
 import $ from 'jquery';
 import Link from "next/link"
 import Router from 'next/router';
+import { toast } from 'react-toastify';
 
 class Surveillant extends Component {
     constructor(props) {
@@ -28,21 +29,15 @@ class Surveillant extends Component {
                 "columnDefs": [{ orderable: false, targets: [1, 2, 6] }]
             });
         });
-
         try {
             axios.get("users/currentuser")
                 .then(res => {
-                    // ok
+                    console.log("reussi")
                 });
         } catch (err) {
             Router.push("/auth/login");
         }
     }
-    handleDelete = (id) => {
-        axios.delete(`surveillance/supervisor/${id}`)
-        this.setState({ surveillants: this.state.surveillants })
-    }
-
     render() {
         return (
             <>

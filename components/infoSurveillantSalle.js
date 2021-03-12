@@ -13,10 +13,11 @@ export default class InfoSurveillantSalle extends React.Component {
     handleAlloc = async () => {
         const data = {
             surveillant: this.state.surveillant.id,
-            examen: this.examen,
-            salle: this.salle
+            examen: this.examens,
+            salle: this.salle,
+            user: 0
         }
-        axios.post("surveillance/controler", data)
+        axios.post("surveillance/controle", data)
             .catch(err => console.log(err))
         console.log(data);
 
@@ -29,7 +30,7 @@ export default class InfoSurveillantSalle extends React.Component {
                     <td>{`${this.state.surveillant.last_name} ${this.state.surveillant.first_name}`}</td>
                     < td >{this.state.surveillant.grade === true ? `Chef de Salle` : `Surveillant`}</td>
                     <td>
-                        <select className="form-select" onChange={e => this.examen = parseInt(e.target.value)}>
+                        <select className="form-select" onChange={e => this.examens = parseInt(e.target.value)}>
                             {this.state.examen.map(examen =>
                                 <option value={examen.id}>{examen.name} - {examen.day}</option>
                             )}

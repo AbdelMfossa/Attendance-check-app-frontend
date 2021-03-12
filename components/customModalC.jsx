@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Modal, Button, Dropdown } from 'react-bootstrap';
 import axios from "axios"
 import { useRouter } from 'next/router'
+import { toast } from 'react-toastify'
 
 
 function customModalC({ id, onDelete }) {
@@ -9,6 +10,20 @@ function customModalC({ id, onDelete }) {
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const handleDelete = (survid) => {
+        axios.delete(`surveillance/supervisor/${survid}`).then(
+            (res) => {
+                if (res.data != null) {
+                    toast.success("surveillant supprimmée")
+                    this.setState({ surveillants: this.state.surveillants })
+                }
+            }
+        )
+            .catch(
+                err => console.log(err)
+            )
+
+    }
 
     return (
         <>
@@ -17,7 +32,7 @@ function customModalC({ id, onDelete }) {
             </Dropdown.Item>
             <Modal show={show} onHide={handleClose} className="modalSuppression">
                 <Modal.Header closeButton className="color-titre-ajout">
-                    <Modal.Title>SUPPRESSION</Modal.Title>
+                    <Modal.Title className="colorTitre">SUPPRESSION</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>Etes vous certains de vouloir  le supprimer ?</Modal.Body>
                 <Modal.Footer>
@@ -25,7 +40,7 @@ function customModalC({ id, onDelete }) {
                         No/Close
                     </Button>
                     <Button variant="danger" onClick={() => {
-                        onDelete(id);
+                        handleDelete(id);
                         setShow(false);
                     }} >
                         YES
