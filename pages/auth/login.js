@@ -23,10 +23,20 @@ export default function Login() {
         await axios.post('users/signin',{email ,password})
         .then(
             async (res)=>{
-                localStorage.setItem('jwt', Object.values(res.data))
-                console.log(localStorage.getItem('jwt'));
+                const resp = await axios.get("users/currentuser");
 
-                Router.push("/");
+                const user = resp.data.data;
+                console.log(user);
+
+                if (user.role.id !== 1) {
+                  toast("vous n'etes pas autorise a passer");
+                  Router.push("/auth/login");
+                } else {
+                  localStorage.setItem('jwt', Object.values(res.data))
+                  console.log(localStorage.getItem('jwt'));
+
+                  Router.push("/");
+                }
             }
 
         )

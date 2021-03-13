@@ -61,6 +61,10 @@ class Layout extends React.Component {
             axios.get("users/currentuser")
             .then(res => {
                 console.log(res);
+
+                if (res.data.data.role.id !== 1) {
+                    Router.push("/auth/login");
+                }
             })
             .catch(err => {
                  Router.push("/auth/login");

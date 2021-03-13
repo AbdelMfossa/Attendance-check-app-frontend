@@ -8,10 +8,9 @@ import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-// axios.defaults.baseURL = "https://attendceappuy1.herokuapp.com/api/"
-axios.defaults.baseURL = "http://192.168.8.101:8000/api/"
+axios.defaults.baseURL = "https://attendceappuy1.herokuapp.com/api/"
+// axios.defaults.baseURL = "http://192.168.8.101:8000/api/"
 axios.defaults.withCredentials = true;
-// axios.defaults.baseURL = "http://192.168.225.201:8000/api/"
 
 export default function MyApp({ Component, pageProps }) {
   const notify = () => toast("Wow so easy !");

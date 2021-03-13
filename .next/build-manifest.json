@@ -24,15 +24,15 @@
       "static/chunks/webpack.js",
       "static/chunks/pages/_error.js"
     ],
-    "/analyse/analytic": [
-      "static/chunks/main.js",
-      "static/chunks/webpack.js",
-      "static/chunks/pages/analyse/analytic.js"
-    ],
     "/auth/login": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
       "static/chunks/pages/auth/login.js"
+    ],
+    "/surv/surveillant": [
+      "static/chunks/main.js",
+      "static/chunks/webpack.js",
+      "static/chunks/pages/surv/surveillant.js"
     ]
   },
   "ampFirstPages": []
