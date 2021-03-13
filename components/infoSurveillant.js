@@ -6,9 +6,9 @@ import CustomModalC from "./customModalC"
 import Link from 'next/link';
 
 
-const InfoSurveillant = ({ dataSurveillant, onDelete }) => {
+const InfoSurveillant = ({ dataSurveillant }) => {
 
-  const { id, last_name, first_name, email, exam, matricule, phone, horaire, grade } = dataSurveillant;
+  const { id, last_name, first_name, email, exam, matricule, phone, grade } = dataSurveillant;
 
   return (
     <>
@@ -16,7 +16,7 @@ const InfoSurveillant = ({ dataSurveillant, onDelete }) => {
         <td>{`${last_name} ${first_name}`}</td>
         <td>{matricule}</td>
         <td>{phone}</td>
-        <td>{exam.absent.map(explore => explore.salle.code)}</td>
+        <td>{exam.absent.map(explore => explore.salle.code + " / ")}</td>
         < td >{grade === true ? `Chef de Salle` : `Surveillant`}</td>
         <td> {exam.present.length * 2}</td>
         <td className="contextual-menu survDropdown">
@@ -28,7 +28,7 @@ const InfoSurveillant = ({ dataSurveillant, onDelete }) => {
             <Dropdown.Menu className="options">
               <Dropdown.Item  >Edit</Dropdown.Item>
               <Dropdown.Divider />
-              <CustomModalC id={id} onDelete={onDelete} donne={dataSurveillant} />
+              <CustomModalC id={id} titre={'surveillant'} />
             </Dropdown.Menu>
           </Dropdown>
         </td>

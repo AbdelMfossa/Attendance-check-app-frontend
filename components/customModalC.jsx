@@ -1,14 +1,31 @@
 import React, { useState } from 'react'
 import { Modal, Button, Dropdown } from 'react-bootstrap';
 import axios from "axios"
+import { toast } from 'react-toastify'
 
 
-
-function customModalC({ id, onDelete, donnee }) {
+function customModalC(props) {
     const [show, setShow] = useState(false);
-
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const handleDelete = (survid) => {
+        if (props.titre == 'users') {
+            axios.delete(`users/users/${survid}`)
+                .then((res) => {
+                    if (res.data != null)
+                        toast.success("Controleur supprimmé Veuillez recharger la page pour que les modifications prennent effet");
+                })
+                .catch(err => { console.log(err); toast.error("Erreur lors de la suppression"); })
+        }
+        if (props.titre == 'surveillant') {
+            axios.delete(`surveillance/supervisor/${survid}`)
+                .then((res) => {
+                    if (res.data != null)
+                        toast.success("surveillant supprimmé Veuillez recharger la page pour que les modifications prennent effet");
+                })
+                .catch(err => { console.log(err); toast.error("Erreur lors de la suppression "); })
+        }
+    }
 
     return (
         <>
@@ -17,14 +34,17 @@ function customModalC({ id, onDelete, donnee }) {
             </Dropdown.Item>
             <Modal show={show} onHide={handleClose} className="modalSuppression">
                 <Modal.Header closeButton className="color-titre-ajout">
-                    <Modal.Title>SUPPRESSION</Modal.Title>
+                    <Modal.Title className="colorTitre">SUPPRESSION</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>Etes vous certains de vouloir  le supprimer ?</Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
-                        NO/Close
+                        No/Close
                     </Button>
-                    <Button variant="danger" onClick={() => onDelete({ id })} >
+                    <Button variant="danger" onClick={() => {
+                        handleDelete(props.id);
+                        setShow(false);
+                    }} >
                         YES
                     </Button>
                 </Modal.Footer>

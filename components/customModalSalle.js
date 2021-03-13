@@ -1,12 +1,13 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import { Modal, Button } from 'react-bootstrap';
+import { toast } from 'react-toastify'
 
 
 class CustomModalSalle extends React.Component {
-
   state = {
-    show: false
+    show: false,
+    salles: this.props.salle
   }
   handleClose = () => this.setState({ show: false });
   handleShow = () => this.setState({ show: true });
@@ -18,15 +19,18 @@ class CustomModalSalle extends React.Component {
       libelle: this.libelle,
       localisation: this.localisation
     }
-
-    axios.post(`/surveillance/room`, data)
-      .catch(
-        err => console.log(err)
-      )
-
+    axios.post(`surveillance/room`, data)
+      .then(() => {
+        const datas = this.state.salles.slice();
+        datas.push(data);
+        this.setState({ salles: datas })
+        toast.success("Salle créee avec succès")
+      })
+      .catch((err) => toast.error("Erruer lors de la création de la Salle "))
+    this.setState({ show: false })
   }
-  render() {
 
+  render() {
     return (
       <>
         <Button variant="dark" className="btn boutonE" onClick={this.handleShow} >
@@ -40,7 +44,7 @@ class CustomModalSalle extends React.Component {
           className="modalSuppression"
         >
           <Modal.Header closeButton className="color-titre-ajout">
-            <Modal.Title >CREATION D'UNE SALLE</Modal.Title>
+            <Modal.Title className="colorTitre" >CREATION D'UNE SALLE</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <div className="modal-form" >

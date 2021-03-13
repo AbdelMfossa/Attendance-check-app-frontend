@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Layout from "../../components/Layout";
 import CustomModalSalle from "../../components/customModalSalle"
+import CustomModalExam from "../../components/CustomModalExam"
 import $ from 'jquery';
 import axios from "axios"
 import InfoSurveillantSalle from "../../components/infoSurveillantSalle"
@@ -11,11 +12,11 @@ import { respons } from "../../scripts/form";
 class Salle extends React.Component {
     state = {
         survs: this.props.survs,
-        salle: this.props.salle
-    }
-    handleAlloc = () => {
-        axios.put(`/surveillance/supervisor/${state.id}`, state)
-
+        salle: this.props.salle,
+        matiere: this.props.matiere,
+        horaire: this.props.horaire,
+        semestre: this.props.semestre,
+        examen: this.props.examen
     }
     componentDidMount() {
         $(document).ready(function () {
@@ -24,7 +25,7 @@ class Salle extends React.Component {
                 "paging": false,
                 "info": false,
                 "columnDefs": [
-                    { orderable: false, targets: [1, 3] }
+                    { orderable: false, targets: [2, 3, 4] }
                 ],
             });
         });
@@ -37,7 +38,12 @@ class Salle extends React.Component {
                         <header className="row">
                             <div className="col-12 header-card">
                                 <span>ALLOCATION DES SALLES</span>
-                                <CustomModalSalle />
+                                <CustomModalSalle salle={this.props.salle} />
+                                <CustomModalExam
+                                    matiere={this.state.matiere}
+                                    horaire={this.state.horaire}
+                                    semestre={this.state.semestre}
+                                />
                             </div>
                         </header>
                         <section className="row">
@@ -46,9 +52,10 @@ class Salle extends React.Component {
                                     <thead>
                                         <tr>
                                             <th>Nom</th>
-                                            <th>Phone</th>
                                             <th>Grade</th>
+                                            <th>Examen</th>
                                             <th>Salle</th>
+                                            <th>Valider</th>
                                         </tr>
                                     </thead>
 
@@ -58,6 +65,8 @@ class Salle extends React.Component {
                                                 return (
                                                     <InfoSurveillantSalle
                                                         dataSurveillant={surv}
+                                                        salle={this.state.salle}
+                                                        examen={this.state.examen}
                                                         key={surv.id}
                                                     />
                                                 )
@@ -75,16 +84,35 @@ class Salle extends React.Component {
     }
 }
 export async function getStaticProps() {
-    const resp = await axios.get("/surveillance/supervisor");
-    const rep = await axios.get("/surveillance/room");
-    const salle = rep.data.data;
-    const survs = resp.data.data;
-    return {
-        props: {
-            survs: survs,
-            salle: salle
-        }
+    try {
+        const rep1 = await axios.get("surveillance/supervisor");
+        const rep2 = await axios.get("surveillance/room");
+        const rep3 = await axios.get("surveillance/matiere");
+        const rep4 = await axios.get("surveillance/horaire");
+        const rep5 = await axios.get("surveillance/semestre");
+        const rep6 = await axios.get("surveillance/examen")
 
+        const survs = rep1.data.data;
+        const salle = rep2.data.data;
+        const matiere = rep3.data.data;
+        const horaire = rep4.data.data;
+        const semestre = rep5.data.data;
+        const examen = rep6.data.data;
+
+
+        return {
+            props: {
+                survs: survs,
+                salle: salle,
+                matiere: matiere,
+                horaire: horaire,
+                semestre: semestre,
+                examen: examen
+            }
+        }
+    } catch (err) {
+        console.log("Echec du chargement")
+        return { props: { survs: [], salle: [], matiere: [], horaire: [], semestre: [], ue: [] } }
     }
 }
 export default Salle;

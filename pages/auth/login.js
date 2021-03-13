@@ -1,9 +1,10 @@
 import React, { Component, useState, useEffect } from "react";
 import ReactDOM from "react-dom";
+import Head from "next/head"
 import Image from 'next/image';
 import { form } from '../../scripts/form';
 import axios from "axios";
-import {useCookies} from  "react-cookie"
+import { useCookies } from "react-cookie"
 import Router from 'next/router';
 import { toast } from "react-toastify";
 
@@ -18,9 +19,9 @@ export default function Login() {
 
   const onSubmit = async event => {
     event.preventDefault();
-    console.log({email, password});
+    console.log({ email, password });
     try {
-        await axios.post('users/signin',{email ,password})
+      await axios.post('users/signin', { email, password })
         .then(
             async (res)=>{
                 const resp = await axios.get("users/currentuser");
@@ -38,24 +39,23 @@ export default function Login() {
                   Router.push("/");
                 }
             }
-
         )
     } catch (err) {
-        toast(err.response.data)
+      toast.error(err.response.data.detail)
     }
-
   };
-
-
 
   return (
     <>
-      <head>
-        <meta charset='utf-8' />
-        <meta http-equiv='X-UA-Compatible' content='IE=edge' />
-        <title>Login</title>
-        <meta name='viewport' content='width=device-width, initial-scale=1' />
-      </head>
+      <Head>
+        <head>
+          <title>Login</title>
+          <meta charset='utf-8' />
+          <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+          <title>Login</title>
+          <meta name='viewport' content='width=device-width, initial-scale=1' />
+        </head>
+      </Head>
 
       <div className="container">
         <div className="row myCard">
@@ -78,12 +78,12 @@ export default function Login() {
 
                 <div className="FormContent">
                   <div className="md-form mb-0">
-                    <input type="text"  name="email"  onChange={e=>setEmail(e.target.value)} className="form-control js-input" id="1"  />
-                    <label for="email" className="form-label" id="label-1">Email</label>
+                    <input type="text" name="email" onChange={e => setEmail(e.target.value)} className="form-control js-input" id="1" />
+                    <label htmlFor="email" className="form-label" id="label-1">Email</label>
                   </div>
                   <div className="md-form mb-0">
-                    <input type="password"  name="password" onChange={e=>setPassword(e.target.value)} className="form-control js-input" id="2" />
-                    <label for="password" className="form-label" id="label-2">Password</label>
+                    <input type="password" name="password" onChange={e => setPassword(e.target.value)} className="form-control js-input" id="2" />
+                    <label htmlFor="password" className="form-label" id="label-2">Password</label>
                   </div>
                   <div className="md-form mb-0 mt-3 checkbox-input">
                     <label>
@@ -96,7 +96,7 @@ export default function Login() {
 
                 <div className="FormFooter">
                   <div className="md-form mb-0">
-                    <a href="#" className="passForgot">Mot de passe oublié ?</a>
+                    <a href="/" className="passForgot">Mot de passe oublié ?</a>
                   </div>
                   <div className="md-form mb-0">
                     <button type="submit" className="butt">Login Now &#x27F6;</button>
@@ -105,12 +105,10 @@ export default function Login() {
               </form>
             </section>
           </div>
-        </div>
-      </div>
+        </div >
+      </div >
     </>
 
   )
-
-
 }
 

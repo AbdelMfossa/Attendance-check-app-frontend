@@ -165,7 +165,11 @@ body {
     -moz-box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
     box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
 }
-
+.butt:hover{
+    background-color: white !important;
+    border:1px solid #DE3A99 !important;
+    color: #DE3A99 !important;
+}
 .FormFooter .passForgot {
     color: #DE3A99;
     margin-left: 200px;
@@ -257,17 +261,6 @@ body {
     background-color: white;
 }
 
-#datatable_filter{
-    color:white;
-}
-
-#datatable_filter input{
-    width: 150px;
-    margin-bottom: 20px;
-    border-radius: 0px;
-    display: flex;
-    left: 20px;
-}
 .Trait{
     margin-bottom: 1px !important;
 }
@@ -307,20 +300,45 @@ body {
 .homeLink{
     text-decoration: none !important;
     color: #333333 !important;
-    margin-top: 0px !important;
+     
 }
+
 .bouton{
     border-radius: 0%;
 }
 .boutonE{
     border-radius: 0%;
+    display: inline-block;
+    width: 150px !important;
 }
 .exportB{
     margin-bottom: 10px;
     border-radius: 0%;
-
+}
+.colorTitre{
+    color: white;
+    text-align: center;
+}
+.tail{
+    max-width: max-content;
+}
+input[type="search"]{
+    width: 250px;
+    margin-bottom: 20px;
+    border-radius: 0px;
+    display: block;
+    left: 20px;
 }
 
 .activeNav {
     background-color: blue !important;
+}
+#datatable_filter label{
+    font-size: 0 !important;
+}
+#datatable_filter input{
+    width:250px !important ;
+    height: 32px !important;
+    font-size: 15px !important;
+    border-radius: 0;
 }

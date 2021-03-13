@@ -29,10 +29,17 @@
       "static/chunks/webpack.js",
       "static/chunks/pages/auth/login.js"
     ],
+<<<<<<< HEAD
     "/surv/surveillant": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
       "static/chunks/pages/surv/surveillant.js"
+=======
+    "/salle/salleAllocation": [
+      "static/chunks/main.js",
+      "static/chunks/webpack.js",
+      "static/chunks/pages/salle/salleAllocation.js"
+>>>>>>> f93760bbafd83dbe07548552806467d7c2705538
     ]
   },
   "ampFirstPages": []

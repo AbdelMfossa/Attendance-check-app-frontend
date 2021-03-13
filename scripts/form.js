@@ -50,14 +50,6 @@ export const respons = () => {
   }
 }
 
-export const search = () => {
-  var table = $('#datatable').DataTable();
-
-  $('#myInputTextField').on('keyup', function () {
-    table.search(this.value).draw();
-  });
-}
-
 
 // export const place = () => {
 //   const doc = document.getElementById("datatable_filter");

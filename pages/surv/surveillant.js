@@ -11,14 +11,12 @@ import { place } from "../../scripts/form";
 import $ from 'jquery';
 import Link from "next/link"
 import Router from 'next/router';
-
+import { toast } from 'react-toastify';
 
 class Surveillant extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            surveillants: this.props.survs
-        }
+        this.state = { surveillants: this.props.survs }
     }
     componentDidMount() {
         $(document).ready(function () {
@@ -26,29 +24,14 @@ class Surveillant extends Component {
                 "searching": true,
                 "paging": false,
                 "info": false,
-                "columnDefs": [
-                    { orderable: false, targets: [1, 2, 3, 4, 6] }
-                ],
+                "columnDefs": [{ orderable: false, targets: [1, 2, 6] }]
             });
         });
-
-        try {
-            axios.get("users/currentuser")
-            .then(res => {
-              // ok
-            });
-        } catch (err) {
-            Router.push("/auth/login");
-        }
+        try { axios.get("users/currentuser"); }
+        catch (err) { Router.push("/auth/login"); }
     }
-
-    handleDelete = (id) => {
-        axios.delete(`surveillance/supervisor/${id}`)
-    }
-
     render() {
         return (
-
             <>
                 <Layout title="Surveillant">
                     <div className="container-fluid">
@@ -61,7 +44,7 @@ class Surveillant extends Component {
                             </header>
                             <section className="row">
                                 <div className="col-12 content-card">
-                                    <table id="datatable" className="table dt-responsive nowrap" style={{ borderCollapse: "collapse", borderSpacing: 0, width: "100%" }}>
+                                    <table id="datatable" className="table-responsive-sm nowrap " style={{ borderCollapse: "collapse", borderSpacing: 0, width: "100%" }}>
                                         <thead>
                                             <tr>
                                                 <th>Nom</th>
@@ -81,7 +64,6 @@ class Surveillant extends Component {
                                                         <InfoSurveillant
                                                             dataSurveillant={surv}
                                                             key={surv.id}
-                                                            onDelete={this.handleDelete}
                                                         />
                                                     )
                                                 })
@@ -98,12 +80,17 @@ class Surveillant extends Component {
         )
     }
 }
+
 export async function getStaticProps() {
-    const resp = await axios.get("surveillance/supervisor");
-    const survs = resp.data.data;
-    return {
-        props: {
-            survs
+    try {
+        const resp = await axios.get("surveillance/supervisor");
+        const survs = resp.data.data;
+        return { props: { survs } }
+    } catch (err) {
+        return {
+            props: {
+                survs: []
+            }
         }
     }
 }
