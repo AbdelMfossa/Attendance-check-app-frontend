@@ -2,11 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-<<<<<<< HEAD
   "/auth/login": "pages/auth/login.js",
-  "/surv/surveillant": "pages/surv/surveillant.js"
-=======
-  "/salle/salleAllocation": "pages/salle/salleAllocation.js",
-  "/auth/login": "pages/auth/login.js"
->>>>>>> f93760bbafd83dbe07548552806467d7c2705538
+  "/data/account": "pages/data/account.js",
+  "/": "pages/index.js"
 }

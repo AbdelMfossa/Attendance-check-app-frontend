@@ -30,8 +30,15 @@ export default function Login() {
                 console.log(user);
 
                 if (user.role.id !== 1) {
-                  toast("vous n'etes pas autorise a passer");
-                  Router.push("/auth/login");
+                  toast.warning("vous n'etes pas autorise a passer");
+
+                  try {
+                    const response = await axios.post("users/signout");
+
+                    Router.push("/auth/login");
+                  } catch (err) {
+                    console.lot(err);
+                  }
                 } else {
                   localStorage.setItem('jwt', Object.values(res.data))
                   console.log(localStorage.getItem('jwt'));
