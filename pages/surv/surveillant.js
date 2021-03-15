@@ -30,6 +30,14 @@ class Surveillant extends Component {
         try { axios.get("users/currentuser"); }
         catch (err) { Router.push("/auth/login"); }
     }
+
+    handleAddSupervisor = (sup) => {
+        let survs = [...this.state.surveillants];
+        survs.push(sup);
+
+        this.setState({ surveillants: survs });
+    }
+
     render() {
         return (
             <>
@@ -39,7 +47,10 @@ class Surveillant extends Component {
                             <header className="row">
                                 <div className="col-12 header-card">
                                     <span>SURVEILLANTS({this.state.surveillants.length})</span>
-                                    <CustomModal title="Surveillant" />
+                                    <CustomModal
+                                        title="Surveillant"
+                                        onAddSupervisor={this.handleAddSupervisor}
+                                    />
                                 </div>
                             </header>
                             <section className="row">
