@@ -37,7 +37,7 @@ class Controleur extends React.Component {
         const orientation = "portrait";
 
         const marginLeft = 40;
-        const title = `LISTE DES CONTROLEURS EXAMEN\n\n\n`;
+        const title = "\t\t\tLISTE DES CONTROLEURS EXAMEN";
         const doc = new jsPDF(orientation, unit, size);
         doc.setFontSize(15);
         const headers = [["Noms et Prénoms", "Matricule", "Phone", "Email"]];
@@ -52,7 +52,7 @@ class Controleur extends React.Component {
 
         doc.text(title, marginLeft, 40);
         doc.autoTable(content);
-        doc.save("report.pdf")
+        doc.save("ListeControleur.pdf")
     }
     render() {
         let a = 0;
