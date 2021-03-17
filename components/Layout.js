@@ -13,7 +13,7 @@ class Layout extends React.Component {
     constructor(props) {
         super(props);
 
-        // this.currentUser();
+        this.currentUser();
 
         this.state = {
             navs: [
@@ -68,7 +68,7 @@ class Layout extends React.Component {
             if (res.data.data !== null) {
                 this.setState({ authorized: true });
             }
-        } catch(err) {
+        } catch (err) {
             console.log(err);
         }
 
@@ -144,23 +144,36 @@ class Layout extends React.Component {
                                             <img src="/static/university.png " alt="picture of uy1" width="40px" height="40" />
                                             <span>The University of Yaounde I</span>
                                         </div>
-                                        <div className="logo-textL">
-                                            <Dropdown>
-                                                <Dropdown.Toggle as={CustomToggle}>
-                                                    <Image className="img-xs image" src="/static/avatar.jpg" alt="pic profile" width={40} height={40} />
-                                                 </Dropdown.Toggle>
+                                    </div>
+                                    <div className="flex-1" id="page-content-wrapper">
 
-                                                <Dropdown.Menu>
-                                                    <Dropdown.Item href="/data/account">Account</Dropdown.Item>
-                                                    <Dropdown.Divider />
-                                                    <Dropdown.Item onClick={() => this.logout()} >Logout</Dropdown.Item>
-                                                </Dropdown.Menu>
-                                            </Dropdown>
+                                        <nav className="navbar navbar-expand-lg navbar-light border-bottom bg-col">
+                                            <div className="logo-menu" id="icon-menu" onClick={this.toggle}>
+                                                <i className="bi bi-justify"></i>
+                                            </div>
 
+                                            <div className="logo-text">
+                                                <img src="/static/university.png " alt="picture of uy1" width="40px" height="40" />
+                                                <span>The University of Yaounde I</span>
+                                            </div>
+                                            <div className="logo-textL">
+                                                <Dropdown>
+                                                    <Dropdown.Toggle as={CustomToggle}>
+                                                        <Image className="img-xs image" src="/static/avatar.jpg" alt="pic profile" width={40} height={40} />
+                                                    </Dropdown.Toggle>
+
+                                                    <Dropdown.Menu>
+                                                        <Dropdown.Item href="/data/account">Account</Dropdown.Item>
+                                                        <Dropdown.Divider />
+                                                        <Dropdown.Item onClick={() => this.logout()} >Logout</Dropdown.Item>
+                                                    </Dropdown.Menu>
+                                                </Dropdown>
+
+                                            </div>
+                                        </nav>
+                                        <div className="main" id="interface" style={{ height: `${this.state.responsive.mainInterface}px` }}>
+                                            {this.props.children}
                                         </div>
-                                    </nav>
-                                    <div className="main" id="interface" style={{ height: `${this.state.responsive.mainInterface}px` }}>
-                                        {this.props.children}
                                     </div>
                                 </div>
                             </div>
