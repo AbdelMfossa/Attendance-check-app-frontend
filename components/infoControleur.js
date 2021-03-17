@@ -3,6 +3,7 @@ import Head from "next/head";
 import { Dropdown } from "react-bootstrap"
 import CustomToggle from "./customToggle"
 import CustomModalC from "./customModalC"
+import ModalCModif from "./ModalCModif"
 import Link from 'next/link';
 
 
@@ -27,7 +28,7 @@ const infoControleur = ({ dataSurveillant, onDelete }) => {
                                     <i className="bi bi-three-dots-vertical options-icon" />
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu className="options">
-                                    <Dropdown.Item href="modif/edite" >Edit</Dropdown.Item>
+                                    <ModalCModif controleur={{ last_name, first_name, email, phone, matricule, role, id }} />
                                     <Dropdown.Divider />
                                     <CustomModalC id={id} titre={`users`} />
                                 </Dropdown.Menu>

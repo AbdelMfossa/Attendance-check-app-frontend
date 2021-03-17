@@ -23,14 +23,33 @@ export default function Login() {
     try {
       await axios.post('users/signin', { email, password })
         .then(
-          async (res) => {
-            localStorage.setItem('jwt', Object.values(res.data))
-            console.log(localStorage.getItem('jwt'));
-            Router.push("/");
-          }
+            async (res)=>{
+                const resp = await axios.get("users/currentuser");
+
+                const user = resp.data.data;
+                console.log(user);
+
+                if (user.role.id !== 1) {
+                  toast.warning("vous n'etes pas autorise a passer");
+
+                  try {
+                    const response = await axios.post("users/signout");
+
+                    Router.push("/auth/login");
+                  } catch (err) {
+                    console.lot(err);
+                  }
+                } else {
+                  localStorage.setItem('jwt', Object.values(res.data))
+                  console.log(localStorage.getItem('jwt'));
+
+                  Router.push("/");
+                }
+            }
         )
     } catch (err) {
-      toast.error(err.response.data.detail)
+      console.error(err);
+      // toast.error(err.response.data.detail);
     }
   };
 

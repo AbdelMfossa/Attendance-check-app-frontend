@@ -58,7 +58,7 @@ class Controleur extends React.Component {
         let a = 0;
         this.state.controleurs.map(
             explore => {
-                if (explore.role.id == 2) {
+                if (explore.role !== null && explore.role.id == 2) {
                     a += 1;
                 }
             })

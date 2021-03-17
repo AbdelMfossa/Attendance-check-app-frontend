@@ -17,13 +17,13 @@ export default class Index extends React.Component {
     if (jwt !== null) {
       this.setState({ jwt });
     }
-    axios.get("users/currentuser")
-      .then(res => {
-        console.log(res);
-      })
-      .catch(err => {
-        Router.push("/auth/login");
-      })
+    // axios.get("users/currentuser")
+    //   .then(res => {
+    //     console.log(res);
+    //   })
+    //   .catch(err => {
+    //     Router.push("/auth/login");
+    //   })
   }
 
   render() {

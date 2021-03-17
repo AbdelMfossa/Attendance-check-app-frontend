@@ -33,9 +33,33 @@ class CustomModal extends React.Component {
     }
     axios.post(`/surveillance/supervisor`, data)
       .catch(err => { console.log(err); toast.error("Erreur lors de la suppression"); })
-      .then((res) => {
-        if (res.data != null)
+      .then(async (res) => {
+        if (res.data != null) {
           toast.success("Surveillant Crée avec succès Veuillez recharchez la page");
+
+          try {
+            const resp = await axios.get("surveillance/supervisor");
+
+            let sups = resp.data.data;
+            console.log(sups);
+            let sup = null;
+            let id = 1;
+
+            for(let superv of sups) {
+              if (superv.id > id) {
+                id = superv.id;
+                sup = superv;
+              }
+            }
+
+            if (sup !== undefined) {
+              this.props.onAddSupervisor(sup);
+            }
+
+          } catch (err) {
+            toast.warning("impossible de recharger les surveillants");
+          }
+        }
       });
     this.setState({ show: false })
 
