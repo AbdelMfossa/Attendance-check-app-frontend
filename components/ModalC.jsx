@@ -34,9 +34,33 @@ export default class ModalC extends React.Component {
         }
         axios.post(`/users/signup`, data)
             .catch(err => { console.log(err); toast.error("Erreur lors de la creation du controleur"); })
-            .then((res) => {
-                if (res.data != null)
+            .then(async (res) => {
+                if (res.data != null) {
                     toast.success("Controleur Crée avec succès Veuillez recharchez la page");
+
+                    try {
+                        const resp = await axios.get("users/users");
+
+                        let controleurs = resp.data;
+                        console.log(controleurs);
+                        let ctr = null;
+                        let id = 1;
+
+                        for(let cntr of controleurs) {
+                          if (cntr.id > id) {
+                            id = cntr.id;
+                            ctr = cntr;
+                          }
+                        }
+
+                        if (ctr !== null) {
+                          this.props.onAddControleur(ctr);
+                        }
+
+                    } catch (err) {
+                        toast.warning("impossible de recharger les controleurs");
+                    }
+                }
             });
         this.setState({ show: false })
         console.log(data)

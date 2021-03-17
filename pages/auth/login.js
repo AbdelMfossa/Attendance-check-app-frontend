@@ -48,7 +48,8 @@ export default function Login() {
             }
         )
     } catch (err) {
-      toast.error(err.response.data.detail)
+      console.error(err);
+      // toast.error(err.response.data.detail);
     }
   };
 

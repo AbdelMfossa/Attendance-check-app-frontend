@@ -15,6 +15,7 @@ import { toast } from 'react-toastify';
 
 class Surveillant extends Component {
     constructor(props) {
+        console.log(props.survs);
         super(props);
         this.state = { surveillants: this.props.survs }
     }
@@ -30,6 +31,23 @@ class Surveillant extends Component {
         try { axios.get("users/currentuser"); }
         catch (err) { Router.push("/auth/login"); }
     }
+
+    handleAddSupervisor = (sup) => {
+        let survs = [...this.state.surveillants];
+        survs.push(sup);
+
+        this.setState({ surveillants: survs });
+    }
+
+    handleDeleteSupervisor = (id) => {
+        let survs = [...this.state.surveillants];
+        let index = survs.findIndex(surv => surv.id === id);
+
+        survs.splice(index, 1);
+
+        this.setState({ surveillants: survs });
+    }
+
     render() {
         return (
             <>
@@ -39,7 +57,10 @@ class Surveillant extends Component {
                             <header className="row">
                                 <div className="col-12 header-card">
                                     <span>SURVEILLANTS({this.state.surveillants.length})</span>
-                                    <CustomModal title="Surveillant" />
+                                    <CustomModal
+                                        title="Surveillant"
+                                        onAddSupervisor={this.handleAddSupervisor}
+                                    />
                                 </div>
                             </header>
                             <section className="row">
@@ -64,6 +85,7 @@ class Surveillant extends Component {
                                                         <InfoSurveillant
                                                             dataSurveillant={surv}
                                                             key={surv.id}
+                                                            deleteSurv={this.handleDeleteSupervisor}
                                                         />
                                                     )
                                                 })

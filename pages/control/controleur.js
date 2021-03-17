@@ -37,7 +37,7 @@ class Controleur extends React.Component {
         const orientation = "portrait";
 
         const marginLeft = 40;
-        const title = `LISTE DES CONTROLEURS EXAMEN\n\n\n`;
+        const title = "\t\t\tLISTE DES CONTROLEURS EXAMEN";
         const doc = new jsPDF(orientation, unit, size);
         doc.setFontSize(15);
         const headers = [["Noms et Prénoms", "Matricule", "Phone", "Email"]];
@@ -52,8 +52,25 @@ class Controleur extends React.Component {
 
         doc.text(title, marginLeft, 40);
         doc.autoTable(content);
-        doc.save("report.pdf")
+        doc.save("ListeControleur.pdf")
     }
+
+    handleDeleteControleur = (id) => {
+        let controleurs = [...this.state.controleurs];
+        let index = controleurs.findIndex(ctr => ctr.id === id);
+
+        controleurs.splice(index, 1);
+
+        this.setState({ controleurs });
+    }
+
+    handleAddControleur = (controleur) => {
+        let controleurs = [...this.state.controleurs];
+        controleurs.push(controleur);
+
+        this.setState({ controleurs });
+    }
+
     render() {
         let a = 0;
         this.state.controleurs.map(
@@ -70,7 +87,7 @@ class Controleur extends React.Component {
                             <header className="row">
                                 <div className="col-12 header-card">
                                     <span>CONTROLEURS({a})</span>
-                                    <ModalC title="Controleur" />
+                                    <ModalC title="Controleur" onAddControleur={this.handleAddControleur} />
                                 </div>
                             </header>
                             <section className="row">
@@ -93,6 +110,7 @@ class Controleur extends React.Component {
                                                         <InfoControleur
                                                             dataSurveillant={contr}
                                                             key={contr.id}
+                                                            onDelete={this.handleDeleteControleur}
                                                         />
                                                     )
                                                 })

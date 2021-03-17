@@ -30,7 +30,7 @@ export default class Account extends React.Component {
       let loading = this.state.isloading;
       this.setState({ user, isloading: !loading });
     } catch (err) {
-      Router.push("auth/login");
+      Router.push("/auth/login");
     }
   }
   handleModification({ lname, fname, adEmail, nPhone, role }) {
