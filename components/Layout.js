@@ -7,6 +7,7 @@ import Link from "next/link";
 import axios from "axios";
 import Router from 'next/router';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { respon } from '../scripts/form';
 
 class Layout extends React.Component {
 
@@ -42,37 +43,38 @@ class Layout extends React.Component {
             authorized: this.props.auth,
 
             responsive: {
-                class: null,
-                mainInterface: "auto"
+                class: null
             }
         }
     }
 
     async componentDidMount() {
-        let resp = this.state.responsive;
+        // let resp = this.state.responsive;
 
-        resp.class = window.innerHeight - 100;
+        // this.setState({ responsive: resp });
 
-        window.addEventListener("resize", () => {
-            let height = window.innerHeight;
-            let res = this.state.responsive;
+        // resp.class = window.innerHeight - 100;
 
-            res.mainInterface = height - 100;
+        // window.addEventListener("resize", () => {
+        //     let height = window.innerHeight;
+        //     let res = this.state.responsive;
 
-            this.setState({ responsive: res });
-        });
+        //     res.mainInterface = height - 100;
+
+        //     this.setState({ responsive: res });
+        // });
+
+        respon();
 
         try {
             const res = await axios.get("users/currentuser");
 
             if (res.data.data !== null) {
-                this.setState({ authorized: true });
+                this.setState({ authorized: true});
             }
         } catch (err) {
             console.log(err);
         }
-
-        this.setState({ responsive: resp });
     }
 
     logout = async () => {
@@ -135,7 +137,7 @@ class Layout extends React.Component {
                                 </div>
                                 <div className="flex-1" id="page-content-wrapper">
 
-                                     <nav className="navbar navbar-expand-lg navbar-light border-bottom bg-col">
+                                    <nav className="navbar navbar-expand-lg navbar-light border-bottom bg-col">
                                         <div className="logo-menu" id="icon-menu" onClick={this.toggle}>
                                             <i className="bi bi-justify"></i>
                                         </div>
@@ -144,36 +146,23 @@ class Layout extends React.Component {
                                             <img src="/static/university.png " alt="picture of uy1" width="40px" height="40" />
                                             <span>The University of Yaounde I</span>
                                         </div>
-                                    </div>
-                                    <div className="flex-1" id="page-content-wrapper">
+                                        <div className="logo-textL">
+                                            <Dropdown>
+                                                <Dropdown.Toggle as={CustomToggle}>
+                                                    <Image className="img-xs image" src="/static/avatar.jpg" alt="pic profile" width={40} height={40} />
+                                                </Dropdown.Toggle>
 
-                                        <nav className="navbar navbar-expand-lg navbar-light border-bottom bg-col">
-                                            <div className="logo-menu" id="icon-menu" onClick={this.toggle}>
-                                                <i className="bi bi-justify"></i>
-                                            </div>
+                                                <Dropdown.Menu>
+                                                    <Dropdown.Item href="/data/account">Account</Dropdown.Item>
+                                                    <Dropdown.Divider />
+                                                    <Dropdown.Item onClick={() => this.logout()} >Logout</Dropdown.Item>
+                                                </Dropdown.Menu>
+                                            </Dropdown>
 
-                                            <div className="logo-text">
-                                                <img src="/static/university.png " alt="picture of uy1" width="40px" height="40" />
-                                                <span>The University of Yaounde I</span>
-                                            </div>
-                                            <div className="logo-textL">
-                                                <Dropdown>
-                                                    <Dropdown.Toggle as={CustomToggle}>
-                                                        <Image className="img-xs image" src="/static/avatar.jpg" alt="pic profile" width={40} height={40} />
-                                                    </Dropdown.Toggle>
-
-                                                    <Dropdown.Menu>
-                                                        <Dropdown.Item href="/data/account">Account</Dropdown.Item>
-                                                        <Dropdown.Divider />
-                                                        <Dropdown.Item onClick={() => this.logout()} >Logout</Dropdown.Item>
-                                                    </Dropdown.Menu>
-                                                </Dropdown>
-
-                                            </div>
-                                        </nav>
-                                        <div className="main" id="interface" style={{ height: `${this.state.responsive.mainInterface}px` }}>
-                                            {this.props.children}
                                         </div>
+                                    </nav>
+                                    <div className="main" id="interface" >
+                                        {this.props.children}
                                     </div>
                                 </div>
                             </div>

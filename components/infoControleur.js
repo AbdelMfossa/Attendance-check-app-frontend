@@ -30,7 +30,7 @@ const infoControleur = ({ dataSurveillant, onDelete }) => {
                                 <Dropdown.Menu className="options">
                                     <ModalCModif controleur={{ last_name, first_name, email, phone, matricule, role, id }} />
                                     <Dropdown.Divider />
-                                    <CustomModalC id={id} titre={`users`} />
+                                    <CustomModalC id={id} titre={`users`} deleted={onDelete} />
                                 </Dropdown.Menu>
                             </Dropdown>
                         </td>

@@ -12,16 +12,21 @@ function customModalC(props) {
         if (props.titre == 'users') {
             axios.delete(`users/users/${survid}`)
                 .then((res) => {
-                    if (res.data != null)
-                        toast.success("Controleur supprimmé Veuillez recharger la page pour que les modifications prennent effet");
+                    if (res.data != null) {
+                        toast.success("Controleur supprimmé avec succes");
+                        props.deleted(survid);
+                    }
                 })
                 .catch(err => { console.log(err); toast.error("Erreur lors de la suppression"); })
         }
         if (props.titre == 'surveillant') {
             axios.delete(`surveillance/supervisor/${survid}`)
                 .then((res) => {
-                    if (res.data != null)
-                        toast.success("surveillant supprimmé Veuillez recharger la page pour que les modifications prennent effet");
+                    if (res.data != null) {
+                        toast.success("surveillant supprimmé avec succes");
+
+                        props.deleted(survid);
+                    }
                 })
                 .catch(err => { console.log(err); toast.error("Erreur lors de la suppression "); })
         }

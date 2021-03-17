@@ -27,3 +27,13 @@ export const form = () => {
     }
   });
 }
+
+export function respon() {
+  let mainInterface = document.getElementById("interface");
+
+  mainInterface.style.height = `${window.innerHeight - 100}px`;
+
+  window.onresize = function() {
+    mainInterface.style.height = `${window.innerHeight - 100}px`;
+  }
+}

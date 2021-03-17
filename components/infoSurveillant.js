@@ -6,7 +6,7 @@ import CustomModalC from "./customModalC"
 import Link from 'next/link';
 
 
-const InfoSurveillant = ({ dataSurveillant }) => {
+const InfoSurveillant = ({ dataSurveillant, deleteSurv }) => {
 
   const { id, last_name, first_name, email, exam, matricule, phone, grade } = dataSurveillant;
 
@@ -28,7 +28,7 @@ const InfoSurveillant = ({ dataSurveillant }) => {
             <Dropdown.Menu className="options">
               <Dropdown.Item  >Edit</Dropdown.Item>
               <Dropdown.Divider />
-              <CustomModalC id={id} titre={'surveillant'} />
+              <CustomModalC id={id} titre={'surveillant'} deleted={deleteSurv} />
             </Dropdown.Menu>
           </Dropdown>
         </td>

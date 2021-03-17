@@ -15,6 +15,7 @@ import { toast } from 'react-toastify';
 
 class Surveillant extends Component {
     constructor(props) {
+        console.log(props.survs);
         super(props);
         this.state = { surveillants: this.props.survs }
     }
@@ -34,6 +35,15 @@ class Surveillant extends Component {
     handleAddSupervisor = (sup) => {
         let survs = [...this.state.surveillants];
         survs.push(sup);
+
+        this.setState({ surveillants: survs });
+    }
+
+    handleDeleteSupervisor = (id) => {
+        let survs = [...this.state.surveillants];
+        let index = survs.findIndex(surv => surv.id === id);
+
+        survs.splice(index, 1);
 
         this.setState({ surveillants: survs });
     }
@@ -75,6 +85,7 @@ class Surveillant extends Component {
                                                         <InfoSurveillant
                                                             dataSurveillant={surv}
                                                             key={surv.id}
+                                                            deleteSurv={this.handleDeleteSupervisor}
                                                         />
                                                     )
                                                 })
