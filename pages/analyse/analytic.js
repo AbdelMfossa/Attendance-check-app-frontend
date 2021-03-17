@@ -30,7 +30,7 @@ class Analystic extends Component {
         const orientation = "portrait";
 
         const marginLeft = 40;
-        const title = "UY1";
+        const title = "\t\t\t\tSURVEILLANCES UNIVERSITE YAOUNDE I";
         const doc = new jsPDF(orientation, unit, size);
         doc.setFontSize(15);
         const headers = [["Noms et Prénoms", "Matricule", "Phone", "Salle", "Qualité", "Cota Horaires"]];
