@@ -6,13 +6,14 @@ import CustomToggle from "./customToggle";
 import Link from "next/link";
 import axios from "axios";
 import Router from 'next/router';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Layout extends React.Component {
 
     constructor(props) {
         super(props);
 
-        this.currentUser();
+        // this.currentUser();
 
         this.state = {
             navs: [
@@ -38,7 +39,7 @@ class Layout extends React.Component {
                 }
             ],
 
-            authorized: false,
+            authorized: this.props.auth,
 
             responsive: {
                 class: null,
@@ -84,19 +85,13 @@ class Layout extends React.Component {
         }
     }
 
-    currentUser() {
+    async currentUser() {
         try {
-            axios.get("users/currentuser")
-            .then(res => {
-                console.log(res);
+            const res = await axios.get("users/currentuser");
 
-                if (res.data.data.role.id !== 1) {
-                    Router.push("/auth/login");
-                }
-            })
-            .catch(err => {
-                 Router.push("/auth/login");
-            })
+            if (res.data.data.role.id !== 1) {
+                Router.push("/auth/login");
+            }
         } catch(err) {
             Router.push("/auth/login");
         }
@@ -118,9 +113,6 @@ class Layout extends React.Component {
         const auth = this.state.authorized;
 
         return (
-            <>
-            {
-                auth ? (
                     <>
 
                         <Head>
@@ -174,9 +166,6 @@ class Layout extends React.Component {
                             </div>
                         </div>
                     </>
-                ):null
-            }
-            </>
         )
     }
 }
