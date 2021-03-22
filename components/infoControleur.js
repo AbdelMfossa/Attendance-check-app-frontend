@@ -4,6 +4,7 @@ import { Dropdown } from "react-bootstrap";
 import CustomToggle from "./customToggle";
 import CustomModalC from "./customModalC";
 import Link from "next/link";
+import ModalCModif from "../components/ModalCModif";
 
 const infoControleur = ({ dataSurveillant, onDelete }) => {
   const {

@@ -3,6 +3,7 @@ import Head from "next/head";
 import { Dropdown } from "react-bootstrap";
 import CustomToggle from "./customToggle";
 import CustomModalC from "./customModalC";
+import ModalSModif from "../components/ModalSModif";
 import Link from "next/link";
 
 const InfoSurveillant = ({ dataSurveillant }) => {
@@ -35,7 +36,8 @@ const InfoSurveillant = ({ dataSurveillant }) => {
               <i className="bi bi-three-dots-vertical options-icon" />
             </Dropdown.Toggle>
             <Dropdown.Menu className="options">
-              <Dropdown.Item>Edit</Dropdown.Item>
+              <ModalSModif surveillant={dataSurveillant} />
+              {/* <Dropdown.Item>Edit</Dropdown.Item> */}
               <Dropdown.Divider />
               <CustomModalC id={id} titre={"surveillant"} />
             </Dropdown.Menu>
