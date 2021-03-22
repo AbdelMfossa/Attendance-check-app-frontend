@@ -1,5 +1,7 @@
-import cookie from "cookie"
+import cookie from "cookie";
 
 export function parseCookie(req) {
-    return cookie.parse(req ? req.headers.cookie || "" : localStorage.getItem('jwt'))
+  return cookie.parse(
+    req ? req.headers.cookie || "" : localStorage.getItem("jwt")
+  );
 }

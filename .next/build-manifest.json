@@ -29,10 +29,10 @@
       "static/chunks/webpack.js",
       "static/chunks/pages/auth/login.js"
     ],
-    "/salle/salleAllocation": [
+    "/control/controleur": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
-      "static/chunks/pages/salle/salleAllocation.js"
+      "static/chunks/pages/control/controleur.js"
     ]
   },
   "ampFirstPages": []

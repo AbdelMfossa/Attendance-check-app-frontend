@@ -5,24 +5,24 @@
  */
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 @font-face {
-    font-family: "proxima Bold";
-    src: url("/static/Proxima\ Nova\ Bold.otf")
+  font-family: "proxima Bold";
+  src: url("/static/Proxima\ Nova\ Bold.otf");
 }
 
 @font-face {
-    font-family: "proxima Thin";
-    src: url("/static/Proxima\ Nova\ Thin.otf");
+  font-family: "proxima Thin";
+  src: url("/static/Proxima\ Nova\ Thin.otf");
 }
 
 @font-face {
-    font-family: "proxima Regular";
-    src: url("/static/ProximaNova-Regular.otf");
+  font-family: "proxima Regular";
+  src: url("/static/ProximaNova-Regular.otf");
 }
 
 body {
@@ -31,30 +31,29 @@ body {
 
 #wrapper {
   overflow-x: hidden;
-  transition: margin .5s ease;
+  transition: margin 0.5s ease;
 }
 
 #sidebar-wrapper {
   width: 250px;
   min-height: 100vh;
   margin-left: -15rem;
-  -webkit-transition: margin .25s ease-out;
-  -moz-transition: margin .25s ease-out;
-  -o-transition: margin .25s ease-out;
-  transition: margin .25s ease-out;
+  -webkit-transition: margin 0.25s ease-out;
+  -moz-transition: margin 0.25s ease-out;
+  -o-transition: margin 0.25s ease-out;
+  transition: margin 0.25s ease-out;
   font-size: 12px;
   font-family: "proxima Thin";
   font-weight: bold;
   background-color: white !important;
 }
 
-
 #sidebar-wrapper div a {
   background-color: white !important;
 }
 
 #sidebar-wrapper div a:hover {
-  background-color: #F4F4F4 !important;
+  background-color: #f4f4f4 !important;
 }
 
 #sidebar-wrapper .sidebar-heading {
@@ -97,7 +96,7 @@ body {
 .topbar {
   height: 40px;
   width: 100%;
-  background-color: #6A4E77;
+  background-color: #6a4e77;
 }
 
 .navbar {
@@ -143,7 +142,7 @@ body {
 
 .main {
   padding: 20px;
-  background-color: #F4F4F4;
+  background-color: #f4f4f4;
   overflow-y: scroll;
 }
 
@@ -172,7 +171,8 @@ body {
   font-size: 16px;
 }
 
-.header-card, .middle-card {
+.header-card,
+.middle-card {
   height: 50px;
 }
 
@@ -250,7 +250,7 @@ body {
 }
 
 thead tr {
-  background-color: #F4F4F4;
+  background-color: #f4f4f4;
 }
 
 thead tr th {
@@ -260,7 +260,7 @@ thead tr th {
 
 tbody tr td {
   font-size: 12px;
-  font-family: "Proxima Thin";
+  font-family: "Proxima Regular";
 }
 
 @media screen and (max-width: 768px) {

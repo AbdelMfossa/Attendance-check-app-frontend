@@ -1,146 +1,146 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 body {
-    background: #F4F4F4;
-    overflow: hidden;
+  background: #f4f4f4;
+  overflow: hidden;
 }
 
 .container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    max-width: 730px;
-    height: 430px;
-    margin: auto;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 0 !important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-width: 730px;
+  height: 430px;
+  margin: auto;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 0 !important;
 }
 
 .myCard {
-    position: relative;
-    background: #fff;
-    display: flex;
-    flex-direction: row;
-    height: 100%;
-    border-radius: 15px;
-    padding: 0 !important;
-    -webkit-box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
-    -moz-box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
-    box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
+  position: relative;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  border-radius: 15px;
+  padding: 0 !important;
+  -webkit-box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
 }
 
 .rightSection {
-    position: absolute;
-    display: flex;
-    min-width: 290px;
-    height: 105%;
-    top: -12px;
-    bottom: -12px;
-    left: -5px;
-    background-color: #6A4E77;
-    border-radius: 8px;
-    padding: 25px;
-    color: rgb(192, 192, 192);
-    font-size: 12px;
-    justify-content: center;
+  position: absolute;
+  display: flex;
+  min-width: 290px;
+  height: 105%;
+  top: -12px;
+  bottom: -12px;
+  left: -5px;
+  background-color: #6a4e77;
+  border-radius: 8px;
+  padding: 25px;
+  color: rgb(192, 192, 192);
+  font-size: 12px;
+  justify-content: center;
 }
 
 .leftSection {
-    margin-right: 30px;
+  margin-right: 30px;
 }
 
 .leftSection header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .FormContent {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 5px;
 }
 
 .md-form {
-    position: relative;
+  position: relative;
 }
 
 .md-form input {
-    padding-left: 0 !important;
-    padding-top: 20px;
-    margin-top: 12px;
-    border-bottom: 1px solid grey;
-    border-top: 0;
-    border-left: 0;
-    border-right: 0;
-    border-radius: 0;
+  padding-left: 0 !important;
+  padding-top: 20px;
+  margin-top: 12px;
+  border-bottom: 1px solid grey;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-radius: 0;
 }
 
 .checkbox-input {
-    /*display: inline-flex;*/
-    align-self: flex-start;
+  /*display: inline-flex;*/
+  align-self: flex-start;
 }
 
 .checkbox-input label input {
-    align-items: center;
+  align-items: center;
 }
 
 .checkbox-input label {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .checkbox-input label small {
-    align-self: flex-end;
-    margin-left: 10px;
+  align-self: flex-end;
+  margin-left: 10px;
 }
 
 .form-label {
-    position: absolute;
-    display: block;
-    top: 25px;
-    left: 10px;
-    transition: transform .6s, font-size .6s;
+  position: absolute;
+  display: block;
+  top: 25px;
+  left: 10px;
+  transition: transform 0.6s, font-size 0.6s;
 }
 
 .form-label-focused {
-    transform: translate(-10px, -20px);
-    font-size: 12px !important;
+  transform: translate(-10px, -20px);
+  font-size: 12px !important;
 }
 
 .form-label-focused-color {
-    color: #DE3A99 !important;
-    text-decoration: #333333 im !important;
+  color: #de3a99 !important;
+  text-decoration: #333333 im !important;
 }
 
 .md-form label {
-    font-family: "proxima Bold";
-    color: #CFCFCF;
-    font-size: 15px;
+  font-family: "proxima Bold";
+  color: #cfcfcf;
+  font-size: 15px;
 }
 
 .md-form label.active {
-    color: #DE3A99!important;
-    font-size: 20px;
-    font-family: "proxima Regular";
+  color: #de3a99 !important;
+  font-size: 20px;
+  font-family: "proxima Regular";
 }
 
 .myForm input {
-    color: #333333;
-    font-family: 'proxima Bold';
+  color: #333333;
+  font-family: "proxima Bold";
 }
 
 .md-form input[type="password"]:not(.browser-default):focus:not([readonly]),
 .md-form input[type="text"]:not(.browser-default):focus:not([readonly]) {
-    border-bottom: 1px solid #DE3A99;
-    box-shadow: 0 1px 0 0 #DE3A99;
+  border-bottom: 1px solid #de3a99;
+  box-shadow: 0 1px 0 0 #de3a99;
 }
 
 .modal-form {
@@ -149,374 +149,370 @@ body {
 }
 
 .leftSection header h2 {
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #DE3A99;
-    color: #DE3A99;
-    font-family: "proxima Bold";
-    width: 100px;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #de3a99;
+  color: #de3a99;
+  font-family: "proxima Bold";
+  width: 100px;
 }
 
 .row {
-    height: 100%;
+  height: 100%;
 }
 
 .rightSection header {
-    color: #fff;
-    font-size: 44px;
+  color: #fff;
+  font-size: 44px;
 }
 
 .box {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-content: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
 }
 
 .box div {
-    margin-left: auto;
-    margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .box p {
-    margin-top: 70px;
-    font-weight: bold;
+  margin-top: 70px;
+  font-weight: bold;
 }
 
 .box .img-logo {
-    margin-top: 20px;
-    margin-bottom: 70px;
+  margin-top: 20px;
+  margin-bottom: 70px;
 }
 
 .leftSection .myInput:focus {
-    outline: none;
+  outline: none;
 }
 
 .myForm {
-    position: relative;
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  position: relative;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .FormFooter {
-    margin-top: 35px;
-    min-height: 130px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  margin-top: 35px;
+  min-height: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .leftSection .butt {
-    background: #DE3A99;
-    color: #fff;
-    width: 230px;
-    font-family: "proxima Bold";
-    border: none;
-    border-radius: 25px;
-    padding: 10px;
-    -webkit-box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
-    -moz-box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
-    box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
+  background: #de3a99;
+  color: #fff;
+  width: 230px;
+  font-family: "proxima Bold";
+  border: none;
+  border-radius: 25px;
+  padding: 10px;
+  -webkit-box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 10px 20px -11px rgba(0, 0, 0, 0.4);
+}
+.butt:hover {
+  background-color: white !important;
+  border: 1px solid #de3a99 !important;
+  color: #de3a99 !important;
 }
 
 .FormFooter div:first-child {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    margin-right: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 15px;
 }
 
 .FormFooter div:last-child {
-    padding-bottom: 20px;
+  padding-bottom: 20px;
 }
 
 .FormFooter .passForgot {
-    color: #DE3A99;
-    display: flex;
-    align-self: flex-end;
-    font-family: "proxima Bold";
-    text-decoration: underline;
+  color: #de3a99;
+  display: flex;
+  align-self: flex-end;
+  font-family: "proxima Bold";
+  text-decoration: underline;
 }
 
 .leftSection .butt:focus {
-    outline: none;
+  outline: none;
 }
 
 .leftSection .fas {
-    position: relative;
-    color: #bb36fd;
-    left: 36px;
+  position: relative;
+  color: #bb36fd;
+  left: 36px;
 }
 
 .butt_out {
-    background: transparent;
-    color: #fff;
-    width: 120px;
-    border: 2px solid#fff;
-    border-radius: 25px;
-    padding: 10px;
-    -webkit-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
-    -moz-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
-    box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+  background: transparent;
+  color: #fff;
+  width: 120px;
+  border: 2px solid#fff;
+  border-radius: 25px;
+  padding: 10px;
+  -webkit-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
 }
 
 .butt_out:hover {
-    border: 2px solid#eecbff;
+  border: 2px solid#eecbff;
 }
 
 .butt_out:focus {
-    outline: none;
+  outline: none;
 }
 
 @media screen and (max-width: 767px) {
-    .rightSection {
-        display: none;
-    }
+  .rightSection {
+    display: none;
+  }
 
-    .leftSection {
-        width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-    }
+  .leftSection {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-    .container {
-        background-color: #F4F4F4;
-    }
+  .container {
+    background-color: #f4f4f4;
+  }
 }
 
 @media screen and (max-width: 300px) {
-    .leftSection .butt {
-        width: 150px;
-        font-size: 16px;
-    }
+  .leftSection .butt {
+    width: 150px;
+    font-size: 16px;
+  }
 }
 body {
-    overflow: hidden;
-  }
+  overflow: hidden;
+}
 
-  #wrapper {
-    overflow-x: hidden;
-    transition: margin .5s ease;
-  }
+#wrapper {
+  overflow-x: hidden;
+  transition: margin 0.5s ease;
+}
 
+#sidebar-wrapper {
+  width: 250px;
+  min-height: 100vh;
+  margin-left: -15rem;
+  -webkit-transition: margin 0.25s ease-out;
+  -moz-transition: margin 0.25s ease-out;
+  -o-transition: margin 0.25s ease-out;
+  transition: margin 0.25s ease-out;
+  font-size: 12px;
+  font-family: "proxima Thin";
+  font-weight: bold;
+  background-color: white !important;
+}
+
+#sidebar-wrapper div Link {
+  background-color: white !important;
+}
+
+#sidebar-wrapper div Link:hover {
+  background-color: #f4f4f4 !important;
+}
+
+#sidebar-wrapper .sidebar-heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0.875rem 1.25rem;
+  font-size: 1rem;
+  font-family: "proxima Bold";
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+#sidebar-wrapper .list-group {
+  width: 15rem;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+
+#page-content-wrapper .navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#navbarDropdown img {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
+
+.topbar {
+  height: 40px;
+  width: 100%;
+  background-color: #6a4e77;
+}
+
+.navbar {
+  height: 60px;
+  padding: 0 !important;
+}
+
+.logo-text {
+  display: flex;
+  flex: 6;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.logo-text span {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-left: 25px;
+  font-size: 20px;
+  font-family: "proxima Regular";
+}
+
+.logo-menu {
+  display: flex;
+  flex: 1;
+  margin-left: 15px;
+}
+
+.logo-menu:hover {
+  cursor: pointer;
+}
+
+.logo-menu i {
+  font-size: 1.4rem;
+}
+
+.profil {
+  display: flex;
+  flex: 1;
+}
+
+.main {
+  padding: 20px;
+  background-color: #f4f4f4;
+  overflow-y: scroll;
+}
+
+.mainCard {
+  height: auto;
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.header-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.header-card button {
+  height: 35px;
+  width: 100px;
+  font-size: 12px;
+  font-family: "Proxima Regular";
+}
+
+.header-card span {
+  font-family: "Proxima Bold";
+  font-size: 16px;
+}
+
+.header-card,
+.middle-card {
+  height: 50px;
+}
+
+.middle-card {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.middle-card input {
+  border-radius: 0px !important;
+  width: 50%;
+  border: 1px solid grey;
+  padding: 7px;
+  padding-right: 40px;
+}
+
+.middle-card i {
+  position: absolute;
+  top: 6px;
+  left: 44%;
+  font-size: 1.4rem;
+}
+
+.content-card {
+  height: auto;
+  margin-top: 10px;
+}
+
+thead tr {
+  background-color: #f4f4f4;
+}
+
+thead tr th {
+  font-size: 12px;
+  font-family: "Proxima Bold";
+}
+
+@media screen and (max-width: 768px) {
+  .middle-card i {
+    left: 43%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .middle-card i {
+    left: 41%;
+  }
+}
+
+@media (min-width: 768px) {
   #sidebar-wrapper {
-    width: 250px;
-    min-height: 100vh;
-    margin-left: -15rem;
-    -webkit-transition: margin .25s ease-out;
-    -moz-transition: margin .25s ease-out;
-    -o-transition: margin .25s ease-out;
-    transition: margin .25s ease-out;
-    font-size: 12px;
-    font-family: "proxima Thin";
-    font-weight: bold;
-    background-color: white !important;
-  }
-
-  #sidebar-wrapper div Link:first-child {
-    border-top: 0px solid #CFCFCF;
-  }
-
-  #sidebar-wrapper div Link {
-    background-color: white !important;
-  }
-
-  #sidebar-wrapper div Link:hover {
-    background-color: #F4F4F4 !important;
-  }
-
-  #sidebar-wrapper .sidebar-heading {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding: 0.875rem 1.25rem;
-    font-size: 1rem;
-    font-family: "proxima Bold";
-    font-size: 14px;
-    margin-bottom: 30px;
-  }
-
-  #sidebar-wrapper .list-group {
-    width: 15rem;
-  }
-
-  #page-content-wrapper {
-    min-width: 100vw;
-  }
-
-  #wrapper.toggled #sidebar-wrapper {
     margin-left: 0;
   }
 
-  #page-content-wrapper .navbar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  #navbarDropdown img {
-    width: 40px;
-    height: 40px;
-    border-radius: 100%;
-  }
-
-  .topbar {
-    height: 40px;
+  #page-content-wrapper {
+    min-width: 0;
     width: 100%;
-    background-color: #6A4E77;
   }
 
-  .navbar {
-    height: 60px;
-    padding: 0 !important;
-  }
-
-  .logo-text {
-    display: flex;
-    flex: 6;
-    flex-direction: row;
-    justify-content: center;
-  }
-
-  .logo-text span {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    margin-left: 25px;
-    font-size: 20px;
-    font-family: "proxima Regular";
-  }
-
-  .logo-menu {
-    display: flex;
-    flex: 1;
-    margin-left: 15px;
-  }
-
-  .logo-menu:hover {
-    cursor: pointer;
-  }
-
-  .logo-menu i {
-    font-size: 1.4rem;
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -250px;
   }
 
   .profil {
-    display: flex;
-    flex: 1;
+    margin-right: -40px;
+    margin-left: 100px;
   }
-
-  .main {
-    padding: 20px;
-    background-color: #F4F4F4;
-    overflow-y: scroll;
-  }
-
-  .mainCard {
-    height: auto;
-    background-color: white;
-    padding: 20px;
-    margin-bottom: 20px;
-  }
-
-  .header-card {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .header-card button {
-    height: 35px;
-    width: 100px;
-    font-size: 12px;
-    font-family: "Proxima Regular";
-  }
-
-  .header-card span {
-    font-family: "Proxima Bold";
-    font-size: 16px;
-  }
-
-  .header-card, .middle-card {
-    height: 50px;
-  }
-
-  .middle-card {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-  }
-
-  .middle-card input {
-    border-radius: 0px !important;
-    width: 50%;
-    border: 1px solid grey;
-    padding: 7px;
-    padding-right: 40px;
-  }
-
-  .middle-card i {
-    position: absolute;
-    top: 6px;
-    left: 44%;
-    font-size: 1.4rem;
-  }
-
-  .content-card {
-    height: auto;
-    margin-top: 10px;
-  }
-
-  thead tr {
-    background-color: #F4F4F4;
-  }
-
-  thead tr th {
-    font-size: 12px;
-    font-family: "Proxima Bold";
-  }
-
-  tbody tr td {
-    font-size: 12px;
-    font-family: "Proxima Thin";
-  }
-
-  @media screen and (max-width: 768px) {
-    .middle-card i {
-      left: 43%;
-    }
-  }
-
-  @media screen and (max-width: 500px) {
-    .middle-card i {
-      left: 41%;
-    }
-  }
-
-  @media (min-width: 768px) {
-    #sidebar-wrapper {
-      margin-left: 0;
-    }
-
-    #page-content-wrapper {
-      min-width: 0;
-      width: 100%;
-    }
-
-    #wrapper.toggled #sidebar-wrapper {
-      margin-left: -250px;
-    }
-
-    .profil {
-      margin-right: -40px;
-      margin-left: 100px;
-    }
-
-  }
+}

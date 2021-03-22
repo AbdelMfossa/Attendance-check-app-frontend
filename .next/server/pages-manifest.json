@@ -2,6 +2,6 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/salle/salleAllocation": "pages/salle/salleAllocation.js",
-  "/auth/login": "pages/auth/login.js"
+  "/auth/login": "pages/auth/login.js",
+  "/control/controleur": "pages/control/controleur.js"
 }
