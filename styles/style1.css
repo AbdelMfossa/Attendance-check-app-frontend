@@ -323,7 +323,7 @@ body {
 }
 
 #sidebar-wrapper div Link {
-  background-color: white !important;
+  /*background-color: white !important;*/
 }
 
 #sidebar-wrapper div Link:hover {

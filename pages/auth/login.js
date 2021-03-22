@@ -37,7 +37,7 @@ export default function Login() {
 
                     Router.push("/auth/login");
                   } catch (err) {
-                    console.lot(err);
+                    console.log(err);
                   }
                 } else {
                   localStorage.setItem('jwt', Object.values(res.data))

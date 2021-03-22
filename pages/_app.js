@@ -10,7 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import NextNprogress from 'nextjs-progressbar';
 
 // axios.defaults.baseURL = "https://attendceappuy1.herokuapp.com/api/"
-axios.defaults.baseURL = "http://192.168.1.104:8000/api/"
+axios.defaults.baseURL = "http://192.168.8.100:8000/api/"
 axios.defaults.withCredentials = true;
 
 export default function MyApp({ Component, pageProps }) {
