@@ -1,10 +1,8 @@
-import React, { Component, useState, useEffect } from "react";
-import ReactDOM from "react-dom";
+import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import { form } from "../../scripts/form";
 import axios from "axios";
-import { useCookies } from "react-cookie";
 import Router from "next/router";
 import { toast } from "react-toastify";
 
@@ -28,22 +26,18 @@ export default function Login() {
           Router.push("/");
         });
     } catch (err) {
-      // toast.error(err.response.data.detail);
+      toast.error(err.response.data.detail);
       console.log(err);
     }
   };
   return (
     <>
       <Head>
-        <head>
-          <title>Login</title>
-          <meta charset="utf-8" />
-          <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-          <title>Login</title>
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-        </head>
+        <title>Login</title>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-
       <div className="container">
         <div className="row myCard">
           <div className="col-md-5 ">
@@ -58,7 +52,7 @@ export default function Login() {
                     alt="logo du login"
                   />
                 </div>
-                <p>Page de connexion au systeme</p>
+                <p>Page de connexion au système</p>
               </div>
             </section>
           </div>
@@ -81,6 +75,7 @@ export default function Login() {
                       onChange={(e) => setEmail(e.target.value)}
                       className="form-control js-input"
                       id="1"
+                      required
                     />
                     <label htmlFor="email" className="form-label" id="label-1">
                       Email
@@ -93,6 +88,7 @@ export default function Login() {
                       onChange={(e) => setPassword(e.target.value)}
                       className="form-control js-input"
                       id="2"
+                      required
                     />
                     <label
                       htmlFor="password"

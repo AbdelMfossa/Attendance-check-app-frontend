@@ -26,8 +26,8 @@ export default class ModalSModif extends React.Component {
       last_name: this.state.last_name,
       phone: this.state.phone,
       matricule: this.state.matricule,
-      email: this.state.email,
-      role: this.state.role,
+      grade: this.state.grade,
+      genre: this.state.genre,
     };
     axios
       .put(`surveillance/supervisor/${this.props.surveillant.id}`, data)
@@ -74,7 +74,7 @@ export default class ModalSModif extends React.Component {
                   />
                 </div>
                 <div>
-                  <label>Prenom</label>
+                  <label>Prénom</label>
                   <input
                     type="text"
                     value={this.state.last_name}
@@ -86,7 +86,7 @@ export default class ModalSModif extends React.Component {
                   />
                 </div>
                 <div>
-                  <label>matricule</label>
+                  <label>Matricule</label>
                   <input
                     type="text"
                     value={this.state.matricule}
@@ -127,7 +127,6 @@ export default class ModalSModif extends React.Component {
                         ? this.setState({ grade: true })
                         : this.setState({ grade: grade });
                     }}
-                    value={this.state.grade}
                   >
                     <option value="0">Surveillant</option>
                     <option value="1">Chef de salle</option>

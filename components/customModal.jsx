@@ -31,15 +31,14 @@ class CustomModal extends React.Component {
     };
     axios
       .post(`/surveillance/supervisor`, data)
+      .then(() =>
+        toast.success(
+          "Surveillant Crée avec succès Veuillez recharchez la page"
+        )
+      )
       .catch((err) => {
         console.log(err);
         toast.error("Erreur lors de la suppression");
-      })
-      .then((res) => {
-        if (res.data != null)
-          toast.success(
-            "Surveillant Crée avec succès Veuillez recharchez la page"
-          );
       });
     this.setState({ show: false });
   };
@@ -73,33 +72,39 @@ class CustomModal extends React.Component {
                     className="form-control"
                     placeholder=""
                     onChange={(e) => (this.state.first_name = e.target.value)}
+                    required
                   />
                 </div>
                 <div>
-                  <label>Prenom</label>
+                  <label>Prénom</label>
                   <input
                     type="text"
                     className="form-control"
                     placeholder=""
                     onChange={(e) => (this.state.last_name = e.target.value)}
+                    required
                   />
                 </div>
                 <div>
-                  <label>matricule</label>
+                  <label>Matricule</label>
                   <input
                     type="text"
                     className="form-control"
                     placeholder=""
                     onChange={(e) => (this.state.matricule = e.target.value)}
+                    required
                   />
                 </div>
                 <div>
                   <label>Numéro de téléphone</label>
                   <input
-                    type="text"
+                    type="tel"
+                    maxLength="9"
+                    minLength="9"
                     className="form-control"
                     placeholder=""
                     onChange={(e) => (this.state.phone = e.target.value)}
+                    required
                   />
                 </div>
                 <div>
@@ -107,6 +112,7 @@ class CustomModal extends React.Component {
                   <select
                     className="form-control"
                     onChange={(e) => this.setState({ genre: e.target.value })}
+                    required
                   >
                     <option value="masculin">masculin</option>
                     <option value="feminin">féminin</option>
@@ -121,6 +127,7 @@ class CustomModal extends React.Component {
                         ? this.setState({ grade: true })
                         : this.setState({ grade: grade });
                     }}
+                    required
                   >
                     <option value="0">Surveillant</option>
                     <option value="1">Chef de salle</option>

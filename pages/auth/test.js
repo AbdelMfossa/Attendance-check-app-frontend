@@ -1,7 +1,5 @@
 import axios from "axios";
-import { param } from "jquery";
 import { useEffect } from "react";
-import { parseCookie } from "../../api/client-request";
 
 export default function Homepage() {
   useEffect(async () => {

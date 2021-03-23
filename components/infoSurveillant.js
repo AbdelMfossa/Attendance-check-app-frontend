@@ -37,7 +37,6 @@ const InfoSurveillant = ({ dataSurveillant }) => {
             </Dropdown.Toggle>
             <Dropdown.Menu className="options">
               <ModalSModif surveillant={dataSurveillant} />
-              {/* <Dropdown.Item>Edit</Dropdown.Item> */}
               <Dropdown.Divider />
               <CustomModalC id={id} titre={"surveillant"} />
             </Dropdown.Menu>

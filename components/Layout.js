@@ -11,7 +11,7 @@ import Router from "next/router";
 class Layout extends React.Component {
   constructor(props) {
     super(props);
-    this.currentUser();
+    // this.currentUser();
   }
 
   componentDidMount() {
@@ -19,30 +19,30 @@ class Layout extends React.Component {
     respons();
   }
 
-  logout = async () => {
-    try {
-      const res = await axios.post("users/signout");
+  // logout = async () => {
+  //   try {
+  //     const res = await axios.post("users/signout");
 
-      Router.push("/auth/login");
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  //     Router.push("/auth/login");
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
 
-  currentUser() {
-    try {
-      axios
-        .get("users/currentuser")
-        .then((res) => {
-          console.log(res);
-        })
-        .catch((err) => {
-          Router.push("/auth/login");
-        });
-    } catch (err) {
-      Router.push("/auth/login");
-    }
-  }
+  // currentUser() {
+  //   try {
+  //     axios
+  //       .get("users/currentuser")
+  //       .then((res) => {
+  //         console.log(res);
+  //       })
+  //       .catch((err) => {
+  //         Router.push("/auth/login");
+  //       });
+  //   } catch (err) {
+  //     Router.push("/auth/login");
+  //   }
+  // }
 
   render() {
     return (

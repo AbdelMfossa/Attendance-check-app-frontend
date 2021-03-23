@@ -27,11 +27,11 @@ class Surveillant extends Component {
         columnDefs: [{ orderable: false, targets: [1, 2, 6] }],
       });
     });
-    try {
-      axios.get("users/currentuser");
-    } catch (err) {
-      Router.push("/auth/login");
-    }
+    // try {
+    //   axios.get("users/currentuser");
+    // } catch (err) {
+    //   Router.push("/auth/login");
+    // }
   }
   render() {
     return (

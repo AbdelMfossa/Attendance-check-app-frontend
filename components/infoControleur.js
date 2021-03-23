@@ -6,7 +6,7 @@ import CustomModalC from "./customModalC";
 import Link from "next/link";
 import ModalCModif from "../components/ModalCModif";
 
-const infoControleur = ({ dataSurveillant, onDelete }) => {
+const infoControleur = ({ dataSurveillant }) => {
   const {
     last_name,
     first_name,
@@ -34,7 +34,8 @@ const infoControleur = ({ dataSurveillant, onDelete }) => {
                 <i className="bi bi-three-dots-vertical options-icon" />
               </Dropdown.Toggle>
               <Dropdown.Menu className="options">
-                <Dropdown.Item href="modif/edite">Edit</Dropdown.Item>
+                {/* <Dropdown.Item href="modif/edite">Edit</Dropdown.Item> */}
+                <ModalCModif controleur={dataSurveillant} />
                 <Dropdown.Divider />
                 <CustomModalC id={id} titre={`users`} />
               </Dropdown.Menu>

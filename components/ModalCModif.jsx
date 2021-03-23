@@ -29,10 +29,11 @@ export default class ModalCModif extends React.Component {
       matricule: this.state.matricule,
       email: this.state.email,
       role: this.state.role,
+      password: this.state.password,
     };
     axios
-      .put("users/users/info", data)
-      .then((res) => {
+      .put(`users/users/${this.props.controleur.id}`, data)
+      .then(() => {
         toast.success(
           "Information du controleur modifie avec succès Veuillez recharchez la page"
         );
@@ -48,7 +49,7 @@ export default class ModalCModif extends React.Component {
   render() {
     return (
       <>
-        <Dropdown onClick={this.handleShow}>Edit</Dropdown>
+        <Dropdown.Item onClick={this.handleShow}>Edit</Dropdown.Item>
         <Modal
           show={this.state.show}
           onHide={this.handleClose}
@@ -57,7 +58,7 @@ export default class ModalCModif extends React.Component {
           className="modalSuppression"
         >
           <Modal.Header closeButton className="color-titre-ajout">
-            <Modal.Title className="colorTitre">{`modification d'un ${this.props.title}`}</Modal.Title>
+            <Modal.Title className="colorTitre">{`Modification d'un Controleur`}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <div className="modal-form">
@@ -75,7 +76,7 @@ export default class ModalCModif extends React.Component {
                   />
                 </div>
                 <div>
-                  <label>Prenom</label>
+                  <label>Prénom</label>
                   <input
                     type="text"
                     value={this.state.last_name}
@@ -89,15 +90,16 @@ export default class ModalCModif extends React.Component {
                 <div>
                   <label>Email</label>
                   <input
-                    type="text"
+                    type="email"
                     value={this.state.email}
                     className="form-control"
                     placeholder=""
                     onChange={(e) => this.setState({ email: e.target.value })}
+                    required
                   />
                 </div>
                 <div>
-                  <label>matricule</label>
+                  <label>Matricule</label>
                   <input
                     type="text"
                     value={this.state.matricule}
