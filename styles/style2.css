@@ -293,3 +293,8 @@ font-family: "Proxima Regular";
   margin-right: 30px !important;
 }
 }
+
+canvas {
+  background-color: white;
+  border: .8px solid lightgrey;
+}

@@ -8,6 +8,7 @@ export default class ModalCModif extends React.Component {
         super(props)
         this.state = {
             show: false,
+            id: this.props.controleur.id,
             first_name: this.props.controleur.first_name,
             last_name: this.props.controleur.last_name,
             phone: this.props.controleur.phone,
@@ -30,7 +31,7 @@ export default class ModalCModif extends React.Component {
             email: this.state.email,
             role: this.state.role
         }
-        axios.post('users/users/info', data)
+        axios.put(`users/users/${this.state.id}`, data)
             .then((res) => {
                 toast.success("Information du controleur modifie avec succès Veuillez recharchez la page");
             })

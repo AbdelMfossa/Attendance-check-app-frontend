@@ -4,7 +4,8 @@ import CustomModal from "../../components/customModal";
 import InfoSurveillantA from "../../components/infoSurveillantA"
 import axios from "axios";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'jquery/dist/jquery.min.js';
+// import 'jquery/dist/jquery.min.js';
+// import $ from 'jquery';
 import "datatables.net-dt/js/dataTables.dataTables"
 import "datatables.net-dt/css/jquery.dataTables.min.css"
 import { place } from "../../scripts/form";
@@ -12,6 +13,7 @@ import $ from 'jquery';
 import Link from "next/link"
 import jsPDF from "jspdf";
 import "jspdf-autotable";
+import Chart from 'chart.js';
 
 
 class Analystic extends Component {
@@ -21,9 +23,60 @@ class Analystic extends Component {
             surveillants: this.props.survs
         }
     }
-    handlePrint = () => {
-        ss
+
+    componentDidMount() {
+        // const ctx = document.getELementById("myCanvas");
+
+        // console.log(ctx);
+
+        $(document).ready(function() {
+            let ctx = $("#myCanvas");
+
+            let chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange', 'black'],
+                    datasets: [{
+                        label: '# Analystic',
+                        data: [12, 19, 3, 5, 2, 3, 6],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(0, 0, 0, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(0, 0, 0, 1)'
+                        ],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    scales: {
+                        xAxes: [{
+                            gridLines: {
+                                offsetGridLines: true
+                            }
+                        }]
+                    }
+                }
+            });
+        });
     }
+
+    handlePrint = () => {
+        // ss
+    }
+
     exportPDF = () => {
         const unit = "pt";
         const size = "A4";
@@ -91,6 +144,8 @@ class Analystic extends Component {
                                             }
                                         </tbody>
                                     </table>
+
+                                    <canvas id="myCanvas" style={{ width: "100%", height: "200px" }}>mon canavas</canvas>
 
                                 </div>
                             </section>

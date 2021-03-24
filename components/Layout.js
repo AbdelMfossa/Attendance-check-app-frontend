@@ -6,15 +6,13 @@ import CustomToggle from "./customToggle";
 import Link from "next/link";
 import axios from "axios";
 import Router from 'next/router';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { respon } from '../scripts/form';
 
 class Layout extends React.Component {
 
+
     constructor(props) {
         super(props);
-
-        this.currentUser();
 
         this.state = {
             navs: {
@@ -24,7 +22,7 @@ class Layout extends React.Component {
                 salle: "notActive"
             },
 
-            authorized: this.props.auth,
+            authorized: false,
 
             responsive: {
                 class: null
@@ -37,15 +35,15 @@ class Layout extends React.Component {
             respon();
         }
 
-        try {
-            const res = await axios.get("users/currentuser");
+        // try {
+        //     const res = await axios.get("users/currentuser");
 
-            if (res.data.data !== null) {
-                this.setState({ authorized: true});
-            }
-        } catch (err) {
-            console.log(err);
-        }
+        //     if (res.data.data !== null) {
+        //         this.setState({ authorized: true});
+        //     }
+        // } catch (err) {
+        //     console.log(err);
+        // }
     }
 
     logout = async () => {
@@ -58,19 +56,19 @@ class Layout extends React.Component {
         }
     }
 
-    async currentUser() {
-        try {
-            const res = await axios.get("users/currentuser");
+    // async currentUser() {
+    //     try {
+    //         const res = await axios.get("users/currentuser");
 
-            if (res.data.data.role.id !== 1) {
-                Router.push("/auth/login");
-            }
+    //         if (res.data.data.role.id !== 1) {
+    //             Router.push("/auth/login");
+    //         }
 
-            this.setState({ authorized: true });
-        } catch(err) {
-            Router.push("/auth/login");
-        }
-    }
+    //         this.setState({ authorized: true });
+    //     } catch(err) {
+    //         Router.push("/auth/login");
+    //     }
+    // }
 
     toggle = () => {
         let res = this.state.responsive;
@@ -109,9 +107,6 @@ class Layout extends React.Component {
         const auth = this.state.authorized;
 
         return (
-            <>
-                {
-                    this.state.authorized ? (
                         <>
 
                             <Head>
@@ -189,11 +184,25 @@ class Layout extends React.Component {
                                 </div>
                             </div>
                         </>
-                    ):null
-                }
-            </>
         )
     }
+}
+
+export async function getServerSideProps() {
+    try {
+        const res = await axios.get("users/currentuser");
+
+        if (res.data.data.role.id !== 1) {
+            Router.push("/auth/login");
+        }
+
+        // this.setState({ authorized: true });
+        return { props: {user: res.data.data} }
+    } catch(err) {
+        Router.push("/auth/login");
+    }
+
+    return { props: {user: null} }
 }
 
 export default Layout;
